@@ -1,7 +1,7 @@
 // app.component.ts
 import { Component, OnInit } from "@angular/core";
 import { ApiService } from "./api.service";
-import {Data} from "@angular/router";
+import {data} from "./product-requests";
 
 @Component({
   selector: "app-root",
@@ -9,13 +9,7 @@ import {Data} from "@angular/router";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  data: Data = {
-    currentUser: {
-      image: "",
-      name: "",
-      username: "",
-    },
-    productRequests: [],
+  data: data = {productRequests: [],
   };
 
   constructor(private api: ApiService) {}

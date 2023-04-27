@@ -1,0 +1,21 @@
+<div *ngFor="let request of data.productRequests" class="product-request">
+  <div class="upvote">
+    <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+    <p>{{request.upvotes}}</p>
+  </div>
+  <div class="request-info">
+    <h3 class="request-title">{{request.title}}</h3>
+    <p class="request-description">
+      {{request.description}}
+    </p>
+    <div class="request-tag">
+      {{request.category}}
+    </div>
+  </div>
+  <div class="request-comments">
+    <img src="assets/shared/icon-comments.svg" alt="">
+    <p class="comment-amount">
+      {{request.comments?.length ?? 0}}
+    </p>
+  </div>
+</div>

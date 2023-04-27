@@ -1,4 +1,1 @@
-<!-- app.component.html -->
-<div *ngIf="data?.['productRequests']">
-  <p *ngFor="let request of data?.['productRequests']">{{ request.title }}</p>
-</div>
+<app-product-request [data]="data"></app-product-request>
