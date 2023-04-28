@@ -1,6 +1,6 @@
 // app.component.ts
-import { Component, OnInit } from "@angular/core";
-import { ApiService } from "./api.service";
+import {Component, OnChanges, OnInit, SimpleChanges} from "@angular/core";
+import {ApiService} from "./api.service";
 import {data} from "./product-requests";
 
 @Component({
@@ -9,14 +9,28 @@ import {data} from "./product-requests";
   styleUrls: ["./app.component.scss"],
 })
 export class AppComponent implements OnInit {
-  data: data = {productRequests: [],
-  };
+  originalData: data = {productRequests: []};
+  data: data = {productRequests: []};
 
-  constructor(private api: ApiService) {}
+  constructor(private api: ApiService) {
+  }
 
   ngOnInit(): void {
     this.api.getAllProductRequests().subscribe((data) => {
-      this.data = data;
+      this.originalData = data;
+      this.filterRequestsByCategory('all');
     });
+  }
+
+  onCategoryChange(category: string): void {
+    this.filterRequestsByCategory(category);
+  }
+
+// app.component.ts
+  filterRequestsByCategory(category: string): void {
+    this.data.productRequests = category === 'all'
+      ? [...this.originalData.productRequests]
+      : this.originalData.productRequests.filter(request =>
+        request.category === category);
   }
 }

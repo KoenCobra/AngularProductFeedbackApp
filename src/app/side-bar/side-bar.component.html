@@ -1,1 +1,4 @@
-<p>side-bar works!</p>
+<div *ngFor="let category of categories">
+  <button (click)="changeCategory(category)">{{category}}</button>
+</div>
+
