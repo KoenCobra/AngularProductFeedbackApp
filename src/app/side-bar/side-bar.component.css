@@ -38,5 +38,61 @@
   background-color: #4661E6;
   color: #FFF;
 }
+.sidebar .road-map {
+  background-color: #FFF;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+}
+.sidebar .road-map .road-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+}
+.sidebar .road-map .road-map-header p {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.25px;
+}
+.sidebar .road-map .road-map-header a {
+  color: #4661E6;
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+.sidebar .road-map .road-map-content {
+  display: grid;
+  gap: 0.5rem;
+}
+.sidebar .road-map .road-map-content .content-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar .road-map .road-map-content .content-item .content-item-title {
+  display: flex;
+  align-items: center;
+}
+.sidebar .road-map .road-map-content .content-item .content-item-title .road-map-dot-planned, .sidebar .road-map .road-map-content .content-item .content-item-title .road-map-dot-live, .sidebar .road-map .road-map-content .content-item .content-item-title .road-map-dot-progress {
+  border-radius: 50%;
+  background-color: #F49F85;
+  padding: 0.25rem;
+  margin-right: 1rem;
+}
+.sidebar .road-map .road-map-content .content-item .content-item-title .road-map-dot-progress {
+  background-color: #AD1FEA;
+}
+.sidebar .road-map .road-map-content .content-item .content-item-title .road-map-dot-live {
+  background-color: #62BCFA;
+}
+.sidebar .road-map .road-map-content .content-item .content-item-title p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #647196;
+}
+.sidebar .road-map .road-map-content .content-item .content-item-title .road-map-amount {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #647196;
+}
 
 /*# sourceMappingURL=side-bar.component.css.map */

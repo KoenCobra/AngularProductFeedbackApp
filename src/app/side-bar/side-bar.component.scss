@@ -13,7 +13,7 @@
     font-size: 1.25rem;
     letter-spacing: -0.25px;
 
-    .header-sub{
+    .header-sub {
       opacity: 0.75;
       font-weight: 500;
       font-size: 0.9375rem;
@@ -41,6 +41,76 @@
       &.active {
         background-color: $blue;
         color: $white;
+      }
+    }
+  }
+
+  .road-map {
+    background-color: $white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 10px;
+
+    .road-map-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 1.5rem;
+
+      p {
+        font-weight: 700;
+        font-size: 1.125rem;
+        letter-spacing: -0.25px;
+      }
+
+      a {
+        color: $blue;
+        font-size: 0.8125rem;
+        font-weight: 600;
+      }
+    }
+
+    .road-map-content {
+      display: grid;
+      gap: 0.5rem;
+
+      .content-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .content-item-title {
+          display: flex;
+          align-items: center;
+
+          .road-map-dot-planned {
+            border-radius: 50%;
+            background-color: $orange;
+            padding: 0.25rem;
+            margin-right: 1rem;
+          }
+
+          .road-map-dot-progress{
+            @extend .road-map-dot-planned;
+            background-color: $purple;
+          }
+
+          .road-map-dot-live{
+            @extend .road-map-dot-planned;
+            background-color: $lightblue;
+          }
+
+          p {
+            font-weight: 400;
+            font-size: 1rem;
+            color: $veryLightBlue;
+          }
+
+          .road-map-amount {
+            font-weight: 700;
+            font-size: 1rem;
+            color: $veryLightBlue;
+          }
+        }
       }
     }
   }
