@@ -1,3 +1,51 @@
-
+.toolbar {
+  border-radius: 10px;
+  background-color: #373F68;
+  padding: 0.8rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.375rem;
+}
+.toolbar .toolbar-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  color: #FFF;
+}
+.toolbar .toolbar-info .suggestions {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.25px;
+}
+.toolbar .toolbar-info .sort {
+  color: #FFF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.toolbar .toolbar-info .sort span {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+.toolbar .toolbar-info .sort .sort-btn {
+  color: #FFF;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+.toolbar .toolbar-info .sort img {
+  filter: brightness(0) invert(1);
+}
+.toolbar .feedback-btn {
+  background-color: #AD1FEA;
+  padding: 0.75rem 1.5rem;
+  color: #F2F4FE;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
 
 /*# sourceMappingURL=toolbar.component.css.map */

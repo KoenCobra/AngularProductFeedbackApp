@@ -8,7 +8,6 @@ import {data} from "../product-requests";
 })
 // side-bar.component.ts
 export class SideBarComponent {
-  @Input() data: data = { productRequests: [] };
   @Output() categoryChange: EventEmitter<string> = new EventEmitter<string>();
 
   currentCategory: string = 'all';

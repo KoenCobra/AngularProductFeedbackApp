@@ -2,7 +2,8 @@
 
 main {
   display: grid;
-  grid-template-columns: 255px 1fr;
+  grid-template-columns: 255px 825px;
   gap: 1.875rem;
-  padding: 3.8rem 20.3rem;
+  justify-content: center;
+  padding: 3.8rem 0;
 }

@@ -3,6 +3,8 @@
 .sidebar {
   display: grid;
   gap: 1.5rem;
+  position: sticky;
+  top: 3.8rem;
 
   .header {
     background: url('../../assets/suggestions/desktop/background-header.png');
