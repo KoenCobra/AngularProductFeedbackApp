@@ -8,29 +8,6 @@ import {data} from "./product-requests";
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.scss"],
 })
-export class AppComponent implements OnInit {
-  originalData: data = {productRequests: []};
-  data: data = {productRequests: []};
+export class AppComponent {
 
-  constructor(private api: ApiService) {
-  }
-
-  ngOnInit(): void {
-    this.api.getAllProductRequests().subscribe((data) => {
-      this.originalData = data;
-      this.filterRequestsByCategory('all');
-    });
-  }
-
-  onCategoryChange(category: string): void {
-    this.filterRequestsByCategory(category);
-  }
-
-// app.component.ts
-  filterRequestsByCategory(category: string): void {
-    this.data.productRequests = category === 'all'
-      ? [...this.originalData.productRequests]
-      : this.originalData.productRequests.filter(request =>
-        request.category === category);
-  }
 }

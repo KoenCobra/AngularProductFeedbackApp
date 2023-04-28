@@ -1,27 +1,32 @@
-<div class="product-requests">
-  <div *ngFor="let request of data.productRequests" class="product-request">
-    <div class="upvote">
-      <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-      <p class="upvote-amount">{{request.upvotes}}</p>
-    </div>
-    <div class="request-info">
-      <h3 class="request-title">{{request.title}}</h3>
-      <p class="request-description">
-        {{request.description}}
-      </p>
-      <div class="request-tag">
-        {{request.category}}
+<div class="index">
+  <app-side-bar (categoryChange)="onCategoryChange($event)"></app-side-bar>
+  <div>
+    <app-toolbar [data]="data"></app-toolbar>
+    <div class="product-requests">
+      <div *ngFor="let request of data.productRequests" class="product-request">
+        <div class="upvote">
+          <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+          <p class="upvote-amount">{{request.upvotes}}</p>
+        </div>
+        <div class="request-info">
+          <h3 class="request-title">{{request.title}}</h3>
+          <p class="request-description">
+            {{request.description}}
+          </p>
+          <div class="request-tag">
+            {{request.category}}
+          </div>
+        </div>
+        <div class="request-comments">
+          <img src="assets/shared/icon-comments.svg" alt="">
+          <p class="comment-amount">
+            {{request.comments?.length ?? 0}}
+          </p>
+        </div>
       </div>
     </div>
-    <div class="request-comments">
-      <img src="assets/shared/icon-comments.svg" alt="">
-      <p class="comment-amount">
-        {{request.comments?.length ?? 0}}
-      </p>
+    <div *ngIf="!data.productRequests.length">
+      <app-no-feedback></app-no-feedback>
     </div>
   </div>
-</div>
-
-<div *ngIf="!data.productRequests.length">
-<app-no-feedback></app-no-feedback>
 </div>

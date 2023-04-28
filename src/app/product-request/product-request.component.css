@@ -1,8 +1,15 @@
-.product-requests {
+.index {
+  display: grid;
+  grid-template-columns: 255px 825px;
+  gap: 1.875rem;
+  justify-content: center;
+  padding: 3.8rem 0;
+}
+.index .product-requests {
   display: grid;
   gap: 1.375rem;
 }
-.product-requests .product-request {
+.index .product-requests .product-request {
   background-color: #FFF;
   padding: 1.75rem 2rem;
   border-radius: 10px;
@@ -11,7 +18,7 @@
   align-items: start;
   gap: 2.5rem;
 }
-.product-requests .product-request .upvote {
+.index .product-requests .product-request .upvote {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -22,28 +29,28 @@
   border-radius: 10px;
   cursor: pointer;
 }
-.product-requests .product-request .upvote .upvote-amount {
+.index .product-requests .product-request .upvote .upvote-amount {
   letter-spacing: -0.180556px;
   font-weight: 700;
   font-size: 13px;
 }
-.product-requests .product-request .request-info {
+.index .product-requests .product-request .request-info {
   cursor: pointer;
 }
-.product-requests .product-request .request-info .request-title {
+.index .product-requests .product-request .request-info .request-title {
   color: #3A4374;
   font-weight: 700;
   font-size: 1.125rem;
   letter-spacing: -0.25px;
   margin-bottom: 0.25rem;
 }
-.product-requests .product-request .request-info .request-description {
+.index .product-requests .product-request .request-info .request-description {
   font-weight: 400;
   font-size: 1rem;
   color: #647196;
   margin-bottom: 0.75rem;
 }
-.product-requests .product-request .request-info .request-tag {
+.index .product-requests .product-request .request-info .request-tag {
   width: min-content;
   background-color: #F2F4FE;
   border-radius: 10px;
@@ -53,7 +60,7 @@
   padding: 0.4rem 1rem;
   text-transform: capitalize;
 }
-.product-requests .product-request .request-comments {
+.index .product-requests .product-request .request-comments {
   cursor: pointer;
   display: flex;
   align-items: center;

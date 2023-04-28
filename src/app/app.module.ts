@@ -9,6 +9,7 @@ import { SideBarComponent } from './side-bar/side-bar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FeedbackButtonComponent } from './shared/feedback-button/feedback-button.component';
 import { NoFeedbackComponent } from './shared/no-feedback/no-feedback.component';
+import { NewComponent } from './new/new.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NoFeedbackComponent } from './shared/no-feedback/no-feedback.component'
     SideBarComponent,
     ToolbarComponent,
     FeedbackButtonComponent,
-    NoFeedbackComponent
+    NoFeedbackComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,

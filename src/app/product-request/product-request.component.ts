@@ -1,11 +1,35 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {data} from "../product-requests";
+import {ApiService} from "../api.service";
 
 @Component({
   selector: 'app-product-request',
   templateUrl: './product-request.component.html',
   styleUrls: ['./product-request.component.scss']
 })
-export class ProductRequestComponent {
-  @Input() data: data = {productRequests: []};
+export class ProductRequestComponent implements OnInit{
+  originalData: data = {productRequests: []};
+  data: data = {productRequests: []};
+
+  constructor(private api: ApiService) {
+  }
+
+  ngOnInit(): void {
+    this.api.getAllProductRequests().subscribe((data) => {
+      this.originalData = data;
+      this.filterRequestsByCategory('all');
+    });
+  }
+
+  onCategoryChange(category: string): void {
+    this.filterRequestsByCategory(category);
+  }
+
+// app.component.ts
+  filterRequestsByCategory(category: string): void {
+    this.data.productRequests = category === 'all'
+      ? [...this.originalData.productRequests]
+      : this.originalData.productRequests.filter(request =>
+        request.category === category);
+  }
 }
