@@ -1,0 +1,31 @@
+@import "../../../sass/Variables";
+
+.no-feedback {
+  background-color: $white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 7rem 12.8rem;
+  text-align: center;
+  border-radius: 10px;
+
+  img {
+    padding-bottom: 3.3rem;
+  }
+
+  h4 {
+    padding-bottom: 1rem;
+    font-weight: 700;
+    font-size: 1.5rem;
+    letter-spacing: -0.333333px;
+    color: $darkBlue;
+  }
+
+  p {
+    padding-bottom: 3rem;
+    font-weight: 400;
+    font-size: 1rem;
+    color: $veryLightBlue;
+  }
+}

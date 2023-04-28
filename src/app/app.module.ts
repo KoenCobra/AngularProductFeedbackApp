@@ -8,6 +8,7 @@ import { ProductRequestComponent } from './product-request/product-request.compo
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FeedbackButtonComponent } from './shared/feedback-button/feedback-button.component';
+import { NoFeedbackComponent } from './shared/no-feedback/no-feedback.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FeedbackButtonComponent } from './shared/feedback-button/feedback-butto
     ProductRequestComponent,
     SideBarComponent,
     ToolbarComponent,
-    FeedbackButtonComponent
+    FeedbackButtonComponent,
+    NoFeedbackComponent
   ],
   imports: [
     BrowserModule,
