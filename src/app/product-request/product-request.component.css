@@ -1,5 +1,68 @@
-.product-request {
+.product-requests {
+  display: grid;
+  gap: 1.375rem;
+}
+.product-requests .product-request {
   background-color: #FFF;
+  padding: 1.75rem 2rem;
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: start;
+  gap: 2.5rem;
+}
+.product-requests .product-request .upvote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 0.55rem 0.5rem;
+  background-color: #F2F4FE;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.product-requests .product-request .upvote .upvote-amount {
+  letter-spacing: -0.180556px;
+  font-weight: 700;
+  font-size: 13px;
+}
+.product-requests .product-request .request-info {
+  cursor: pointer;
+}
+.product-requests .product-request .request-info .request-title {
+  color: #3A4374;
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.25px;
+  margin-bottom: 0.25rem;
+}
+.product-requests .product-request .request-info .request-description {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #647196;
+  margin-bottom: 0.75rem;
+}
+.product-requests .product-request .request-info .request-tag {
+  width: min-content;
+  background-color: #F2F4FE;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.8125rem;
+  color: #4661E6;
+  padding: 0.4rem 1rem;
+  text-transform: capitalize;
+}
+.product-requests .product-request .request-comments {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: -0.222222px;
+  color: #3A4374;
+  align-self: center;
 }
 
 /*# sourceMappingURL=product-request.component.css.map */

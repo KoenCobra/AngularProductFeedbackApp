@@ -1,5 +1,75 @@
 @import "../../sass/Variables";
 
-.product-request{
-  background-color: $white;
+.product-requests {
+  display: grid;
+  gap: 1.375rem;
+
+  .product-request {
+    background-color: $white;
+    padding: 1.75rem 2rem;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: start;
+    gap: 2.5rem;
+
+    .upvote {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 0.55rem 0.5rem;
+      background-color: $lightGreyBackground;
+      border-radius: 10px;
+      cursor: pointer;
+
+      .upvote-amount {
+        letter-spacing: -0.180556px;
+        font-weight: 700;
+        font-size: 13px;
+      }
+    }
+
+    .request-info {
+      cursor: pointer;
+      .request-title {
+        color: $darkBlue;
+        font-weight: 700;
+        font-size: 1.125rem;
+        letter-spacing: -0.25px;
+        margin-bottom: 0.25rem;
+      }
+
+      .request-description {
+        font-weight: 400;
+        font-size: 1rem;
+        color: $veryLightBlue;
+        margin-bottom: 0.75rem;
+      }
+
+      .request-tag {
+        width: min-content;
+        background-color: $lightGreyBackground;
+        border-radius: 10px;
+        font-weight: 600;
+        font-size: 0.8125rem;
+        color: $blue;
+        padding: 0.4rem 1rem;
+        text-transform: capitalize;
+      }
+    }
+
+    .request-comments{
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.222222px;
+      color: $darkBlue;
+      align-self: center;
+    }
+  }
 }
