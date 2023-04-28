@@ -1,0 +1,12 @@
+@import "../../../sass/Variables";
+
+.feedback-btn {
+  background-color: $purple;
+  padding: 0.75rem 1.5rem;
+  color: $lightGreyBackground;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.875rem;
+}

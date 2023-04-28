@@ -7,13 +7,15 @@ import {HttpClientModule} from "@angular/common/http";
 import { ProductRequestComponent } from './product-request/product-request.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { FeedbackButtonComponent } from './shared/feedback-button/feedback-button.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductRequestComponent,
     SideBarComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    FeedbackButtonComponent
   ],
   imports: [
     BrowserModule,

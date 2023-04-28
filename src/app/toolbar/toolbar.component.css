@@ -37,15 +37,5 @@
 .toolbar .toolbar-info .sort img {
   filter: brightness(0) invert(1);
 }
-.toolbar .feedback-btn {
-  background-color: #AD1FEA;
-  padding: 0.75rem 1.5rem;
-  color: #F2F4FE;
-  display: flex;
-  align-items: center;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.875rem;
-}
 
 /*# sourceMappingURL=toolbar.component.css.map */
