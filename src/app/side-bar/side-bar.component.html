@@ -1,4 +1,18 @@
-<div *ngFor="let category of categories">
-  <button (click)="changeCategory(category)">{{category}}</button>
+<div class="sidebar">
+
+<div class="header">
+  <p>Frontend Mentor</p>
+  <p class="header-sub">Feedback board</p>
+</div>
+
+<div class="categories">
+  <button
+    class="category"
+    *ngFor="let category of categories" (click)="changeCategory(category)"
+    [class.active]="currentCategory === category"
+  >
+    {{category}}
+  </button>
+</div>
 </div>
 

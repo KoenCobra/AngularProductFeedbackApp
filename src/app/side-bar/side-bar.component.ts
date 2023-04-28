@@ -8,12 +8,14 @@ import {data} from "../product-requests";
 })
 // side-bar.component.ts
 export class SideBarComponent {
-  @Input() data: data = {productRequests: []};
-  @Output() categoryChange = new EventEmitter<string>();
+  @Input() data: data = { productRequests: [] };
+  @Output() categoryChange: EventEmitter<string> = new EventEmitter<string>();
 
-  categories = ['all', 'UI', 'UX', 'enhancement', 'bug', 'feature'];
+  currentCategory: string = 'all';
+  categories: string[] = ['all', 'UI', 'UX', 'enhancement', 'bug', 'feature'];
 
-  changeCategory(category: string) {
+  changeCategory(category: string): void {
+    this.currentCategory = category;
     this.categoryChange.emit(category);
   }
 }

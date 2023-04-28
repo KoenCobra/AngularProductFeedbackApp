@@ -1,0 +1,47 @@
+@import "../../sass/Variables";
+
+.sidebar {
+  display: grid;
+  gap: 1.5rem;
+
+  .header {
+    background: url('../../assets/suggestions/desktop/background-header.png');
+    border-radius: 10px;
+    padding: 3.875rem 4.875rem 1.3rem 1.5rem;
+    color: $white;
+    font-weight: 700;
+    font-size: 1.25rem;
+    letter-spacing: -0.25px;
+
+    .header-sub{
+      opacity: 0.75;
+      font-weight: 500;
+      font-size: 0.9375rem;
+      color: $white;
+    }
+  }
+
+  .categories {
+    background-color: $white;
+    padding: 1.5rem 3.125rem 1.5rem 1.5rem;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+    .category {
+      background-color: $lightGreyBackground;
+      border-radius: 10px;
+      color: $blue;
+      font-weight: 600;
+      font-size: 0.8125rem;
+      padding: 0.3rem 1rem;
+      text-transform: capitalize;
+
+      &.active {
+        background-color: $blue;
+        color: $white;
+      }
+    }
+  }
+}
