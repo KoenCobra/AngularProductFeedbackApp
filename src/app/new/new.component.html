@@ -15,7 +15,13 @@
       <div class="input-field">
         <label>Category</label>
         <p class="label-sub">Choose a category for your feedback</p>
-        <select></select>
+        <mat-form-field appearance="fill">
+          <mat-select>
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
       </div>
       <div class="input-field">
         <label>Feedback Detail</label>

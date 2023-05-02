@@ -31,7 +31,7 @@
   font-size: 1.5rem;
   letter-spacing: -0.333333px;
   color: #3A4374;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
 }
 .new-container .new-form .input-field {
   padding-bottom: 1.5rem;
@@ -40,6 +40,7 @@
   font-weight: 700;
   font-size: 0.875rem;
   letter-spacing: -0.194444px;
+  color: #3A4374;
 }
 .new-container .new-form .input-field .label-sub {
   font-weight: 400;
@@ -51,7 +52,7 @@
   width: 100%;
   background: #F7F8FD;
   border-radius: 5px;
-  padding: 0.75rem 1.5rem;
+  padding: 0.75rem 1rem;
   font-weight: 400;
   font-size: 0.9375rem;
   color: #3A4374;

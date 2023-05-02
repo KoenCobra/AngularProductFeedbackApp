@@ -37,7 +37,7 @@
       font-size: 1.5rem;
       letter-spacing: -0.333333px;
       color: $darkBlue;
-      padding-bottom: 2.5rem;
+      padding-bottom: 1.5rem;
     }
 
     .input-field {
@@ -47,30 +47,31 @@
         font-weight: 700;
         font-size: 0.875rem;
         letter-spacing: -0.194444px;
+        color: $darkBlue;
       }
 
-      .label-sub{
+      .label-sub {
         font-weight: 400;
         font-size: 14px;
         color: $veryLightBlue;
         padding-bottom: 1rem;
       }
 
-      input, textarea{
+      input, textarea {
         width: 100%;
         background: $bodyBackgroundColor;
         border-radius: 5px;
-        padding: 0.75rem 1.5rem;
+        padding: 0.75rem 1rem;
         font-weight: 400;
         font-size: 0.9375rem;
         color: $darkBlue;
       }
     }
 
-    .new-footer{
+    .new-footer {
       text-align: right;
 
-      .new-form-back-btn{
+      .new-form-back-btn {
         background-color: $darkBlue;
         border-radius: 10px;
         padding: 0.75rem 1.5rem;
@@ -78,13 +79,12 @@
         margin-right: 1rem;
       }
 
-      .new-form-submit-btn{
+      .new-form-submit-btn {
         @extend .new-form-back-btn;
         background-color: $purple;
       }
     }
   }
-
-
 }
+
 

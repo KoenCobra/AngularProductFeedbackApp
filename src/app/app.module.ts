@@ -10,6 +10,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { FeedbackButtonComponent } from './shared/feedback-button/feedback-button.component';
 import { NoFeedbackComponent } from './shared/no-feedback/no-feedback.component';
 import { NewComponent } from './new/new.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { NewComponent } from './new/new.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
