@@ -13,7 +13,8 @@
         <input
           [ngClass]="{'error': feedbackForm.controls.feedbackTitle.touched && feedbackForm.controls.feedbackTitle.invalid}"
           [formControl]="feedbackForm.controls.feedbackTitle" type="text">
-        <div *ngIf="feedbackForm.controls.feedbackTitle.dirty && feedbackForm.controls.feedbackTitle.touched && feedbackForm.controls.feedbackTitle.errors">
+        <div
+          *ngIf="feedbackForm.controls.feedbackTitle.touched && feedbackForm.controls.feedbackTitle.errors">
           <p *ngIf="feedbackForm.controls.feedbackTitle.errors?.['required']" class="error-message">
             Can't be empty
           </p>
@@ -31,7 +32,8 @@
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <div *ngIf="feedbackForm.controls.feedbackCategory.dirty && feedbackForm.controls.feedbackCategory.touched && feedbackForm.controls.feedbackCategory.errors">
+        <div
+          *ngIf="feedbackForm.controls.feedbackCategory.touched && feedbackForm.controls.feedbackCategory.errors">
           <p *ngIf="feedbackForm.controls.feedbackCategory.errors?.['required']" class="error-message">
             Can't be empty
           </p>
@@ -44,7 +46,8 @@
           [ngClass]="{'error': feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.invalid}"
           [formControl]="feedbackForm.controls.feedbackDetail">
         </textarea>
-        <div *ngIf="feedbackForm.controls.feedbackDetail.dirty && feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.errors">
+        <div
+          *ngIf="feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.errors">
           <p *ngIf="feedbackForm.controls.feedbackDetail.errors?.['required']" class="error-message">
             Can't be empty
           </p>

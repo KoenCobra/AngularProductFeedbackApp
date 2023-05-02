@@ -31,6 +31,7 @@ export class NewComponent {
 
   onSubmit() {
     if (this.feedbackForm.invalid) {
+      this.feedbackForm.markAllAsTouched();
       return;
     }
     // this.http.post<Category>('')
