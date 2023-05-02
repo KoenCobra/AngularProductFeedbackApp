@@ -17,9 +17,12 @@ export class ProductRequestComponent implements OnInit{
   ngOnInit(): void {
     this.api.getAllProductRequests().subscribe((data) => {
       this.originalData = data;
+      const localStorageData = JSON.parse(localStorage.getItem('productRequests') || '[]');
+      this.originalData.productRequests = [...this.originalData.productRequests, ...localStorageData];
       this.filterRequestsByCategory('all');
     });
   }
+
 
   onCategoryChange(category: string): void {
     this.filterRequestsByCategory(category);

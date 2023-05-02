@@ -1,9 +1,13 @@
 import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {HttpClient} from "@angular/common/http";
+import {ApiService} from "../api.service";
 
 interface Category {
   value: string;
+}
+
+interface createRequest{
+
 }
 
 @Component({
@@ -12,7 +16,7 @@ interface Category {
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent {
-  constructor(private http: HttpClient) {
+  constructor(private apiService: ApiService) {
   }
 
   categories: Category[] = [
@@ -34,8 +38,13 @@ export class NewComponent {
       this.feedbackForm.markAllAsTouched();
       return;
     }
-    // this.http.post<Category>('')
+    const feedbackData = {
+      title: this.feedbackForm.controls.feedbackTitle.value,
+      category: this.feedbackForm.controls.feedbackCategory.value,
+      detail: this.feedbackForm.controls.feedbackDetail.value
+    };
+    this.apiService.createProductRequests(feedbackData).subscribe((response) => {
+      console.log(response);
+    });
   }
-
-
 }
