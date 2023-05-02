@@ -43,12 +43,12 @@
         <label>Feedback Detail</label>
         <p class="label-sub">Include any specific comments on what should be improved, added, etc.</p>
         <textarea
-          [ngClass]="{'error': feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.invalid}"
-          [formControl]="feedbackForm.controls.feedbackDetail">
+          [ngClass]="{'error': feedbackForm.controls.feedbackDescription.touched && feedbackForm.controls.feedbackDescription.invalid}"
+          [formControl]="feedbackForm.controls.feedbackDescription">
         </textarea>
         <div
-          *ngIf="feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.errors">
-          <p *ngIf="feedbackForm.controls.feedbackDetail.errors?.['required']" class="error-message">
+          *ngIf="feedbackForm.controls.feedbackDescription.touched && feedbackForm.controls.feedbackDescription.errors">
+          <p *ngIf="feedbackForm.controls.feedbackDescription.errors?.['required']" class="error-message">
             Can't be empty
           </p>
         </div>

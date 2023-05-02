@@ -30,7 +30,7 @@ export class NewComponent {
   feedbackForm = new FormGroup({
     feedbackTitle: new FormControl( '',[Validators.required]),
     feedbackCategory: new FormControl(this.categories[0].value, [Validators.required]),
-    feedbackDetail: new FormControl('', [Validators.required])
+    feedbackDescription: new FormControl('', [Validators.required])
   })
 
   onSubmit() {
@@ -41,8 +41,9 @@ export class NewComponent {
     const feedbackData = {
       title: this.feedbackForm.controls.feedbackTitle.value,
       category: this.feedbackForm.controls.feedbackCategory.value,
-      detail: this.feedbackForm.controls.feedbackDetail.value
+      description: this.feedbackForm.controls.feedbackDescription.value
     };
+    console.log(feedbackData);
     this.apiService.createProductRequests(feedbackData).subscribe((response) => {
       console.log(response);
     });
