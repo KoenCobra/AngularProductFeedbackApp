@@ -1,1 +1,32 @@
-<p>new works!</p>
+<div class="new-container">
+  <div class="back-link">
+    <img src="assets/shared/icon-arrow-left.svg" alt="">
+    <a routerLink="/">Go Back</a>
+  </div>
+  <div class="new-form">
+    <img src="assets/shared/icon-new-feedback.svg" alt="">
+    <h2 class="feedback-title">Create new feedback</h2>
+    <form>
+      <div class="input-field">
+        <label>Feedback Title</label>
+          <p class="label-sub">Add a short, descriptive headline</p>
+        <input type="text">
+      </div>
+      <div class="input-field">
+        <label>Category</label>
+        <p class="label-sub">Choose a category for your feedback</p>
+        <select></select>
+      </div>
+      <div class="input-field">
+        <label>Feedback Detail</label>
+        <p class="label-sub">Include any specific comments on what should be improved, added, etc.</p>
+        <textarea>
+        </textarea>
+      </div>
+      <div class="new-footer">
+        <button routerLink="/" class="new-form-back-btn">Cancel</button>
+        <button routerLink="/" class="new-form-submit-btn">Add FeedBack</button>
+      </div>
+    </form>
+  </div>
+</div>

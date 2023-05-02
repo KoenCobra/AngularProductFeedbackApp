@@ -1,0 +1,90 @@
+@import "../../sass/Variables";
+
+.new-container {
+  display: grid;
+  justify-content: center;
+
+  .back-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 3rem 0;
+
+    a {
+      color: $veryLightBlue;
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-decoration: none;
+    }
+
+  }
+
+  .new-form {
+    background-color: $white;
+    border-radius: 10px;
+    position: relative;
+    padding: 2.625rem;
+
+    img {
+      position: absolute;
+      left: 2.625rem;
+      top: 0;
+      transform: translateY(-50%);
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      letter-spacing: -0.333333px;
+      color: $darkBlue;
+      padding-bottom: 2.5rem;
+    }
+
+    .input-field {
+      padding-bottom: 1.5rem;
+
+      label {
+        font-weight: 700;
+        font-size: 0.875rem;
+        letter-spacing: -0.194444px;
+      }
+
+      .label-sub{
+        font-weight: 400;
+        font-size: 14px;
+        color: $veryLightBlue;
+        padding-bottom: 1rem;
+      }
+
+      input, textarea{
+        width: 100%;
+        background: $bodyBackgroundColor;
+        border-radius: 5px;
+        padding: 0.75rem 1.5rem;
+        font-weight: 400;
+        font-size: 0.9375rem;
+        color: $darkBlue;
+      }
+    }
+
+    .new-footer{
+      text-align: right;
+
+      .new-form-back-btn{
+        background-color: $darkBlue;
+        border-radius: 10px;
+        padding: 0.75rem 1.5rem;
+        color: $bodyBackgroundColor;
+        margin-right: 1rem;
+      }
+
+      .new-form-submit-btn{
+        @extend .new-form-back-btn;
+        background-color: $purple;
+      }
+    }
+  }
+
+
+}
+
