@@ -13,7 +13,8 @@ import { NewComponent } from './new/new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
-
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { NgToastModule } from 'ng-angular-popup'
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import {ReactiveFormsModule} from "@angular/forms";
     ToolbarComponent,
     FeedbackButtonComponent,
     NoFeedbackComponent,
-    NewComponent
+    NewComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import {ReactiveFormsModule} from "@angular/forms";
     HttpClientModule,
     BrowserAnimationsModule,
     MatSelectModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]

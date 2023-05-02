@@ -1,12 +1,14 @@
-import {Component} from '@angular/core';
+import {Component, TemplateRef} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ApiService} from "../api.service";
+import {Router} from "@angular/router";
+import {NgToastService} from "ng-angular-popup";
 
 interface Category {
   value: string;
 }
 
-interface createRequest{
+interface createRequest {
 
 }
 
@@ -16,8 +18,10 @@ interface createRequest{
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent {
-  constructor(private apiService: ApiService) {
+  constructor(private apiService: ApiService, private router: Router, private toast: NgToastService) {
   }
+
+  customSnackBarTemplate!: TemplateRef<any>;
 
   categories: Category[] = [
     {value: 'Feature'},
@@ -28,7 +32,7 @@ export class NewComponent {
   ];
 
   feedbackForm = new FormGroup({
-    feedbackTitle: new FormControl( '',[Validators.required]),
+    feedbackTitle: new FormControl('', [Validators.required]),
     feedbackCategory: new FormControl(this.categories[0].value, [Validators.required]),
     feedbackDescription: new FormControl('', [Validators.required])
   })
@@ -43,9 +47,13 @@ export class NewComponent {
       category: this.feedbackForm.controls.feedbackCategory.value,
       description: this.feedbackForm.controls.feedbackDescription.value
     };
-    console.log(feedbackData);
     this.apiService.createProductRequests(feedbackData).subscribe((response) => {
-      console.log(response);
+      if (response === feedbackData) {
+        this.toast.success({detail: "SUCCESS", summary: 'Request successfully added', duration: 5000});
+        this.router.navigateByUrl('/');
+      } else {
+        this.toast.error({detail: "ERROR", summary: 'Something went wrong', sticky: true});
+      }
     });
   }
 }
