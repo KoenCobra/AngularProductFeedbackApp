@@ -1,17 +1,40 @@
-import { Component } from '@angular/core';
-interface Food {
+import {Component} from '@angular/core';
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {HttpClient} from "@angular/common/http";
+
+interface Category {
   value: string;
-  viewValue: string;
 }
+
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  constructor(private http: HttpClient) {
+  }
+
+  categories: Category[] = [
+    {value: 'Feature'},
+    {value: 'UI'},
+    {value: 'UX'},
+    {value: 'Enhancement'},
+    {value: 'Bug'}
   ];
+
+  feedbackForm = new FormGroup({
+    feedbackTitle: new FormControl( '',[Validators.required]),
+    feedbackCategory: new FormControl(this.categories[0].value, [Validators.required]),
+    feedbackDetail: new FormControl('', [Validators.required])
+  })
+
+  onSubmit() {
+    if (this.feedbackForm.invalid) {
+      return;
+    }
+    // this.http.post<Category>('')
+  }
+
+
 }

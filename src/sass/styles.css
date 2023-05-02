@@ -91,6 +91,13 @@ html, body {
   height: 100%;
 }
 
+.error-message {
+  font-weight: 400;
+  font-size: 0.835rem;
+  color: #D73737;
+  padding-top: 0.3rem;
+}
+
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   width: 100%;
   background-color: #F7F8FD;

@@ -6,32 +6,53 @@
   <div class="new-form">
     <img src="assets/shared/icon-new-feedback.svg" alt="">
     <h2 class="feedback-title">Create new feedback</h2>
-    <form>
+    <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
       <div class="input-field">
         <label>Feedback Title</label>
-          <p class="label-sub">Add a short, descriptive headline</p>
-        <input type="text">
+        <p class="label-sub">Add a short, descriptive headline</p>
+        <input
+          [ngClass]="{'error': feedbackForm.controls.feedbackTitle.touched && feedbackForm.controls.feedbackTitle.invalid}"
+          [formControl]="feedbackForm.controls.feedbackTitle" type="text">
+        <div *ngIf="feedbackForm.controls.feedbackTitle.dirty && feedbackForm.controls.feedbackTitle.touched && feedbackForm.controls.feedbackTitle.errors">
+          <p *ngIf="feedbackForm.controls.feedbackTitle.errors?.['required']" class="error-message">
+            Can't be empty
+          </p>
+        </div>
       </div>
       <div class="input-field">
         <label>Category</label>
         <p class="label-sub">Choose a category for your feedback</p>
-        <mat-form-field appearance="fill">
-          <mat-select>
-            <mat-option *ngFor="let food of foods" [value]="food.value">
-              {{food.viewValue}}
+        <mat-form-field
+          [ngClass]="{'error': feedbackForm.controls.feedbackCategory.touched && feedbackForm.controls.feedbackCategory.invalid}"
+          appearance="fill">
+          <mat-select [formControl]="feedbackForm.controls.feedbackCategory">
+            <mat-option *ngFor="let category of categories" [value]="category.value">
+              {{category.value}}
             </mat-option>
           </mat-select>
         </mat-form-field>
+        <div *ngIf="feedbackForm.controls.feedbackCategory.dirty && feedbackForm.controls.feedbackCategory.touched && feedbackForm.controls.feedbackCategory.errors">
+          <p *ngIf="feedbackForm.controls.feedbackCategory.errors?.['required']" class="error-message">
+            Can't be empty
+          </p>
+        </div>
       </div>
       <div class="input-field">
         <label>Feedback Detail</label>
         <p class="label-sub">Include any specific comments on what should be improved, added, etc.</p>
-        <textarea>
+        <textarea
+          [ngClass]="{'error': feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.invalid}"
+          [formControl]="feedbackForm.controls.feedbackDetail">
         </textarea>
+        <div *ngIf="feedbackForm.controls.feedbackDetail.dirty && feedbackForm.controls.feedbackDetail.touched && feedbackForm.controls.feedbackDetail.errors">
+          <p *ngIf="feedbackForm.controls.feedbackDetail.errors?.['required']" class="error-message">
+            Can't be empty
+          </p>
+        </div>
       </div>
       <div class="new-footer">
-        <button routerLink="/" class="new-form-back-btn">Cancel</button>
-        <button routerLink="/" class="new-form-submit-btn">Add FeedBack</button>
+        <button type="button" routerLink="/" class="new-form-back-btn">Cancel</button>
+        <button type="submit" class="new-form-submit-btn">Add FeedBack</button>
       </div>
     </form>
   </div>

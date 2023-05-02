@@ -95,6 +95,15 @@ html, body {
   height: 100%;
 }
 
+.error-message {
+  font-weight: 400;
+  font-size: 0.835rem;
+  color: $red;
+  padding-top: 0.3rem;
+}
+
+
+//Material design overwrite
 
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   width: 100%;
@@ -153,5 +162,11 @@ mat-option:not(:last-child) {
 }
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}

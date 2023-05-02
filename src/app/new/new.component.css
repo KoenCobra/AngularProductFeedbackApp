@@ -57,6 +57,9 @@
   font-size: 0.9375rem;
   color: #3A4374;
 }
+.new-container .new-form .input-field input.error, .new-container .new-form .input-field textarea.error {
+  border: 1px solid #D73737 !important;
+}
 .new-container .new-form .new-footer {
   text-align: right;
 }
