@@ -35,10 +35,14 @@
   font-size: 0.8125rem;
   padding: 0.3rem 1rem;
   text-transform: capitalize;
+  transition: all 0.15s ease-in-out;
 }
 .sidebar .categories .category.active {
   background-color: #4661E6;
   color: #FFF;
+}
+.sidebar .categories .category:hover {
+  background-color: #CFD7FF;
 }
 .sidebar .road-map {
   background-color: #FFF;
