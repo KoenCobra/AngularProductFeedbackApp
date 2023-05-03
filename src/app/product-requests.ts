@@ -12,5 +12,14 @@ export interface productRequests {
       name?: string;
       username?: string;
     };
+    replies?: {
+      content?: string;
+      replyingTo?: string;
+      user?: {
+        image?: string;
+        name?: string;
+        username?: string;
+      };
+    }[];
   }[];
 }

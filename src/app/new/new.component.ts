@@ -39,14 +39,11 @@ export class NewComponent {
     const newItem = {
       title: this.feedbackForm.controls.feedbackTitle.value ?? '',
       category: this.feedbackForm.controls.feedbackCategory.value ?? '',
-      upvotes: 0,
-      status: '',
       description: this.feedbackForm.controls.feedbackDescription.value ?? '',
-      comments: [],
     };
 
     this.requestService.addProductRequest(newItem);
-    this.toast.success({ detail: 'SUCCESS', summary: 'Request successfully added', duration: 5000 });
+    this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 5000, position:'br'});
     this.router.navigateByUrl('/');
   }
 }
