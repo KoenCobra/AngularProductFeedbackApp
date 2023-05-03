@@ -1,10 +1,16 @@
-<div class="index">
-  <app-side-bar (categoryChange)="onCategoryChange($event)"></app-side-bar>
-  <div>
-    <app-toolbar (sortCriterionChange)="onSortCriterionChange($event)"></app-toolbar>
+<div class="details-container">
+  <div class="back-link">
+    <div class="back-link-section">
+      <img src="assets/shared/icon-arrow-left.svg" alt="">
+      <a routerLink="/">Go Back</a>
+    </div>
+    <button class="edit-feedback-btn">
+      Edit Feedback
+    </button>
+  </div>
+  <div *ngIf="productRequest$ | async as request">
     <div class="product-requests">
-      <div [routerLink]="['/details', request.id]" *ngFor="let request of productRequests$ |async"
-           class="product-request">
+      <div class="product-request">
         <div class="upvote">
           <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
           <p class="upvote-amount">{{request.upvotes}}</p>
@@ -25,9 +31,6 @@
           </p>
         </div>
       </div>
-    </div>
-    <div *ngIf="(productRequests$ | async)?.length === 0">
-      <app-no-feedback></app-no-feedback>
     </div>
   </div>
 </div>

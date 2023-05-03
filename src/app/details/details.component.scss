@@ -1,0 +1,26 @@
+@import "../../sass/Variables";
+
+.details-container {
+  max-width: 720px;
+  margin-inline: auto;
+
+  .back-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: start ;
+    padding: 3rem 0 1.5rem;
+
+    .back-link-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .edit-feedback-btn {
+      background-color: $blue;
+      border-radius: 10px;
+      padding: 0.75rem 1.5rem;
+      color: $bodyBackgroundColor;
+    }
+  }
+}

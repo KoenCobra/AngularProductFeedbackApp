@@ -1,23 +1,8 @@
-@import "../../sass/Variables";
+  @import "../../sass/Variables";
 
 .new-container {
   display: grid;
   justify-content: center;
-
-  .back-link {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 3rem 0;
-
-    a {
-      color: $veryLightBlue;
-      font-weight: 700;
-      font-size: 0.875rem;
-      text-decoration: none;
-    }
-
-  }
 
   .new-form {
     background-color: $white;

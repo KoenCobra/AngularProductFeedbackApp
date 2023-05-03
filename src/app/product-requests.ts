@@ -1,4 +1,5 @@
 export interface productRequests {
+  id?: number;
   title?: string;
   category?: string;
   upvotes?: number;

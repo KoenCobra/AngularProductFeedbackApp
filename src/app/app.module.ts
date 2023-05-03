@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
 import { NgToastModule } from 'ng-angular-popup';
+import { DetailsComponent } from './details/details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,8 @@ import { NgToastModule } from 'ng-angular-popup';
     ToolbarComponent,
     FeedbackButtonComponent,
     NoFeedbackComponent,
-    NewComponent
+    NewComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,

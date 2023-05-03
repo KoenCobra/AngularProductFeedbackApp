@@ -10,11 +10,9 @@ import {HttpClient} from '@angular/common/http';
 export class ProductRequestService {
   private productRequests$ = new BehaviorSubject<productRequests[]>([]);
   private selectedCategory$ = new BehaviorSubject<string>('all');
-
   constructor(private http: HttpClient) {
     this.init();
   }
-
   public getAllProductRequests(): Observable<productRequests[]> {
     return combineLatest([this.productRequests$, this.selectedCategory$]).pipe(
       map(([requests, category]) =>
@@ -25,10 +23,17 @@ export class ProductRequestService {
     );
   }
 
+  public getProductRequestById(id: number): Observable<productRequests | null> {
+    return this.productRequests$.pipe(
+      map((requests) => {
+        const productRequest = requests.find((request) => request.id === id);
+        return productRequest ? productRequest : null;
+      })
+    );
+  }
   public addProductRequest(item: productRequests): void {
     this.productRequests$.next([...this.productRequests$.getValue(), item]);
   }
-
   public init(): void {
     this.http
       .get<any>('/assets/data.json')
@@ -37,11 +42,9 @@ export class ProductRequestService {
         this.productRequests$.next(response);
       });
   }
-
   public changeCategory(category: string): void {
     this.selectedCategory$.next(category);
   }
-
   public getCurrentCategory(): string {
     return this.selectedCategory$.getValue();
   }

@@ -2,18 +2,6 @@
   display: grid;
   justify-content: center;
 }
-.new-container .back-link {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 3rem 0;
-}
-.new-container .back-link a {
-  color: #647196;
-  font-weight: 700;
-  font-size: 0.875rem;
-  text-decoration: none;
-}
 .new-container .new-form {
   background-color: #FFF;
   border-radius: 10px;
