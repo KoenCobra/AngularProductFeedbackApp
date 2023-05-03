@@ -13,8 +13,7 @@ import { NewComponent } from './new/new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
-import {MatSnackBarModule} from '@angular/material/snack-bar';
-import { NgToastModule } from 'ng-angular-popup'
+import { StoreModule } from '@ngrx/store';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +31,7 @@ import { NgToastModule } from 'ng-angular-popup'
     BrowserAnimationsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    NgToastModule
+    StoreModule.forRoot({}, {}),
   ],
   providers: [],
   bootstrap: [AppComponent]
