@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
 import {productRequests} from "../product-requests";
 import {Observable} from "rxjs";
 import {ProductRequestService} from "../product-request.service";
@@ -20,8 +20,16 @@ export class ToolbarComponent implements OnInit {
   toggleSortDropdown(): void {
     this.isSortDropdownOpen = !this.isSortDropdownOpen;
   }
-  onClickOutside(): void {
-    this.isSortDropdownOpen = false;
+  onClickOutside(event: MouseEvent): void {
+    const targetElement = event.target as HTMLElement;
+    if (!targetElement.closest('.sort') && this.isSortDropdownOpen) {
+      this.isSortDropdownOpen = false;
+    }
+  }
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    this.onClickOutside(event);
   }
   ngOnInit(): void {
     this.productRequests$ = this.requestService.getAllProductRequests();
