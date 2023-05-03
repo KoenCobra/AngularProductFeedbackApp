@@ -24,6 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 .toolbar .toolbar-info .sort span {
   font-size: 0.875rem;
@@ -33,9 +34,41 @@
   color: #FFF;
   font-size: 0.875rem;
   font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 }
-.toolbar .toolbar-info .sort img {
+.toolbar .toolbar-info .sort .sort-btn img {
   filter: brightness(0) invert(1);
+}
+.toolbar .toolbar-info .sort .sort-dropdown {
+  position: absolute;
+  top: 3.5rem;
+  background: #FFF;
+  box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.350492);
+  border-radius: 10px;
+  width: 255px;
+}
+.toolbar .toolbar-info .sort .sort-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.toolbar .toolbar-info .sort .sort-dropdown ul li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.5rem;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #647196;
+  cursor: pointer;
+}
+.toolbar .toolbar-info .sort .sort-dropdown ul li:hover {
+  color: #AD1FEA;
+}
+.toolbar .toolbar-info .sort .sort-dropdown ul li:not(:last-child) {
+  border-bottom: 1px solid rgba(58, 67, 116, 0.15);
 }
 
 /*# sourceMappingURL=toolbar.component.css.map */

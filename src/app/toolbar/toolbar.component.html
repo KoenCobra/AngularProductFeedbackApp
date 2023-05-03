@@ -1,11 +1,32 @@
 <div class="toolbar">
   <div class="toolbar-info">
-  <img src="assets/suggestions/icon-suggestions.svg">
+    <img src="assets/suggestions/icon-suggestions.svg">
     <p class="suggestions">{{(productRequests$ | async)?.length}} Suggestion</p>
     <div class="sort">
       <span>Sort by:</span>
-      <button class="sort-btn">MostUpvotes </button>
-      <img src="assets/shared/icon-arrow-down.svg" alt="" class="sort-svg">
+      <button class="sort-btn">MostUpvotes
+        <img src="assets/shared/icon-arrow-down.svg" alt="" class="sort-svg">
+      </button>
+      <div class="sort-dropdown">
+        <ul>
+          <li>
+            <p>Most Upvotes</p>
+            <img src="assets/shared/icon-check.svg">
+          </li>
+          <li>
+            <p>Least Upvotes</p>
+            <img src="assets/shared/icon-check.svg">
+          </li>
+          <li>
+            <p>Most Comments</p>
+            <img src="assets/shared/icon-check.svg">
+          </li>
+          <li>
+            <p>Least Comments</p>
+            <img src="assets/shared/icon-check.svg">
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
   <app-feedback-button></app-feedback-button>
