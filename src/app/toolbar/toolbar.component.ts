@@ -2,7 +2,6 @@ import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/co
 import {productRequests} from "../product-requests";
 import {Observable} from "rxjs";
 import {ProductRequestService} from "../product-request.service";
-import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-toolbar',
@@ -16,6 +15,7 @@ export class ToolbarComponent implements OnInit {
   @Output() sortCriterionChange: EventEmitter<string> = new EventEmitter<string>();
   public productRequests$: Observable<productRequests[]> = new Observable<productRequests[]>()
   isSortDropdownOpen = false;
+  selectedSortCriterion = 'Most Upvotes';
 
   toggleSortDropdown(): void {
     this.isSortDropdownOpen = !this.isSortDropdownOpen;
@@ -37,5 +37,6 @@ export class ToolbarComponent implements OnInit {
   sortProductRequests(criterion: string): void {
     this.sortCriterionChange.emit(criterion);
     this.isSortDropdownOpen = !this.isSortDropdownOpen;
+    this.selectedSortCriterion = criterion;
   }
 }

@@ -65,12 +65,16 @@
             align-items: center;
             justify-content: space-between;
             padding: 0.75rem 1.5rem;
-            font-weight: 400;
+            font-weight: 500;
             font-size: 1rem;
             color: $veryLightBlue;
             cursor: pointer;
 
             &:hover {
+              color: $purple;
+            }
+
+            &.active {
               color: $purple;
             }
 
@@ -81,7 +85,6 @@
         }
       }
     }
-
   }
 }
 

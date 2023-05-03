@@ -27,17 +27,17 @@ export class ProductRequestComponent implements OnInit {
     this.productRequests$ = this.productRequests$.pipe(
       map((requests) => {
         switch (criterion) {
-          case 'mostUpvotes':
-            return requests.sort((a, b) => b.upvotes! - a.upvotes!);
-          case 'leastUpvotes':
-            return requests.sort((a, b) => a.upvotes! - b.upvotes!);
-          case 'mostComments':
+          case 'Most Upvotes':
+            return requests.sort((a, b) => (b.upvotes || 0) - (a.upvotes || 0));
+          case 'Least Upvotes':
+            return requests.sort((a, b) => (a.upvotes || 0) - (b.upvotes || 0));
+          case 'Most Comments':
             return requests.sort(
-              (a, b) => b.comments!.length - a.comments!.length
+              (a, b) => (b.comments?.length || 0) - (a.comments?.length || 0)
             );
-          case 'leastComments':
+          case 'Least Comments':
             return requests.sort(
-              (a, b) => a.comments!.length - b.comments!.length
+              (a, b) => (a.comments?.length || 0) - (b.comments?.length || 0)
             );
           default:
             return requests;
@@ -45,4 +45,5 @@ export class ProductRequestComponent implements OnInit {
       })
     );
   }
+
 }
