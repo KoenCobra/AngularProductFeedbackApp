@@ -21,8 +21,6 @@ export class NewComponent {
   constructor(private apiService: ApiService, private router: Router, private toast: NgToastService) {
   }
 
-  customSnackBarTemplate!: TemplateRef<any>;
-
   categories: Category[] = [
     {value: 'Feature'},
     {value: 'UI'},

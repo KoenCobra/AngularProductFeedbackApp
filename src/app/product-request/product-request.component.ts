@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {data} from "../product-requests";
 import {ApiService} from "../api.service";
+import {productRequests} from "../product-requests";
 
 @Component({
   selector: 'app-product-request',
@@ -8,17 +8,18 @@ import {ApiService} from "../api.service";
   styleUrls: ['./product-request.component.scss']
 })
 export class ProductRequestComponent implements OnInit{
-  originalData: data = {productRequests: []};
-  data: data = {productRequests: []};
+  originalData!: productRequests[] ;
+  data!: productRequests[];
 
   constructor(private api: ApiService) {
   }
 
   ngOnInit(): void {
     this.api.getAllProductRequests().subscribe((data) => {
+      console.log(data)
       this.originalData = data;
       const localStorageData = JSON.parse(localStorage.getItem('productRequests') || '[]');
-      this.originalData.productRequests = [...this.originalData.productRequests, ...localStorageData];
+      this.originalData = [...this.originalData, ...localStorageData];
       this.filterRequestsByCategory('all');
     });
   }
@@ -30,9 +31,9 @@ export class ProductRequestComponent implements OnInit{
 
 // app.component.ts
   filterRequestsByCategory(category: string): void {
-    this.data.productRequests = category === 'all'
-      ? [...this.originalData.productRequests]
-      : this.originalData.productRequests.filter(request =>
+    this.data = category === 'all'
+      ? [...this.originalData]
+      : this.originalData.filter(request =>
         request.category === category);
   }
 }

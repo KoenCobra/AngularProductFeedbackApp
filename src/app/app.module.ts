@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
 import { StoreModule } from '@ngrx/store';
+import { NgToastModule } from 'ng-angular-popup';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +23,7 @@ import { StoreModule } from '@ngrx/store';
     ToolbarComponent,
     FeedbackButtonComponent,
     NoFeedbackComponent,
-    NewComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +33,7 @@ import { StoreModule } from '@ngrx/store';
     MatSelectModule,
     ReactiveFormsModule,
     StoreModule.forRoot({}, {}),
+    NgToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
