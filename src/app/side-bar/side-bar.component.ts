@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {data} from "../product-requests";
 
 @Component({
   selector: 'app-side-bar',
