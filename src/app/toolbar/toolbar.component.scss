@@ -76,6 +76,7 @@
 
             &.active {
               color: $purple;
+              font-weight: 600;
             }
 
             &:not(:last-child) {

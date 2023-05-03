@@ -30,11 +30,16 @@
         background-color: $lightGreyBackground;
         border-radius: 10px;
         cursor: pointer;
+        transition: all 0.15s ease-in-out;
 
         .upvote-amount {
           letter-spacing: -0.180556px;
           font-weight: 700;
           font-size: 13px;
+        }
+
+        &:hover{
+          background-color: $greyBlue;
         }
       }
 

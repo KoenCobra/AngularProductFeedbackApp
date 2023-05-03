@@ -69,6 +69,7 @@
 }
 .toolbar .toolbar-info .sort .sort-dropdown ul li.active {
   color: #AD1FEA;
+  font-weight: 600;
 }
 .toolbar .toolbar-info .sort .sort-dropdown ul li:not(:last-child) {
   border-bottom: 1px solid rgba(58, 67, 116, 0.15);

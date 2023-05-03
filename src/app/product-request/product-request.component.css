@@ -28,11 +28,15 @@
   background-color: #F2F4FE;
   border-radius: 10px;
   cursor: pointer;
+  transition: all 0.15s ease-in-out;
 }
 .index .product-requests .product-request .upvote .upvote-amount {
   letter-spacing: -0.180556px;
   font-weight: 700;
   font-size: 13px;
+}
+.index .product-requests .product-request .upvote:hover {
+  background-color: #CFD7FF;
 }
 .index .product-requests .product-request .request-info {
   cursor: pointer;
