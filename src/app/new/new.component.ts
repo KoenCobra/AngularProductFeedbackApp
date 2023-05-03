@@ -1,15 +1,11 @@
-import {Component, TemplateRef} from '@angular/core';
+import {Component} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {ApiService} from "../api.service";
 import {Router} from "@angular/router";
 import {NgToastService} from "ng-angular-popup";
+import {ProductRequestService} from "../product-request.service";
 
 interface Category {
   value: string;
-}
-
-interface createRequest {
-
 }
 
 @Component({
@@ -18,7 +14,7 @@ interface createRequest {
   styleUrls: ['./new.component.scss']
 })
 export class NewComponent {
-  constructor(private apiService: ApiService, private router: Router, private toast: NgToastService) {
+  constructor(private router: Router, private toast: NgToastService, private requestService: ProductRequestService) {
   }
 
   categories: Category[] = [
@@ -40,18 +36,17 @@ export class NewComponent {
       this.feedbackForm.markAllAsTouched();
       return;
     }
-    const feedbackData = {
-      title: this.feedbackForm.controls.feedbackTitle.value,
-      category: this.feedbackForm.controls.feedbackCategory.value,
-      description: this.feedbackForm.controls.feedbackDescription.value
+    const newItem = {
+      title: this.feedbackForm.controls.feedbackTitle.value ?? '',
+      category: this.feedbackForm.controls.feedbackCategory.value ?? '',
+      upvotes: 0,
+      status: '',
+      description: this.feedbackForm.controls.feedbackDescription.value ?? '',
+      comments: [],
     };
-    this.apiService.createProductRequests(feedbackData).subscribe((response) => {
-      if (response === feedbackData) {
-        this.toast.success({detail: "SUCCESS", summary: 'Request successfully added', duration: 5000});
-        this.router.navigateByUrl('/');
-      } else {
-        this.toast.error({detail: "ERROR", summary: 'Something went wrong', sticky: true});
-      }
-    });
+
+    this.requestService.addProductRequest(newItem);
+    this.toast.success({ detail: 'SUCCESS', summary: 'Request successfully added', duration: 5000 });
+    this.router.navigateByUrl('/');
   }
 }

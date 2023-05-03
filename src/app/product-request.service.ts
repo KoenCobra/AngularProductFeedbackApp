@@ -1,31 +1,48 @@
 import {Injectable} from '@angular/core';
-import {BehaviorSubject, map, Observable} from "rxjs";
-import {productRequests} from "./product-requests";
-import {HttpClient} from "@angular/common/http";
+import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
+import {map} from 'rxjs/operators';
+import {productRequests} from './product-requests';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductRequestService {
   private productRequests$ = new BehaviorSubject<productRequests[]>([]);
+  private selectedCategory$ = new BehaviorSubject<string>('all');
 
   constructor(private http: HttpClient) {
+    this.init();
   }
 
   public getAllProductRequests(): Observable<productRequests[]> {
-    return this.productRequests$;
+    return combineLatest([this.productRequests$, this.selectedCategory$]).pipe(
+      map(([requests, category]) =>
+        category === 'all'
+          ? requests
+          : requests.filter((request) => request.category === category),
+      ),
+    );
   }
 
-  public init() {
-    return this.http.get<productRequests[]>('/assets/data.json').subscribe((response => {
-      this.productRequests$.next(response);
-    }));
+  public addProductRequest(item: productRequests): void {
+    this.productRequests$.next([...this.productRequests$.getValue(), item]);
   }
 
-  public changeCategory(category: string): Observable<productRequests[]> {
-    return this.productRequests$.pipe(
-      map((requests) =>
-        requests.filter((request) =>
-          request.category === category)));
+  public init(): void {
+    this.http
+      .get<any>('/assets/data.json')
+      .pipe(map((response) => response['productRequests']))
+      .subscribe((response) => {
+        this.productRequests$.next(response);
+      });
+  }
+
+  public changeCategory(category: string): void {
+    this.selectedCategory$.next(category);
+  }
+
+  public getCurrentCategory(): string {
+    return this.selectedCategory$.getValue();
   }
 }

@@ -13,7 +13,6 @@ import { NewComponent } from './new/new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
-import { StoreModule } from '@ngrx/store';
 import { NgToastModule } from 'ng-angular-popup';
 @NgModule({
   declarations: [
@@ -32,7 +31,6 @@ import { NgToastModule } from 'ng-angular-popup';
     BrowserAnimationsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    StoreModule.forRoot({}, {}),
     NgToastModule
   ],
   providers: [],

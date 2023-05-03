@@ -1,9 +1,9 @@
 <div class="index">
   <app-side-bar (categoryChange)="onCategoryChange($event)"></app-side-bar>
   <div>
-    <app-toolbar [productRequests]="data"></app-toolbar>
+    <app-toolbar></app-toolbar>
     <div class="product-requests">
-      <div *ngFor="let request of data" class="product-request">
+      <div *ngFor="let request of productRequests$ |async" class="product-request">
         <div class="upvote">
           <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
           <p class="upvote-amount">{{request.upvotes}}</p>
@@ -25,8 +25,9 @@
         </div>
       </div>
     </div>
-    <div *ngIf="!data?.length">
+    <div *ngIf="(productRequests$ | async)?.length === 0">
       <app-no-feedback></app-no-feedback>
     </div>
+
   </div>
 </div>

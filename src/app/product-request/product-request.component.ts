@@ -1,39 +1,25 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {ApiService} from "../api.service";
-import {productRequests} from "../product-requests";
+import { Component, OnInit } from '@angular/core';
+import { productRequests } from '../product-requests';
+import { ProductRequestService } from '../product-request.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-product-request',
   templateUrl: './product-request.component.html',
-  styleUrls: ['./product-request.component.scss']
+  styleUrls: ['./product-request.component.scss'],
 })
-export class ProductRequestComponent implements OnInit{
-  originalData!: productRequests[] ;
-  data!: productRequests[];
+export class ProductRequestComponent implements OnInit {
+  productRequests$: Observable<productRequests[]> = new  Observable<productRequests[]>();
 
-  constructor(private api: ApiService) {
+  constructor(private requestService: ProductRequestService) {
+
   }
 
   ngOnInit(): void {
-    this.api.getAllProductRequests().subscribe((data) => {
-      console.log(data)
-      this.originalData = data;
-      const localStorageData = JSON.parse(localStorage.getItem('productRequests') || '[]');
-      this.originalData = [...this.originalData, ...localStorageData];
-      this.filterRequestsByCategory('all');
-    });
+    this.productRequests$ = this.requestService.getAllProductRequests();
   }
-
 
   onCategoryChange(category: string): void {
-    this.filterRequestsByCategory(category);
-  }
-
-// app.component.ts
-  filterRequestsByCategory(category: string): void {
-    this.data = category === 'all'
-      ? [...this.originalData]
-      : this.originalData.filter(request =>
-        request.category === category);
+    this.requestService.changeCategory(category);
   }
 }
