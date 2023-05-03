@@ -1,6 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {data} from "./product-requests";
+import {productRequests} from "./product-requests";
 import {of} from "rxjs";
 
 @Injectable({
@@ -12,7 +12,7 @@ export class ApiService{
   }
 
   getAllProductRequests(){
-    return this.http.get<data>('/assets/data.json');
+    return this.http.get<productRequests>('/assets/data.json');
   }
 
   createProductRequests(createRequest: any) {
