@@ -31,7 +31,7 @@ import { NgToastModule } from 'ng-angular-popup';
     BrowserAnimationsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    NgToastModule
+    NgToastModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

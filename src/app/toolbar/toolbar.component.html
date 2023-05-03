@@ -4,24 +4,25 @@
     <p class="suggestions">{{(productRequests$ | async)?.length}} Suggestion</p>
     <div class="sort">
       <span>Sort by:</span>
-      <button class="sort-btn">MostUpvotes
+      <button class="sort-btn" (click)="toggleSortDropdown()">MostUpvotes
         <img src="assets/shared/icon-arrow-down.svg" alt="" class="sort-svg">
       </button>
-      <div class="sort-dropdown">
+      <div *ngIf="isSortDropdownOpen"
+            class="sort-dropdown">
         <ul>
-          <li>
+          <li (click)="sortProductRequests('mostUpvotes')">
             <p>Most Upvotes</p>
             <img src="assets/shared/icon-check.svg">
           </li>
-          <li>
+          <li (click)="sortProductRequests('leastUpvotes')">
             <p>Least Upvotes</p>
             <img src="assets/shared/icon-check.svg">
           </li>
-          <li>
+          <li (click)="sortProductRequests('mostComments')">
             <p>Most Comments</p>
             <img src="assets/shared/icon-check.svg">
           </li>
-          <li>
+          <li (click)="sortProductRequests('leastComments')">
             <p>Least Comments</p>
             <img src="assets/shared/icon-check.svg">
           </li>

@@ -1,7 +1,7 @@
 <div class="index">
   <app-side-bar (categoryChange)="onCategoryChange($event)"></app-side-bar>
   <div>
-    <app-toolbar></app-toolbar>
+    <app-toolbar (sortCriterionChange)="onSortCriterionChange($event)"></app-toolbar>
     <div class="product-requests">
       <div *ngFor="let request of productRequests$ |async" class="product-request">
         <div class="upvote">
