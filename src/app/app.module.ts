@@ -7,7 +7,6 @@ import {HttpClientModule} from "@angular/common/http";
 import { ProductRequestComponent } from './product-request/product-request.component';
 import { SideBarComponent } from './side-bar/side-bar.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
-import { FeedbackButtonComponent } from './shared/feedback-button/feedback-button.component';
 import { NoFeedbackComponent } from './shared/no-feedback/no-feedback.component';
 import { NewComponent } from './new/new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,16 +14,19 @@ import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
 import { NgToastModule } from 'ng-angular-popup';
 import { DetailsComponent } from './details/details.component';
+import { CommentComponent } from './comment/comment.component';
+import { ButtonComponent } from './shared/button/button.component';
 @NgModule({
   declarations: [
     AppComponent,
     ProductRequestComponent,
     SideBarComponent,
     ToolbarComponent,
-    FeedbackButtonComponent,
     NoFeedbackComponent,
     NewComponent,
-    DetailsComponent
+    DetailsComponent,
+    CommentComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

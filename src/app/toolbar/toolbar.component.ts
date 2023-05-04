@@ -2,6 +2,7 @@ import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/co
 import {productRequests} from "../product-requests";
 import {Observable} from "rxjs";
 import {ProductRequestService} from "../product-request.service";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-toolbar',
@@ -39,4 +40,6 @@ export class ToolbarComponent implements OnInit {
     this.isSortDropdownOpen = !this.isSortDropdownOpen;
     this.selectedSortCriterion = criterion;
   }
+
+  protected readonly RouterLink = RouterLink;
 }

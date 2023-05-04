@@ -1,0 +1,41 @@
+<div class="comment" *ngFor="let comment of productRequest.comments">
+  <div>
+    <img src="{{comment.user?.image}}" alt="">
+  </div>
+  <div class="comment-section">
+    <div class="user-name">
+      <div>
+        <p>{{comment.user?.name}}</p>
+        <p>{{comment.user?.username}}</p>
+      </div>
+      <button class="reply-btn">
+        Reply
+      </button>
+    </div>
+    <div class="comment-content">
+      <p>{{comment.content}}</p>
+    </div>
+    <div class="replies" *ngFor="let reply of comment.replies">
+      <div>
+        <img src="{{reply.user?.image}}" alt="">
+      </div>
+      <div class="comment-section">
+        <div class="user-name">
+          <div>
+            <p>{{reply.user?.name}}</p>
+            <p>{{reply.user?.username}}</p>
+          </div>
+        </div>
+        <div class="comment-content">
+          <p><span class="reply-to">{{reply.replyingTo}}</span>{{reply.content}}</p>
+        </div>
+      </div>
+    </div>
+    <div class="reply">
+      <textarea></textarea>
+      <button class="post-reply-btn">
+        Post Reply
+      </button>
+    </div>
+  </div>
+</div>
