@@ -1,5 +1,22 @@
-/* You can add global styles to this file, and also import other style files */
 @import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Jost:wght@400;500;600;700;800;900&display=swap");
+.btn, .feedback-btn {
+  padding: 0.75rem 1.5rem;
+  color: #F2F4FE;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.feedback-btn {
+  background-color: #AD1FEA;
+}
+.feedback-btn:hover {
+  background-color: #b940ed;
+}
+
 /* Box sizing rules */
 *,
 *::before,
@@ -98,71 +115,6 @@ html, body {
   font-size: 0.835rem;
   color: #D73737;
   padding-top: 0.3rem;
-}
-
-.mdc-text-field--filled:not(.mdc-text-field--disabled) {
-  width: 100%;
-  background-color: #F7F8FD;
-}
-
-.mat-mdc-form-field {
-  width: 100%;
-}
-
-.mdc-text-field--filled:not(.mdc-text-field--disabled) .mdc-line-ripple::before,
-.mdc-text-field--filled .mdc-line-ripple::after {
-  display: none !important;
-}
-
-.mdc-text-field {
-  border-radius: 5px !important;
-}
-
-.mat-mdc-form-field-infix {
-  max-height: 44px !important;
-  min-height: 0 !important;
-}
-
-.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
-  padding-top: 10px !important;
-}
-
-.custom-mat-form-field .mat-form-field-underline {
-  display: none !important;
-}
-
-.mat-mdc-select-panel {
-  border-radius: 10px;
-  margin-top: 1rem !important;
-}
-
-mat-option:not(:last-child) {
-  border-bottom: 1px solid rgba(58, 67, 116, 0.15);
-}
-
-.cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel {
-  padding: 0;
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
-}
-
-.mat-mdc-select-value, .mat-mdc-option {
-  font-weight: 400 !important;
-  font-size: 0.9375rem !important;
-  color: #3A4374 !important;
-}
-
-.mat-mdc-form-field-focus-overlay {
-  background-color: transparent;
-}
-
-html, body {
-  height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 
 .product-request {
