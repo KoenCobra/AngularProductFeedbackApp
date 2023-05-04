@@ -11,6 +11,7 @@ export class ButtonComponent {
   @Input() btnIcon: string = '';
   @Input() btnClass: string = '';
   @Input() targetRoute: string = '';
+  @Input() type: string = '';
   @Output() btnClick: EventEmitter<any> = new EventEmitter<any>();
 
   constructor(private router: Router) {

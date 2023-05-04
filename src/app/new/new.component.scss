@@ -1,4 +1,4 @@
-  @import "../../sass/Variables";
+@import "../../sass/Variables";
 
 .new-container {
   display: grid;
@@ -51,27 +51,16 @@
         font-size: 0.9375rem;
         color: $darkBlue;
 
-        &.error{
+        &.error {
           border: 1px solid $red !important;
         }
       }
     }
 
     .new-footer {
-      text-align: right;
-
-      .new-form-back-btn {
-        background-color: $darkBlue;
-        border-radius: 10px;
-        padding: 0.75rem 1.5rem;
-        color: $bodyBackgroundColor;
-        margin-right: 1rem;
-      }
-
-      .new-form-submit-btn {
-        @extend .new-form-back-btn;
-        background-color: $purple;
-      }
+      display: flex;
+      gap: 1rem;
+      justify-content: end;
     }
   }
 }

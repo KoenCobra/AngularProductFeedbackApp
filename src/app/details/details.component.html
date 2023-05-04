@@ -4,9 +4,8 @@
       <img src="assets/shared/icon-arrow-left.svg" alt="">
       <a routerLink="/">Go Back</a>
     </div>
-    <button class="edit-feedback-btn">
-      Edit Feedback
-    </button>
+
+    <app-button [btnText]="'Edit Feedback'" [btnClass]="'blue-btn'"></app-button>
   </div>
   <div *ngIf="productRequest$ | async as request">
     <div class="product-requests">

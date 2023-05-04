@@ -54,8 +54,8 @@
         </div>
       </div>
       <div class="new-footer">
-        <button type="button" routerLink="/" class="new-form-back-btn">Cancel</button>
-        <button type="submit" class="new-form-submit-btn">Add FeedBack</button>
+        <app-button [btnText]="'Cancel'" [btnClass]="'darkblue-btn'" [targetRoute]="'/'" [type]="'button'" ></app-button>
+        <app-button [btnText]="'Add FeedBack'" [btnClass]="'purple-btn'" [type]="'submit'" ></app-button>
       </div>
     </form>
   </div>
