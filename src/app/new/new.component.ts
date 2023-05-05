@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NgToastService} from "ng-angular-popup";
 import {ProductRequestService} from "../product-request.service";
+import {productRequests} from "../product-requests";
 
 interface Category {
   value: string;
@@ -36,14 +37,15 @@ export class NewComponent {
       this.feedbackForm.markAllAsTouched();
       return;
     }
-    const newItem = {
+    const newItem: productRequests = {
+      id: Date.now(),
       title: this.feedbackForm.controls.feedbackTitle.value ?? '',
       category: this.feedbackForm.controls.feedbackCategory.value ?? '',
-      description: this.feedbackForm.controls.feedbackDescription.value ?? '',
+      description: this.feedbackForm.controls.feedbackDescription.value ?? ''
     };
 
     this.requestService.addProductRequest(newItem);
-    this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 5000, position:'br'});
+    this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 5000, position: 'br'});
     this.router.navigateByUrl('/');
   }
 }

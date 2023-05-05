@@ -3,12 +3,13 @@ import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {productRequests} from './product-requests';
 import {HttpClient} from '@angular/common/http';
+import {comment} from "./comment";
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductRequestService {
-  private productRequests$ = new BehaviorSubject<productRequests[]>([]);
+  public productRequests$ = new BehaviorSubject<productRequests[]>([]);
   private selectedCategory$ = new BehaviorSubject<string>('all');
   constructor(private http: HttpClient) {
     this.init();
@@ -48,8 +49,26 @@ export class ProductRequestService {
   public getCurrentCategory(): string {
     return this.selectedCategory$.getValue();
   }
+  addComment(requestId: number, comment: comment) {
+    const currentProductRequests = this.productRequests$.getValue();
+    const request = currentProductRequests.find(request => request.id === requestId);
 
-  public addComment(comment:string){
+    if (request) {
+      const newComment = {
+        id: Date.now(),
+        content: comment.content,
+        user: comment.user,
+      };
 
+      const updatedProductRequest: productRequests = {
+        ...request,
+        comments: [...(request.comments || []), newComment],
+      };
+
+      const updatedProductRequests =
+        currentProductRequests.map(productRequest => productRequest.id === requestId ? updatedProductRequest : productRequest);
+      this.productRequests$.next(updatedProductRequests);
+    }
   }
+
 }

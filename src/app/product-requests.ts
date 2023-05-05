@@ -1,25 +1,25 @@
 export interface productRequests {
-  id?: number;
-  title?: string;
-  category?: string;
+  id: number;
+  title: string | null;
+  category: string | null;
   upvotes?: number;
-  status?: string;
-  description?: string;
+  status?: string | null;
+  description: string | null;
   comments?: {
     id: number;
-    content?: string;
+    content: string | null;
     user?: {
-      image?: string;
-      name?: string;
-      username?: string;
+      image: string | null;
+      name: string | null;
+      username: string | null;
     };
     replies?: {
-      content?: string;
-      replyingTo?: string;
+      content: string | null;
+      replyingTo: string | null;
       user?: {
-        image?: string;
-        name?: string;
-        username?: string;
+        image: string | null;
+        name: string | null;
+        username: string | null;
       };
     }[];
   }[];

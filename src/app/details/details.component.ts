@@ -5,6 +5,7 @@ import {ProductRequestService} from "../product-request.service";
 import {productRequests} from "../product-requests";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {map} from "rxjs/operators";
+import {comment} from "../comment";
 
 @Component({
   selector: 'app-details',
@@ -30,5 +31,25 @@ export class DetailsComponent implements OnInit {
   }
 
   commentFormSubmit() {
+    if (this.commentForm.invalid) {
+      this.commentForm.markAllAsTouched();
+      return;
+    }
+
+    if (this.productRequest) {
+      const commentData: comment = {
+        content: this.commentForm.controls.comment.value,
+        user: {
+          image: 'assets/user-images/image-judah.jpg',
+          name: 'Judah',
+          username: '@Judah',
+        },
+      };
+
+      this.requestService.addComment(this.productRequest.id, commentData);
+      this.commentForm.reset();
+    }
   }
+
+
 }

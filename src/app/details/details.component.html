@@ -6,6 +6,8 @@
 
   <app-feedback-request [feedbackRequest]="productRequest"></app-feedback-request>
 
+  <app-comment [productRequest]="productRequest"></app-comment>
+
   <div class="post-comment">
     <h3>Add Comment</h3>
     <form [formGroup]="commentForm" (ngSubmit)="commentFormSubmit()">
@@ -25,7 +27,5 @@
       </div>
     </form>
   </div>
-
-  <app-comment [productRequest]="productRequest"></app-comment>
 </div>
 

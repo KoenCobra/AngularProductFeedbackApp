@@ -5,12 +5,12 @@
   margin-inline: auto;
   display: grid;
   gap: 1.5rem;
+  padding: 3rem 0 3rem;
 
   .details-header{
     display: flex;
     justify-content: space-between;
-    align-items: flex-start ;
-    padding: 3rem 0 0;
+    align-items: flex-start;
   }
 
   .post-comment{
