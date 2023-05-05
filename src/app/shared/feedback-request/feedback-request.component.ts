@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {productRequests} from "../../product-requests";
+import {productRequest} from "../../product-request";
 
 @Component({
   selector: 'app-feedback-request',
@@ -7,5 +7,5 @@ import {productRequests} from "../../product-requests";
   styleUrls: ['./feedback-request.component.scss']
 })
 export class FeedbackRequestComponent {
-@Input() feedbackRequest!: productRequests | null;
+@Input() feedbackRequest!: productRequest | null;
 }

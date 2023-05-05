@@ -6,7 +6,10 @@
 
   <app-feedback-request [feedbackRequest]="productRequest"></app-feedback-request>
 
+  <div class="comments">
+    <h3>{{productRequest?.comments?.length}} Comments</h3>
   <app-comment [productRequest]="productRequest"></app-comment>
+  </div>
 
   <div class="post-comment">
     <h3>Add Comment</h3>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { productRequests } from '../product-requests';
+import { productRequest } from '../product-request';
 import { ProductRequestService } from '../product-request.service';
 import { Observable } from 'rxjs';
 import {map} from "rxjs/operators";
@@ -10,7 +10,7 @@ import {map} from "rxjs/operators";
   styleUrls: ['./product-request.component.scss'],
 })
 export class ProductRequestComponent implements OnInit {
-  productRequests$: Observable<productRequests[]> = new  Observable<productRequests[]>();
+  productRequests$: Observable<productRequest[]> = new  Observable<productRequest[]>();
 
   constructor(private requestService: ProductRequestService) {
   }

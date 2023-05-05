@@ -1,4 +1,4 @@
-export interface productRequests {
+export interface productRequest {
   id: number;
   title: string | null;
   category: string | null;

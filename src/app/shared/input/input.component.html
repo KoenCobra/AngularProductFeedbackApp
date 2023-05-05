@@ -1,6 +1,6 @@
 <div class="input-field">
-  <label>{{ label }}</label>
-  <p class="label-sub">{{subLabel}}</p>
+  <label *ngIf="label">{{ label }}</label>
+  <p *ngIf="subLabel" class="label-sub">{{subLabel}}</p>
   <input *ngIf="controlType === 'input'" [type]="inputType" [formControl]="control"/>
 
   <div *ngIf="controlType === 'textarea'">

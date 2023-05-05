@@ -15,7 +15,7 @@ export class InputComponent {
   @Input() placeholder: string = '';
   @Input() controlType!: 'input' | 'textarea';
 
-  charactersLeft: number = 255;
+  charactersLeft: number = 250;
 
   showErrors() {
     const {touched, errors} = this.control;

@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"comment.component.css"}
+{"version":3,"sourceRoot":"","sources":["comment.component.scss","../../sass/_variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;;AAIA;EACE;EACA;EACA;;AAEA;EACE;EACA;EACA;EACA,OCrBG;;ADwBL;EACE;EACA;EACA,OC1BQ;;AD6BV;EACE;EACA;EACA,OC/BD;;ADiCC;EACE;;AAMR;EACE;EACA;EACA,OC5CY;ED6CZ;;AAGF;EACE;EACA;EACA;;AAEA;EACE","file":"comment.component.css"}

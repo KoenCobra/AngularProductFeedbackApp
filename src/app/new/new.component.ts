@@ -3,7 +3,7 @@ import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NgToastService} from "ng-angular-popup";
 import {ProductRequestService} from "../product-request.service";
-import {productRequests} from "../product-requests";
+import {productRequest} from "../product-request";
 
 interface Category {
   value: string;
@@ -37,7 +37,7 @@ export class NewComponent {
       this.feedbackForm.markAllAsTouched();
       return;
     }
-    const newItem: productRequests = {
+    const newItem: productRequest = {
       id: Date.now(),
       title: this.feedbackForm.controls.feedbackTitle.value ?? '',
       category: this.feedbackForm.controls.feedbackCategory.value ?? '',

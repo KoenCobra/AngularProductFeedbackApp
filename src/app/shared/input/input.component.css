@@ -33,6 +33,10 @@
   font-weight: 400;
   font-size: 0.9125rem;
   color: #647196;
+  padding-top: 0.5rem;
+}
+.input-field ::placeholder {
+  font-size: 0.9rem;
 }
 
 /*# sourceMappingURL=input.component.css.map */

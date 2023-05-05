@@ -1,11 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Observable} from "rxjs";
 import {ProductRequestService} from "../product-request.service";
-import {productRequests} from "../product-requests";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {map} from "rxjs/operators";
 import {comment} from "../comment";
+import {productRequest} from "../product-request";
 
 @Component({
   selector: 'app-details',
@@ -14,7 +13,7 @@ import {comment} from "../comment";
 })
 export class DetailsComponent implements OnInit {
   requestId: string = '';
-  productRequest!: productRequests | null;
+  productRequest!: productRequest | null;
 
   commentForm = new FormGroup({
     comment: new FormControl('', Validators.required)

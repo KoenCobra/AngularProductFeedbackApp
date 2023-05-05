@@ -1,5 +1,5 @@
 import {Component, EventEmitter, HostListener, OnInit, Output} from '@angular/core';
-import {productRequests} from "../product-requests";
+import {productRequest} from "../product-request";
 import {Observable} from "rxjs";
 import {ProductRequestService} from "../product-request.service";
 import {RouterLink} from "@angular/router";
@@ -14,7 +14,7 @@ export class ToolbarComponent implements OnInit {
   }
 
   @Output() sortCriterionChange: EventEmitter<string> = new EventEmitter<string>();
-  public productRequests$: Observable<productRequests[]> = new Observable<productRequests[]>()
+  public productRequests$: Observable<productRequest[]> = new Observable<productRequest[]>()
   isSortDropdownOpen = false;
   selectedSortCriterion = 'Most Upvotes';
 

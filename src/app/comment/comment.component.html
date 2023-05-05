@@ -1,14 +1,12 @@
 <div class="comment" *ngFor="let comment of productRequest?.comments">
-  <div>
-    <img src="{{comment.user?.image}}" alt="">
-  </div>
+  <img src="{{comment.user?.image}}" alt="">
   <div class="comment-section">
-    <div class="user-name">
+    <div class="name-section">
       <div>
-        <p>{{comment.user?.name}}</p>
-        <p>@{{comment.user?.username}}</p>
+        <p class="name">{{comment.user?.name}}</p>
+        <p class="user-name">@{{comment.user?.username}}</p>
       </div>
-      <button class="reply-btn">
+      <button (click)="showReply(comment.id)" class="reply-btn">
         Reply
       </button>
     </div>
@@ -31,11 +29,14 @@
         </div>
       </div>
     </div>
-    <div class="reply">
-      <textarea></textarea>
-      <button class="post-reply-btn">
-        Post Reply
-      </button>
+    <div *ngIf="isReplyShowing(comment.id)" class="reply">
+      <app-input
+        [control]="replyForm.controls.reply"
+        controlType="textarea"
+        placeholder="Type your reply here"
+        [maxLength]="250"
+      ></app-input>
+      <app-button btnText="Post Reply" btnClass="purple-btn"></app-button>
     </div>
   </div>
 </div>

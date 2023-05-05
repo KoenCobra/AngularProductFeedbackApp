@@ -7,13 +7,27 @@
   gap: 1.5rem;
   padding: 3rem 0 3rem;
 
-  .details-header{
+  .details-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
   }
 
-  .post-comment{
+  .comments {
+    background-color: $white;
+    padding: 1.5rem 2rem;
+    border-radius: 10px;
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.125rem;
+      letter-spacing: -0.25px;
+      color: $darkBlue;
+      padding-bottom: 1.75rem;
+    }
+  }
+
+  .post-comment {
     background-color: $white;
     border-radius: 10px;
     padding: 1.5rem 2rem 2rem;

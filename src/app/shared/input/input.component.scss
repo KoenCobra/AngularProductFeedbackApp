@@ -40,5 +40,10 @@
     font-weight: 400;
     font-size: 0.9125rem;
     color: $veryLightBlue;
+    padding-top: 0.5rem;
+  }
+
+  ::placeholder{
+    font-size: 0.9rem;
   }
 }
