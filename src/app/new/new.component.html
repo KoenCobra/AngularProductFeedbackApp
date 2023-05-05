@@ -32,7 +32,8 @@
         controlType="textarea"
         [control]="feedbackForm.controls.feedbackDescription"
         [label]="'Feedback Detail'"
-        [subLabel]="'Include any specific comments on what should be improved, added, etc.'">
+        [subLabel]="'Include any specific comments on what should be improved, added, etc.'"
+        [maxLength]="255">
       </app-input>
 
       <div class="new-footer">

@@ -27,7 +27,7 @@ export class NewComponent {
 
   feedbackForm = new FormGroup({
     feedbackTitle: new FormControl('', [Validators.required]),
-    feedbackCategory: new FormControl(this.categories[0].value, [Validators.required]),
+    feedbackCategory: new FormControl(this.categories[0].value),
     feedbackDescription: new FormControl('', [Validators.required])
   })
 

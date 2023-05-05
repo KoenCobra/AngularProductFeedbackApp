@@ -25,9 +25,20 @@
     font-weight: 400;
     font-size: 0.9375rem;
     color: $darkBlue;
+    resize: none;
 
     &.error {
       border: 1px solid $red !important;
     }
+
+    &:focus{
+      outline: 1px solid $blue;
+    }
+  }
+
+  .characters-left{
+    font-weight: 400;
+    font-size: 0.9125rem;
+    color: $veryLightBlue;
   }
 }

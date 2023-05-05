@@ -3,16 +3,20 @@
   <p class="label-sub">{{subLabel}}</p>
   <input *ngIf="controlType === 'input'" [type]="inputType" [formControl]="control"/>
 
-  <textarea [placeholder]="placeholder" *ngIf="controlType === 'textarea'" [formControl]="control"></textarea>
+  <div *ngIf="controlType === 'textarea'">
+  <textarea
+    [maxLength]="255"
+    rows="3"
+    [placeholder]="placeholder"
+    [formControl]="control"
+    (input)="onInputChange($event)"
+  ></textarea>
+    <p *ngIf="maxLength" class="characters-left">{{ charactersLeft }} characters left</p>
+  </div>
 
   <ng-content>
   </ng-content>
 
-  <p *ngIf="control.errors?.['maxlength'] && controlType === 'textarea'">
-    <!--    {{ control.errors?.['maxlength'].actualLength }}-->
-    {{ control.errors?.['maxlength'].requiredLength }}
-    characters left
-  </p>
   <div *ngIf="showErrors()" class="error-message">
     <p *ngIf="control.errors?.['required']">
       Can't be empty

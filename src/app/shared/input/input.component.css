@@ -21,9 +21,18 @@
   font-weight: 400;
   font-size: 0.9375rem;
   color: #3A4374;
+  resize: none;
 }
 .input-field input.error, .input-field textarea.error {
   border: 1px solid #D73737 !important;
+}
+.input-field input:focus, .input-field textarea:focus {
+  outline: 1px solid #4661E6;
+}
+.input-field .characters-left {
+  font-weight: 400;
+  font-size: 0.9125rem;
+  color: #647196;
 }
 
 /*# sourceMappingURL=input.component.css.map */
