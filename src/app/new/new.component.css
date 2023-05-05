@@ -2,6 +2,9 @@
   display: grid;
   justify-content: center;
 }
+.new-container .new-header {
+  padding: 2rem 0 3rem;
+}
 .new-container .new-form {
   background-color: #FFF;
   border-radius: 10px;
@@ -20,33 +23,6 @@
   letter-spacing: -0.333333px;
   color: #3A4374;
   padding-bottom: 1.5rem;
-}
-.new-container .new-form .input-field {
-  padding-bottom: 1.5rem;
-}
-.new-container .new-form .input-field label {
-  font-weight: 700;
-  font-size: 0.875rem;
-  letter-spacing: -0.194444px;
-  color: #3A4374;
-}
-.new-container .new-form .input-field .label-sub {
-  font-weight: 400;
-  font-size: 14px;
-  color: #647196;
-  padding-bottom: 1rem;
-}
-.new-container .new-form .input-field input, .new-container .new-form .input-field textarea {
-  width: 100%;
-  background: #F7F8FD;
-  border-radius: 5px;
-  padding: 0.75rem 1rem;
-  font-weight: 400;
-  font-size: 0.9375rem;
-  color: #3A4374;
-}
-.new-container .new-form .input-field input.error, .new-container .new-form .input-field textarea.error {
-  border: 1px solid #D73737 !important;
 }
 .new-container .new-form .new-footer {
   display: flex;

@@ -18,6 +18,7 @@ import { CommentComponent } from './comment/comment.component';
 import { ButtonComponent } from './shared/button/button.component';
 import { FeedbackRequestComponent } from './shared/feedback-request/feedback-request.component';
 import { BacklinkComponent } from './shared/backlink/backlink.component';
+import { InputComponent } from './shared/input/input.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { BacklinkComponent } from './shared/backlink/backlink.component';
     CommentComponent,
     ButtonComponent,
     FeedbackRequestComponent,
-    BacklinkComponent
+    BacklinkComponent,
+    InputComponent
   ],
   imports: [
     BrowserModule,

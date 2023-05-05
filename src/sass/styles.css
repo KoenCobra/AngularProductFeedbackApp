@@ -254,7 +254,6 @@ mat-option:not(:last-child) {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 3rem 0;
 }
 .back-link a {
   color: #647196;

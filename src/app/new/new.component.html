@@ -1,7 +1,6 @@
 <div class="new-container">
-  <div class="back-link">
-    <img src="assets/shared/icon-arrow-left.svg" alt="">
-    <a routerLink="/">Go Back</a>
+  <div class="new-header">
+    <app-backlink></app-backlink>
   </div>
   <div class="new-form">
     <img src="assets/shared/icon-new-feedback.svg" alt="">
@@ -23,21 +22,13 @@
       <div class="input-field">
         <label>Category</label>
         <p class="label-sub">Choose a category for your feedback</p>
-        <mat-form-field
-          [ngClass]="{'error': feedbackForm.controls.feedbackCategory.touched && feedbackForm.controls.feedbackCategory.invalid}"
-          appearance="fill">
+        <mat-form-field appearance="fill">
           <mat-select [formControl]="feedbackForm.controls.feedbackCategory">
             <mat-option *ngFor="let category of categories" [value]="category.value">
               {{category.value}}
             </mat-option>
           </mat-select>
         </mat-form-field>
-        <div
-          *ngIf="feedbackForm.controls.feedbackCategory.touched && feedbackForm.controls.feedbackCategory.errors">
-          <p *ngIf="feedbackForm.controls.feedbackCategory.errors?.['required']" class="error-message">
-            Can't be empty
-          </p>
-        </div>
       </div>
       <div class="input-field">
         <label>Feedback Detail</label>
@@ -54,8 +45,8 @@
         </div>
       </div>
       <div class="new-footer">
-        <app-button [btnText]="'Cancel'" [btnClass]="'darkblue-btn'" [targetRoute]="'/'" [type]="'button'" ></app-button>
-        <app-button [btnText]="'Add FeedBack'" [btnClass]="'purple-btn'" [type]="'submit'" ></app-button>
+        <app-button [btnText]="'Cancel'" [btnClass]="'darkblue-btn'" [targetRoute]="'/'" [type]="'button'"></app-button>
+        <app-button [btnText]="'Add FeedBack'" [btnClass]="'purple-btn'" [type]="'submit'"></app-button>
       </div>
     </form>
   </div>

@@ -1,0 +1,18 @@
+<div class="input-field">
+  <label>{{ label }}</label>
+  <p class="label-sub">{{subLabel}}</p>
+  <input *ngIf="controlType === 'input'" [type]="inputType" [formControl]="control"/>
+
+  <textarea [placeholder]="placeholder" *ngIf="controlType === 'textarea'" [formControl]="control"></textarea>
+
+  <p *ngIf="control.errors?.['maxlength'] && controlType === 'textarea'">
+    <!--    {{ control.errors?.['maxlength'].actualLength }}-->
+    {{ control.errors?.['maxlength'].requiredLength }}
+    characters left
+  </p>
+  <div *ngIf="showErrors()" class="error-message">
+    <p *ngIf="control.errors?.['required']">
+      Can't be empty
+    </p>
+  </div>
+</div>
