@@ -2,16 +2,11 @@
   max-width: 720px;
   margin-inline: auto;
 }
-.details-container .back-link {
+.details-container .details-header {
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: flex-start;
   padding: 3rem 0 1.5rem;
-}
-.details-container .back-link .back-link-section {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
 }
 
 /*# sourceMappingURL=details.component.css.map */

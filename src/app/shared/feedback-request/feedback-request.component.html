@@ -1,0 +1,21 @@
+<div class="product-request">
+  <div class="upvote">
+    <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+    <p class="upvote-amount">{{feedbackRequest.upvotes}}</p>
+  </div>
+  <div [routerLink]="['/details', feedbackRequest.id]"  class="request-info">
+    <h3 class="request-title">{{feedbackRequest.title}}</h3>
+    <p class="request-description">
+      {{feedbackRequest.description}}
+    </p>
+    <div class="request-tag">
+      {{feedbackRequest.category}}
+    </div>
+  </div>
+  <div [routerLink]="['/details', feedbackRequest.id]"  class="request-comments">
+    <img src="assets/shared/icon-comments.svg" alt="">
+    <p class="comment-amount">
+      {{feedbackRequest.comments?.length ?? 0}}
+    </p>
+  </div>
+</div>

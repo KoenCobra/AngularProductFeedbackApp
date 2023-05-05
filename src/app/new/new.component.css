@@ -51,7 +51,7 @@
 .new-container .new-form .new-footer {
   display: flex;
   gap: 1rem;
-  justify-content: end;
+  justify-content: flex-end;
 }
 
 /*# sourceMappingURL=new.component.css.map */

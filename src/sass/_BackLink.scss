@@ -1,0 +1,14 @@
+﻿@import "../sass/Variables";
+
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  a {
+    color: $veryLightBlue;
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-decoration: none;
+  }
+}

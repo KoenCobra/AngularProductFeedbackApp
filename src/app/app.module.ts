@@ -16,6 +16,8 @@ import { NgToastModule } from 'ng-angular-popup';
 import { DetailsComponent } from './details/details.component';
 import { CommentComponent } from './comment/comment.component';
 import { ButtonComponent } from './shared/button/button.component';
+import { FeedbackRequestComponent } from './shared/feedback-request/feedback-request.component';
+import { BacklinkComponent } from './shared/backlink/backlink.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +28,9 @@ import { ButtonComponent } from './shared/button/button.component';
     NewComponent,
     DetailsComponent,
     CommentComponent,
-    ButtonComponent
+    ButtonComponent,
+    FeedbackRequestComponent,
+    BacklinkComponent
   ],
   imports: [
     BrowserModule,

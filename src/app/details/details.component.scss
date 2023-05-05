@@ -4,16 +4,10 @@
   max-width: 720px;
   margin-inline: auto;
 
-  .back-link {
+  .details-header{
     display: flex;
     justify-content: space-between;
-    align-items: start ;
+    align-items: flex-start ;
     padding: 3rem 0 1.5rem;
-
-    .back-link-section {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
   }
 }

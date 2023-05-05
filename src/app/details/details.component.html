@@ -1,44 +1,17 @@
 <div class="details-container">
-  <div class="back-link">
-    <div class="back-link-section">
-      <img src="assets/shared/icon-arrow-left.svg" alt="">
-      <a routerLink="/">Go Back</a>
-    </div>
-
+  <div class="details-header">
+    <app-backlink></app-backlink>
     <app-button [btnText]="'Edit Feedback'" [btnClass]="'blue-btn'"></app-button>
   </div>
   <div *ngIf="productRequest$ | async as request">
-    <div class="product-requests">
-      <div class="product-request">
-        <div class="upvote">
-          <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-          <p class="upvote-amount">{{request.upvotes}}</p>
-        </div>
-        <div class="request-info">
-          <h3 class="request-title">{{request.title}}</h3>
-          <p class="request-description">
-            {{request.description}}
-          </p>
-          <div class="request-tag">
-            {{request.category}}
-          </div>
-        </div>
-        <div class="request-comments">
-          <img src="assets/shared/icon-comments.svg" alt="">
-          <p class="comment-amount">
-            {{request.comments?.length ?? 0}}
-          </p>
-        </div>
-      </div>
-    </div>
+    <app-feedback-request [feedbackRequest]="request"></app-feedback-request>
     <div class="post-comment">
       <h3>Add Comment</h3>
       <textarea></textarea>
       <div class="post-comment-footer">
         <p>
-        225 characters left
+          225 characters left
         </p>
-
       </div>
     </div>
     <app-comment [productRequest]="request"></app-comment>
