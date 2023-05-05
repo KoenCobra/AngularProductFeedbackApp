@@ -42,8 +42,7 @@ mat-option:not(:last-child) {
 
 .cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel {
   padding: 0;
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
+  border-radius: 10px !important;
 }
 
 .mat-mdc-select-value, .mat-mdc-option {

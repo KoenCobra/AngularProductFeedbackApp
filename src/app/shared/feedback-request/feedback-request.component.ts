@@ -7,5 +7,5 @@ import {productRequests} from "../../product-requests";
   styleUrls: ['./feedback-request.component.scss']
 })
 export class FeedbackRequestComponent {
-@Input() feedbackRequest!: productRequests;
+@Input() feedbackRequest!: productRequests | null;
 }

@@ -3,11 +3,19 @@
 .details-container {
   max-width: 720px;
   margin-inline: auto;
+  display: grid;
+  gap: 1.5rem;
 
   .details-header{
     display: flex;
     justify-content: space-between;
     align-items: flex-start ;
-    padding: 3rem 0 1.5rem;
+    padding: 3rem 0 0;
+  }
+
+  .post-comment{
+    background-color: $white;
+    border-radius: 10px;
+    padding: 1.5rem 2rem 2rem;
   }
 }

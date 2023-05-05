@@ -3,18 +3,29 @@
     <app-backlink></app-backlink>
     <app-button [btnText]="'Edit Feedback'" [btnClass]="'blue-btn'"></app-button>
   </div>
-  <div *ngIf="productRequest$ | async as request">
-    <app-feedback-request [feedbackRequest]="request"></app-feedback-request>
-    <div class="post-comment">
-      <h3>Add Comment</h3>
-      <textarea></textarea>
+
+  <app-feedback-request [feedbackRequest]="productRequest"></app-feedback-request>
+
+  <div class="post-comment">
+    <h3>Add Comment</h3>
+    <form [formGroup]="commentForm" (ngSubmit)="commentFormSubmit()">
+      <app-input
+        controlType="textarea"
+        [maxLength]="255"
+        [control]="commentForm.controls.comment"
+        placeholder="Type your comment here">
+      </app-input>
+
       <div class="post-comment-footer">
-        <p>
-          225 characters left
-        </p>
+        <app-button
+          type="submit"
+          [btnClass]="'purple-btn'"
+          btnText="Post Comment">
+        </app-button>
       </div>
-    </div>
-    <app-comment [productRequest]="request"></app-comment>
+    </form>
   </div>
+
+  <app-comment [productRequest]="productRequest"></app-comment>
 </div>
 

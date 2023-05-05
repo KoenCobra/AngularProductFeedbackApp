@@ -7,5 +7,5 @@ import {productRequests} from "../product-requests";
   styleUrls: ['./comment.component.scss']
 })
 export class CommentComponent {
-  @Input() productRequest!: productRequests;
+  @Input() productRequest!: productRequests | null;
 }

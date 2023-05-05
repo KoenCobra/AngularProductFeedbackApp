@@ -1,8 +1,10 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Observable, switchMap} from "rxjs";
+import {Observable} from "rxjs";
 import {ProductRequestService} from "../product-request.service";
 import {productRequests} from "../product-requests";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {map} from "rxjs/operators";
 
 @Component({
   selector: 'app-details',
@@ -11,13 +13,22 @@ import {productRequests} from "../product-requests";
 })
 export class DetailsComponent implements OnInit {
   requestId: string = '';
-  public productRequest$!: Observable<productRequests | null>;
+  productRequest!: productRequests | null;
+
+  commentForm = new FormGroup({
+    comment: new FormControl('', Validators.required)
+  })
 
   constructor(private route: ActivatedRoute, private requestService: ProductRequestService) {
   }
 
   ngOnInit(): void {
     this.requestId = this.route.snapshot.paramMap.get('id') || '';
-    this.productRequest$ = this.requestService.getProductRequestById(parseInt(this.requestId));
+    this.requestService.getProductRequestById(parseInt(this.requestId)).pipe(
+      map((value) => this.productRequest = value)
+    ).subscribe();
+  }
+
+  commentFormSubmit() {
   }
 }

@@ -1,4 +1,4 @@
-<div class="product-request">
+<div *ngIf="feedbackRequest" class="product-request">
   <div class="upvote">
     <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
     <p class="upvote-amount">{{feedbackRequest.upvotes}}</p>

@@ -48,4 +48,8 @@ export class ProductRequestService {
   public getCurrentCategory(): string {
     return this.selectedCategory$.getValue();
   }
+
+  public addComment(comment:string){
+
+  }
 }
