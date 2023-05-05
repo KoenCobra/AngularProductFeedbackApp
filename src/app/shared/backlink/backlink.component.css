@@ -1,0 +1,13 @@
+.back-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.back-link a {
+  color: #647196;
+  font-weight: 700;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=backlink.component.css.map */

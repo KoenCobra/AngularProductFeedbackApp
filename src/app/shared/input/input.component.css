@@ -1,3 +1,29 @@
-
+.input-field {
+  padding-bottom: 1.5rem;
+}
+.input-field label {
+  font-weight: 700;
+  font-size: 0.875rem;
+  letter-spacing: -0.194444px;
+  color: #3A4374;
+}
+.input-field .label-sub {
+  font-weight: 400;
+  font-size: 14px;
+  color: #647196;
+  padding-bottom: 1rem;
+}
+.input-field input, .input-field textarea {
+  width: 100%;
+  background: #F7F8FD;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: #3A4374;
+}
+.input-field input.error, .input-field textarea.error {
+  border: 1px solid #D73737 !important;
+}
 
 /*# sourceMappingURL=input.component.css.map */

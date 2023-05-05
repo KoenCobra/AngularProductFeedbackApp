@@ -12,10 +12,10 @@ export class InputComponent {
   @Input() control!: FormControl;
   @Input() inputType: string = '';
   @Input() placeholder: string = '';
-  @Input() controlType!: 'input' | 'textarea';
+  @Input() controlType!: 'input' | 'textarea' | 'select';
 
   showErrors() {
-    const {dirty, touched, errors} = this.control;
-    return dirty && touched && errors;
+    const {touched, errors} = this.control;
+    return touched && errors;
   }
 }

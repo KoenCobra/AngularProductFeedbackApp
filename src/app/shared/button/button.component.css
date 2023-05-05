@@ -1,0 +1,33 @@
+.btn, .blue-btn, .darkblue-btn, .purple-btn {
+  padding: 0.75rem 1.5rem;
+  color: #F2F4FE;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.15s ease-in-out;
+}
+
+.purple-btn {
+  background-color: #AD1FEA;
+}
+.purple-btn:hover {
+  background-color: #b940ed;
+}
+
+.darkblue-btn {
+  background-color: #3A4374;
+}
+.darkblue-btn:hover {
+  background-color: #46518c;
+}
+
+.blue-btn {
+  background-color: #4661E6;
+}
+.blue-btn:hover {
+  background-color: #657cea;
+}
+
+/*# sourceMappingURL=button.component.css.map */

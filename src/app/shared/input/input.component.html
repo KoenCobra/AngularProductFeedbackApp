@@ -5,6 +5,9 @@
 
   <textarea [placeholder]="placeholder" *ngIf="controlType === 'textarea'" [formControl]="control"></textarea>
 
+  <ng-content>
+  </ng-content>
+
   <p *ngIf="control.errors?.['maxlength'] && controlType === 'textarea'">
     <!--    {{ control.errors?.['maxlength'].actualLength }}-->
     {{ control.errors?.['maxlength'].requiredLength }}
