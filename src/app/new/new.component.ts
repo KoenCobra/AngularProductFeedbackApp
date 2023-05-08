@@ -57,9 +57,24 @@ export class NewComponent implements OnInit {
       this.btnText = 'Update';
       this.feedbackForm.setValue({
         feedbackTitle: this.productRequest.title,
-        feedbackCategory: this.capitalizeFirstLetter(this.productRequest.category ?? ''),
+        feedbackCategory: this.productRequest.category,
         feedbackDescription: this.productRequest.description,
       })
+    }
+  }
+
+  updateRequest() {
+    if (this.productRequest && this.feedbackForm.valid) {
+      const updatedItem: productRequest = {
+        ...this.productRequest,
+        title: this.feedbackForm.controls.feedbackTitle.value,
+        category: this.feedbackForm.controls.feedbackCategory.value,
+        description: this.feedbackForm.controls.feedbackDescription.value,
+      };
+
+      this.requestService.updateProductRequest(updatedItem);
+      this.toast.success({detail: 'SUCCESS', summary: 'Request successfully updated', duration: 4000, position: 'br'});
+      this.router.navigateByUrl('/');
     }
   }
 
@@ -68,16 +83,21 @@ export class NewComponent implements OnInit {
       this.feedbackForm.markAllAsTouched();
       return;
     }
-    const newItem: productRequest = {
-      id: Date.now(),
-      title: this.feedbackForm.controls.feedbackTitle.value ?? '',
-      category: this.feedbackForm.controls.feedbackCategory.value ?? '',
-      description: this.feedbackForm.controls.feedbackDescription.value ?? ''
-    };
 
-    this.requestService.addProductRequest(newItem);
-    this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 4000, position: 'br'});
-    this.router.navigateByUrl('/');
+    if (this.productRequest) {
+      this.updateRequest();
+    } else {
+      const newItem: productRequest = {
+        id: Date.now(),
+        title: this.feedbackForm.controls.feedbackTitle.value ?? '',
+        category: this.feedbackForm.controls.feedbackCategory.value ?? '',
+        description: this.feedbackForm.controls.feedbackDescription.value ?? ''
+      };
+
+      this.requestService.addProductRequest(newItem);
+      this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 4000, position: 'br'});
+      this.router.navigateByUrl('/');
+    }
   }
 
   deleteRequest() {
@@ -92,5 +112,4 @@ export class NewComponent implements OnInit {
       this.router.navigateByUrl('/');
     }
   }
-
 }

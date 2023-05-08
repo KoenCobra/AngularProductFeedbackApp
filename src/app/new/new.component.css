@@ -29,5 +29,8 @@
   gap: 1rem;
   justify-content: flex-end;
 }
+.new-container .new-form .new-footer .delete-btn {
+  margin-right: auto;
+}
 
 /*# sourceMappingURL=new.component.css.map */

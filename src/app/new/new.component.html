@@ -39,8 +39,8 @@
       </app-input>
 
       <div class="new-footer">
-        <ng-container *ngIf="productRequest">
-          <app-button (click)="deleteRequest()" [btnText]="'Delete'" [btnClass]="'red-btn'" [type]="'button'"></app-button>
+        <ng-container class="delete-btn" *ngIf="productRequest">
+          <app-button class="delete-btn" (click)="deleteRequest()" [btnText]="'Delete'" [btnClass]="'red-btn'" [type]="'button'"></app-button>
         </ng-container>
         <app-button [btnText]="'Cancel'" [btnClass]="'darkblue-btn'" [targetRoute]="'/'" [type]="'button'"></app-button>
         <app-button [btnText]="btnText + ' feedback'" [btnClass]="'purple-btn'" [type]="'submit'"></app-button>

@@ -102,6 +102,13 @@ export class ProductRequestService {
     }
   }
 
+  public updateProductRequest(updatedRequest: productRequest): void {
+    const currentProductRequests = this.productRequests$.getValue();
+    const updatedProductRequests = currentProductRequests.map(request => request.id === updatedRequest.id ? updatedRequest : request);
+    this.productRequests$.next(updatedProductRequests);
+  }
+
+
   public deleteRequest(requestId: number): void {
     const currentProductRequests = this.productRequests$.getValue();
     const updatedProductRequests = currentProductRequests.filter(request => request.id !== requestId);
