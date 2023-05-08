@@ -4,11 +4,11 @@
     <app-button [btnText]="'Edit Feedback'" [btnClass]="'blue-btn'"></app-button>
   </div>
 
-  <app-feedback-request [feedbackRequest]="productRequest"></app-feedback-request>
+  <app-feedback-request  [feedbackRequest]="productRequest"></app-feedback-request>
 
   <div class="comments">
     <h3>{{productRequest?.comments?.length}} Comments</h3>
-  <app-comment [productRequest]="productRequest"></app-comment>
+    <app-comment [totalComments]="productRequest?.comments?.length" [productRequest]="productRequest"></app-comment>
   </div>
 
   <div class="post-comment">

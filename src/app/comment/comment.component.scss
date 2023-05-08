@@ -4,6 +4,19 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
+  position: relative;
+
+  .divider {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #8C92B3;
+    mix-blend-mode: normal;
+    opacity: 0.25;
+  }
+
 
   img {
     border-radius: 50%;
@@ -11,7 +24,6 @@
     height: 40px;
   }
 
-  .comment-section {
     .name-section {
       display: flex;
       justify-content: space-between;
@@ -40,7 +52,12 @@
         }
       }
     }
-  }
+
+    .reply-to {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      color: $purple;
+    }
 
   .comment-content {
     font-weight: 400;
@@ -53,9 +70,18 @@
     display: flex;
     align-items: flex-start;
     gap: 1rem;
+    padding-left: 4.4rem;
 
     app-input {
       flex-grow: 1;
     }
   }
 }
+
+.replies{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
+}
+
+

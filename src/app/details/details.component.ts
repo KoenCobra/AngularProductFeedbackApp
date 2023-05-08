@@ -41,7 +41,7 @@ export class DetailsComponent implements OnInit {
         user: {
           image: 'assets/user-images/image-judah.jpg',
           name: 'Judah',
-          username: '@Judah',
+          username: 'Judah',
         },
       };
 

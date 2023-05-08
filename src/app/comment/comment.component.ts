@@ -9,6 +9,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class CommentComponent {
   @Input() productRequest!: productRequest | null;
+  @Input() totalComments!: number | undefined;
   activeReplyCommentId: number | null = null;
 
   replyForm = new FormGroup({

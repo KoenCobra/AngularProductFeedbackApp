@@ -12,8 +12,12 @@
 }
 .details-container .comments {
   background-color: #FFF;
-  padding: 1.5rem 2rem;
+  padding: 1.5rem 2rem 0.5rem;
   border-radius: 10px;
+}
+.details-container .comments app-comment {
+  display: grid;
+  gap: 2rem;
 }
 .details-container .comments h3 {
   font-weight: 700;

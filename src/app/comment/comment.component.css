@@ -2,35 +2,51 @@
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 2rem;
+  position: relative;
+}
+.comment .divider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: #8C92B3;
+  mix-blend-mode: normal;
+  opacity: 0.25;
 }
 .comment img {
   border-radius: 50%;
   width: 40px;
   height: 40px;
 }
-.comment .comment-section .name-section {
+.comment .name-section {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1.05rem;
 }
-.comment .comment-section .name-section .name {
+.comment .name-section .name {
   font-weight: 700;
   font-size: 0.8125rem;
   letter-spacing: -0.194444px;
   color: #3A4374;
 }
-.comment .comment-section .name-section .user-name {
+.comment .name-section .user-name {
   font-weight: 400;
   font-size: 0.8125rem;
   color: #647196;
 }
-.comment .comment-section .name-section .reply-btn {
+.comment .name-section .reply-btn {
   font-weight: 600;
   font-size: 0.8125rem;
   color: #4661E6;
 }
-.comment .comment-section .name-section .reply-btn:hover {
+.comment .name-section .reply-btn:hover {
   text-decoration-line: underline;
+}
+.comment .reply-to {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: #AD1FEA;
 }
 .comment .comment-content {
   font-weight: 400;
@@ -42,9 +58,16 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  padding-left: 4.4rem;
 }
 .comment .reply app-input {
   flex-grow: 1;
+}
+
+.replies {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 2rem;
 }
 
 /*# sourceMappingURL=comment.component.css.map */
