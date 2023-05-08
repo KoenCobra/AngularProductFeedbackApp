@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {NgToastService} from "ng-angular-popup";
@@ -14,8 +14,11 @@ interface Category {
   templateUrl: './new.component.html',
   styleUrls: ['./new.component.scss']
 })
-export class NewComponent {
+export class NewComponent implements OnInit {
   constructor(private router: Router, private toast: NgToastService, private requestService: ProductRequestService) {
+  }
+
+  ngOnInit(): void {
   }
 
   categories: Category[] = [
@@ -26,11 +29,17 @@ export class NewComponent {
     {value: 'Bug'}
   ];
 
+  capitalizeFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+
   feedbackForm = new FormGroup({
     feedbackTitle: new FormControl('', [Validators.required]),
-    feedbackCategory: new FormControl(this.categories[0].value),
+    feedbackCategory: new FormControl(this.capitalizeFirstLetter(this.requestService.selectedCategory$.getValue())),
     feedbackDescription: new FormControl('', [Validators.required])
   })
+
 
   onSubmit() {
     if (this.feedbackForm.invalid) {

@@ -11,10 +11,12 @@ import {Reply} from "./reply";
 })
 export class ProductRequestService {
   public productRequests$ = new BehaviorSubject<productRequest[]>([]);
-  private selectedCategory$ = new BehaviorSubject<string>('all');
+  public selectedCategory$ = new BehaviorSubject<string>('all');
+
   constructor(private http: HttpClient) {
     this.init();
   }
+
   public getAllProductRequests(): Observable<productRequest[]> {
     return combineLatest([this.productRequests$, this.selectedCategory$]).pipe(
       map(([requests, category]) =>
@@ -33,9 +35,11 @@ export class ProductRequestService {
       })
     );
   }
+
   public addProductRequest(item: productRequest): void {
     this.productRequests$.next([...this.productRequests$.getValue(), item]);
   }
+
   public init(): void {
     this.http
       .get<any>('/assets/data.json')
@@ -44,12 +48,15 @@ export class ProductRequestService {
         this.productRequests$.next(response);
       });
   }
+
   public changeCategory(category: string): void {
     this.selectedCategory$.next(category);
   }
+
   public getCurrentCategory(): string {
     return this.selectedCategory$.getValue();
   }
+
   addComment(requestId: number, comment: comment) {
     const currentProductRequests = this.productRequests$.getValue();
     const request = currentProductRequests.find(request => request.id === requestId);
@@ -87,7 +94,9 @@ export class ProductRequestService {
           comments: request.comments?.map(c => c.id === commentId ? comment : c),
         };
 
-        const updatedProductRequests = currentProductRequests.map(productRequest => productRequest.id === requestId ? updatedRequest : productRequest);
+        const updatedProductRequests =
+          currentProductRequests.map(
+            productRequest => productRequest.id === requestId ? updatedRequest : productRequest);
         this.productRequests$.next(updatedProductRequests);
       }
     }
