@@ -49,9 +49,10 @@ export class NewComponent implements OnInit {
     const newItem: productRequest = {
       id: Date.now(),
       title: this.feedbackForm.controls.feedbackTitle.value ?? '',
-      category: this.feedbackForm.controls.feedbackCategory.value ?? '',
+      category: this.feedbackForm.controls.feedbackCategory.value?.toLowerCase() ?? '',
       description: this.feedbackForm.controls.feedbackDescription.value ?? ''
     };
+    console.log(newItem)
 
     this.requestService.addProductRequest(newItem);
     this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 5000, position: 'br'});
