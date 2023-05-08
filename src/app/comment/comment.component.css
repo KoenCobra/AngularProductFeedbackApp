@@ -56,9 +56,7 @@
 }
 .comment .reply {
   display: flex;
-  align-items: flex-start;
   gap: 1rem;
-  padding-left: 4.4rem;
 }
 .comment .reply app-input {
   flex-grow: 1;

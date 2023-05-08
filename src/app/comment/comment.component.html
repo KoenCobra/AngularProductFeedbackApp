@@ -14,6 +14,17 @@
       <p>{{comment.content}}</p>
       <div *ngIf="totalComments && totalComments !== 1 && i !== (totalComments - 1)" class="divider"></div>
     </div>
+    <form [formGroup]="replyForm" (ngSubmit)="onReplySubmit(comment.id)">
+      <div *ngIf="isReplyShowing(comment.id)" class="reply">
+        <app-input
+          [control]="replyForm.controls.reply"
+          controlType="textarea"
+          placeholder="Type your reply here"
+          [maxLength]="250"
+        ></app-input>
+        <app-button btnText="Post Reply" type="submit" btnClass="purple-btn"></app-button>
+      </div>
+    </form>
     <div class="replies" *ngFor="let reply of comment.replies">
       <img src="{{reply.user?.image}}" alt="">
       <div class="comment-section">
@@ -22,22 +33,11 @@
             <p class="name">{{reply.user?.name}}</p>
             <p class="user-name">@{{reply.user?.username}}</p>
           </div>
-          <button (click)="showReply(comment.id)" class="reply-btn">
-            Reply
-          </button>
         </div>
         <div class="comment-content">
           <p><span class="reply-to">@{{reply.replyingTo}}</span> {{reply.content}}</p>
         </div>
       </div>
     </div>
-    <div *ngIf="isReplyShowing(comment.id)" class="reply">
-      <app-input
-        [control]="replyForm.controls.reply"
-        controlType="textarea"
-        placeholder="Type your reply here"
-        [maxLength]="250"
-      ></app-input>
-      <app-button btnText="Post Reply" btnClass="purple-btn"></app-button>
-    </div>
   </div>
+</div>

@@ -42,7 +42,7 @@ export class DetailsComponent implements OnInit {
           image: 'assets/user-images/image-judah.jpg',
           name: 'Judah',
           username: 'Judah',
-        },
+        }
       };
 
       this.requestService.addComment(this.productRequest.id, commentData);

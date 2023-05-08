@@ -4,6 +4,7 @@ import {map} from 'rxjs/operators';
 import {productRequest} from './product-request';
 import {HttpClient} from '@angular/common/http';
 import {comment} from "./comment";
+import {Reply} from "./reply";
 
 @Injectable({
   providedIn: 'root',
@@ -71,4 +72,24 @@ export class ProductRequestService {
     }
   }
 
+  public addReply(requestId: number, commentId: number, reply: Reply): void {
+    const currentProductRequests = this.productRequests$.getValue();
+    const request = currentProductRequests.find(request => request.id === requestId);
+
+    if (request) {
+      const comment = request.comments?.find(comment => comment.id === commentId);
+
+      if (comment) {
+        comment.replies = comment.replies ? [...comment.replies, reply] : [reply];
+
+        const updatedRequest = {
+          ...request,
+          comments: request.comments?.map(c => c.id === commentId ? comment : c),
+        };
+
+        const updatedProductRequests = currentProductRequests.map(productRequest => productRequest.id === requestId ? updatedRequest : productRequest);
+        this.productRequests$.next(updatedProductRequests);
+      }
+    }
+  }
 }

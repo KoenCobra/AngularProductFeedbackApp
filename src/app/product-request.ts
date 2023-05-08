@@ -6,7 +6,7 @@ export interface productRequest {
   status?: string | null;
   description: string | null;
   comments?: {
-    id: number;
+    id : number;
     content: string | null;
     user?: {
       image: string | null;
@@ -17,9 +17,9 @@ export interface productRequest {
       content: string | null;
       replyingTo: string | null;
       user?: {
-        image: string | null;
-        name: string | null;
-        username: string | null;
+        image?: string | null;
+        name?: string | null;
+        username?: string | null;
       };
     }[];
   }[];
