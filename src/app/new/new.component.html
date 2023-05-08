@@ -10,17 +10,17 @@
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
       <app-input
         controlType="input"
-        [control]="feedbackForm.controls.feedbackTitle"
+        [control]="feedbackForm.controls['feedbackTitle']"
         [label]="'Feedback Title'"
         [subLabel]="'Add a short, descriptive headline'">
       </app-input>
 
       <app-input
-        [control]="feedbackForm.controls.feedbackCategory"
+        [control]="feedbackForm.controls['feedbackCategory']"
         [label]="'Category'"
         [subLabel]="'Choose a category for your feedback'">
         <mat-form-field appearance="fill">
-          <mat-select [formControl]="feedbackForm.controls.feedbackCategory">
+          <mat-select [formControl]="feedbackForm.controls['feedbackCategory']">
             <mat-option *ngFor="let category of categories" [value]="category.value">
               {{category.value}}
             </mat-option>
@@ -30,7 +30,7 @@
 
       <app-input
         controlType="textarea"
-        [control]="feedbackForm.controls.feedbackDescription"
+        [control]="feedbackForm.controls['feedbackDescription']"
         [label]="'Feedback Detail'"
         [subLabel]="'Include any specific comments on what should be improved, added, etc.'"
         [maxLength]="250">

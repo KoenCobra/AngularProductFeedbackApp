@@ -15,7 +15,7 @@ import {InputComponent} from "../shared/input/input.component";
 export class DetailsComponent implements OnInit {
   requestId: string = '';
   productRequest!: productRequest | null;
-  @ViewChild(InputComponent, {static: false}) inputComponent!: InputComponent;
+  @ViewChild(InputComponent) inputComponent!: InputComponent;
 
   commentForm = new FormGroup({
     comment: new FormControl('', Validators.required)

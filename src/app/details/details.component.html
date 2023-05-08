@@ -1,7 +1,11 @@
 <div class="details-container">
   <div class="details-header">
     <app-backlink></app-backlink>
-    <app-button [btnText]="'Edit Feedback'" [btnClass]="'blue-btn'"></app-button>
+    <app-button
+      [btnText]="'Edit Feedback'"
+      [btnClass]="'blue-btn'"
+      [targetRoute]="'update/' + productRequest?.id">
+    </app-button>
   </div>
 
   <app-feedback-request  [feedbackRequest]="productRequest"></app-feedback-request>
