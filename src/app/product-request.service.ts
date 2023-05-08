@@ -101,4 +101,11 @@ export class ProductRequestService {
       }
     }
   }
+
+  public deleteRequest(requestId: number): void {
+    const currentProductRequests = this.productRequests$.getValue();
+    const updatedProductRequests = currentProductRequests.filter(request => request.id !== requestId);
+    this.productRequests$.next(updatedProductRequests);
+  }
+
 }

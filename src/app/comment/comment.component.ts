@@ -1,4 +1,4 @@
-import {Component, Input, ViewChild} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {productRequest} from '../product-request';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Reply} from "../reply";

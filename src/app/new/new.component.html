@@ -5,7 +5,9 @@
 
   <div class="new-form">
     <img src="assets/shared/icon-new-feedback.svg" alt="">
-    <h2 class="feedback-title">Create new feedback</h2>
+    <h2 class="feedback-title">
+      {{title}} new feedback
+    </h2>
 
     <form [formGroup]="feedbackForm" (ngSubmit)="onSubmit()">
       <app-input
@@ -37,8 +39,11 @@
       </app-input>
 
       <div class="new-footer">
+        <ng-container *ngIf="productRequest">
+          <app-button (click)="deleteRequest()" [btnText]="'Delete'" [btnClass]="'red-btn'" [type]="'button'"></app-button>
+        </ng-container>
         <app-button [btnText]="'Cancel'" [btnClass]="'darkblue-btn'" [targetRoute]="'/'" [type]="'button'"></app-button>
-        <app-button [btnText]="'Add FeedBack'" [btnClass]="'purple-btn'" [type]="'submit'"></app-button>
+        <app-button [btnText]="btnText + ' feedback'" [btnClass]="'purple-btn'" [type]="'submit'"></app-button>
       </div>
     </form>
   </div>
