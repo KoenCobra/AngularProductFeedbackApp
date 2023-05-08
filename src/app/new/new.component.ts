@@ -34,11 +34,11 @@ export class NewComponent implements OnInit {
   }
 
   categories: Category[] = [
-    {value: 'Feature'},
+    {value: 'feature'},
     {value: 'UI'},
     {value: 'UX'},
-    {value: 'Enhancement'},
-    {value: 'Bug'}
+    {value: 'enhancement'},
+    {value: 'bug'}
   ];
 
   capitalizeFirstLetter(str: string): string {
@@ -47,7 +47,7 @@ export class NewComponent implements OnInit {
 
   feedbackForm = new FormGroup({
     feedbackTitle: new FormControl('', [Validators.required]),
-    feedbackCategory: new FormControl(this.capitalizeFirstLetter(this.requestService.selectedCategory$.getValue())),
+    feedbackCategory: new FormControl(this.requestService.selectedCategory$.getValue()),
     feedbackDescription: new FormControl('', [Validators.required])
   })
 
@@ -71,7 +71,7 @@ export class NewComponent implements OnInit {
     const newItem: productRequest = {
       id: Date.now(),
       title: this.feedbackForm.controls.feedbackTitle.value ?? '',
-      category: this.feedbackForm.controls.feedbackCategory.value?.toLowerCase() ?? '',
+      category: this.feedbackForm.controls.feedbackCategory.value ?? '',
       description: this.feedbackForm.controls.feedbackDescription.value ?? ''
     };
 
