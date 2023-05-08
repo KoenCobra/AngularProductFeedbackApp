@@ -1,10 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ProductRequestService} from "../product-request.service";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {map} from "rxjs/operators";
 import {comment} from "../comment";
 import {productRequest} from "../product-request";
+import {InputComponent} from "../shared/input/input.component";
 
 @Component({
   selector: 'app-details',
@@ -14,6 +15,7 @@ import {productRequest} from "../product-request";
 export class DetailsComponent implements OnInit {
   requestId: string = '';
   productRequest!: productRequest | null;
+  @ViewChild(InputComponent, {static: false}) inputComponent!: InputComponent;
 
   commentForm = new FormGroup({
     comment: new FormControl('', Validators.required)
@@ -47,8 +49,7 @@ export class DetailsComponent implements OnInit {
 
       this.requestService.addComment(this.productRequest.id, commentData);
       this.commentForm.reset();
+      this.inputComponent.charactersLeft = this.inputComponent.maxLength;
     }
   }
-
-
 }

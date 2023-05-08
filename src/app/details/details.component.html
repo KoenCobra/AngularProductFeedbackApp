@@ -16,7 +16,7 @@
     <form [formGroup]="commentForm" (ngSubmit)="commentFormSubmit()">
       <app-input
         controlType="textarea"
-        [maxLength]="255"
+        [maxLength]="250"
         [control]="commentForm.controls.comment"
         placeholder="Type your comment here">
       </app-input>
