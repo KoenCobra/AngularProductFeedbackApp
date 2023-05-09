@@ -12,6 +12,7 @@ import {Reply} from "./reply";
 export class ProductRequestService {
   public productRequests$ = new BehaviorSubject<productRequest[]>([]);
   public selectedCategory$ = new BehaviorSubject<string>('all');
+  private localStorageKey = 'productRequests';
 
   constructor(private http: HttpClient) {
     this.init();
@@ -37,16 +38,34 @@ export class ProductRequestService {
   }
 
   public addProductRequest(item: productRequest): void {
-    this.productRequests$.next([...this.productRequests$.getValue(), item]);
+    const updatedProductRequests = [...this.productRequests$.getValue(), item];
+    this.productRequests$.next(updatedProductRequests);
+    this.saveToLocalStorage(updatedProductRequests);
   }
 
+
   public init(): void {
-    this.http
-      .get<any>('/assets/data.json')
-      .pipe(map((response) => response['productRequests']))
-      .subscribe((response) => {
-        this.productRequests$.next(response);
-      });
+    const localStorageData = this.loadFromLocalStorage();
+    if (localStorageData) {
+      this.productRequests$.next(localStorageData);
+    } else {
+      this.http
+        .get<any>('/assets/data.json')
+        .pipe(map((response) => response['productRequests']))
+        .subscribe((response) => {
+          this.productRequests$.next(response);
+          this.saveToLocalStorage(response);
+        });
+    }
+  }
+
+  private saveToLocalStorage(data: productRequest[]): void {
+    localStorage.setItem(this.localStorageKey, JSON.stringify(data));
+  }
+
+  private loadFromLocalStorage(): productRequest[] | null {
+    const data = localStorage.getItem(this.localStorageKey);
+    return data ? JSON.parse(data) : null;
   }
 
   public changeCategory(category: string): void {
@@ -76,6 +95,7 @@ export class ProductRequestService {
       const updatedProductRequests =
         currentProductRequests.map(productRequest => productRequest.id === requestId ? updatedProductRequest : productRequest);
       this.productRequests$.next(updatedProductRequests);
+      this.saveToLocalStorage(updatedProductRequests);
     }
   }
 
@@ -98,6 +118,7 @@ export class ProductRequestService {
           currentProductRequests.map(
             productRequest => productRequest.id === requestId ? updatedRequest : productRequest);
         this.productRequests$.next(updatedProductRequests);
+        this.saveToLocalStorage(updatedProductRequests);
       }
     }
   }
@@ -106,6 +127,7 @@ export class ProductRequestService {
     const currentProductRequests = this.productRequests$.getValue();
     const updatedProductRequests = currentProductRequests.map(request => request.id === updatedRequest.id ? updatedRequest : request);
     this.productRequests$.next(updatedProductRequests);
+    this.saveToLocalStorage(updatedProductRequests);
   }
 
 
@@ -113,6 +135,6 @@ export class ProductRequestService {
     const currentProductRequests = this.productRequests$.getValue();
     const updatedProductRequests = currentProductRequests.filter(request => request.id !== requestId);
     this.productRequests$.next(updatedProductRequests);
+    this.saveToLocalStorage(updatedProductRequests);
   }
-
 }
