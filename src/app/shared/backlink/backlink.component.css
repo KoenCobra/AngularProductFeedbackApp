@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 }
 .back-link a {
   color: #647196;

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-backlink',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./backlink.component.scss']
 })
 export class BacklinkComponent {
+  constructor(private location: Location) { }
+  goBack() {
+    this.location.back();
+  }
 
 }

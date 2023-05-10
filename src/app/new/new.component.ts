@@ -5,6 +5,7 @@ import {NgToastService} from "ng-angular-popup";
 import {ProductRequestService} from "../product-request.service";
 import {productRequest} from "../product-request";
 import {map} from "rxjs/operators";
+import {Location} from "@angular/common";
 
 interface Category {
   value: string;
@@ -22,7 +23,7 @@ export class NewComponent implements OnInit {
   btnText: string = 'Add';
 
   constructor(private router: Router, private toast: NgToastService, private requestService: ProductRequestService,
-              private route: ActivatedRoute) {
+              private route: ActivatedRoute, private location: Location) {
   }
 
   ngOnInit(): void {
@@ -111,5 +112,9 @@ export class NewComponent implements OnInit {
       });
       this.router.navigateByUrl('/');
     }
+  }
+
+  goBack() {
+    this.location.back();
   }
 }

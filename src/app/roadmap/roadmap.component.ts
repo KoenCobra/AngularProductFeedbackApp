@@ -13,7 +13,7 @@ export class RoadmapComponent implements OnInit {
   planned: productRequest[] = [];
   inProgress: productRequest[] = [];
   live: productRequest[] = [];
-  category:BehaviorSubject<string> =  new BehaviorSubject<string>('');
+  category: BehaviorSubject<string> = new BehaviorSubject<string>('');
 
   constructor(private requestService: ProductRequestService) {
   }
