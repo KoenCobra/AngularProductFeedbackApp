@@ -21,6 +21,7 @@ export class SideBarComponent implements OnInit{
   liveRequests$!: Observable<number>;
 
   constructor(private requestService: ProductRequestService) {
+    this.currentCategory = this.requestService.getCurrentCategory();
   }
 
   ngOnInit(): void {

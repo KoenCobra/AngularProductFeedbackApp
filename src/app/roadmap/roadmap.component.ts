@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {productRequest} from "../product-request";
 import {ProductRequestService} from "../product-request.service";
+import {BehaviorSubject} from "rxjs";
 
 @Component({
   selector: 'app-roadmap',
@@ -12,6 +13,7 @@ export class RoadmapComponent implements OnInit {
   planned: productRequest[] = [];
   inProgress: productRequest[] = [];
   live: productRequest[] = [];
+  category:BehaviorSubject<string> =  new BehaviorSubject<string>('');
 
   constructor(private requestService: ProductRequestService) {
   }
@@ -22,6 +24,8 @@ export class RoadmapComponent implements OnInit {
       this.inProgress = requests.filter(request => request.status === 'in-progress');
       this.live = requests.filter(request => request.status === 'live');
     });
+
+    this.category = this.requestService.selectedCategory$;
   }
 
   drop(event: CdkDragDrop<productRequest[]>) {

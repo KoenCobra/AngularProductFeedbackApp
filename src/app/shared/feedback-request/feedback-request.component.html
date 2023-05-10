@@ -1,7 +1,7 @@
 <div *ngIf="feedbackRequest" class="product-request">
   <div class="upvote">
     <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-    <p class="upvote-amount">{{feedbackRequest.upvotes}}</p>
+    <p class="upvote-amount">{{feedbackRequest.upvotes ?? 0}}</p>
   </div>
   <div [routerLink]="['/details', feedbackRequest.id]"  class="request-info">
     <h3 class="request-title">{{feedbackRequest.title}}</h3>

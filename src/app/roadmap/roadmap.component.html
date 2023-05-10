@@ -5,51 +5,132 @@
         <img src="assets/shared/icon-arrow-left.svg" alt="">
         <a routerLink="/">Go Back</a>
       </div>
-      <h1>Roadmap</h1>
+      <h1>Roadmap for '{{category |async}}'</h1>
     </div>
     <app-button btnClass="purple-btn" targetRoute="new" btnText="+ Add Feedback"></app-button>
   </div>
   <div class="roadmap-body">
     <div class="roadmap-column">
       <h3>Planned ({{planned.length}})</h3>
-      <p>Ideas prioritized for research</p>
+      <p class="column-subtitle">Ideas prioritized for research</p>
       <div
         id="planned"
         cdkDropList
         #plannedList="cdkDropList"
         [cdkDropListData]="planned"
         [cdkDropListConnectedTo]="[inProgressList, liveList]"
-        class="example-list"
+        class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of planned" cdkDrag>{{item.title}}</div>
+        <div class="roadmap-box orange-box" *ngFor="let item of planned" cdkDrag>
+          <div class="box-header">
+            <div class="dot">
+            </div>
+            <p>Planned</p>
+          </div>
+          <div class="box-content">
+            <h3>
+              {{item.title}}
+            </h3>
+            <p>{{item.description}}</p>
+          </div>
+          <div class="box-footer">
+            <div class="upvote">
+              <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+              <p class="upvote-amount">{{item.upvotes ?? 0}}</p>
+            </div>
+            <div class="box-category">
+              {{item.category}}
+            </div>
+            <div [routerLink]="['/details', item.id]"  class="request-comments">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <p class="comment-amount">
+                {{item.comments?.length ?? 0}}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="roadmap-column">
       <h3>In-Progress ({{inProgress.length}})</h3>
-      <p>Currently being developed</p>
+      <p class="column-subtitle">Currently being developed</p>
       <div
         id="in-progress"
         cdkDropList
         #inProgressList="cdkDropList"
         [cdkDropListData]="inProgress"
         [cdkDropListConnectedTo]="[plannedList, liveList]"
-        class="example-list"
+        class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{item.title}}</div>
+          <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
+            <div class="box-header">
+              <div class="dot">
+              </div>
+              <p>In Progress</p>
+            </div>
+            <div class="box-content">
+              <h3>
+                {{item.title}}
+              </h3>
+              <p>{{item.description}}</p>
+            </div>
+            <div class="box-footer">
+              <div class="upvote">
+                <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                <p class="upvote-amount">{{item.upvotes}}</p>
+              </div>
+              <div class="box-category">
+                {{item.category}}
+              </div>
+              <div [routerLink]="['/details', item.id]"  class="request-comments">
+                <img src="assets/shared/icon-comments.svg" alt="">
+                <p class="comment-amount">
+                  {{item.comments?.length ?? 0}}
+                </p>
+              </div>
+            </div>
+        </div>
       </div>
     </div>
     <div class="roadmap-column">
       <h3>Live ({{live.length}})</h3>
-      <p>Released features</p>
+      <p class="column-subtitle">Released features</p>
       <div
         id="live"
         cdkDropList
         #liveList="cdkDropList"
         [cdkDropListData]="live"
         [cdkDropListConnectedTo]="[plannedList, inProgressList]"
-        class="example-list"
+        class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of live" cdkDrag>{{item.title}}</div>
+        <div class="roadmap-box blue-box" *ngFor="let item of live" cdkDrag>
+          <div class="box-header">
+            <div class="dot">
+            </div>
+            <p>Live</p>
+          </div>
+          <div class="box-content">
+            <h3>
+              {{item.title}}
+            </h3>
+            <p>{{item.description}}</p>
+          </div>
+          <div class="box-footer">
+            <div class="upvote">
+              <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+              <p class="upvote-amount">{{item.upvotes}}</p>
+            </div>
+            <div class="box-category">
+              {{item.category}}
+            </div>
+            <div [routerLink]="['/details', item.id]"  class="request-comments">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <p class="comment-amount">
+                {{item.comments?.length ?? 0}}
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
