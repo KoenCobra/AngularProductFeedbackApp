@@ -22,11 +22,11 @@
         class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
         <div class="roadmap-box orange-box" *ngFor="let item of planned" cdkDrag>
-          <div class="box-header">
-            <div class="dot">
-            </div>
-            <p>Planned</p>
-          </div>
+<!--          <div class="box-header">-->
+<!--            <div class="dot">-->
+<!--            </div>-->
+<!--            <p>Planned</p>-->
+<!--          </div>-->
           <div class="box-content">
             <h3>
               {{item.title}}
@@ -63,11 +63,11 @@
         class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
           <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
-            <div class="box-header">
-              <div class="dot">
-              </div>
-              <p>In Progress</p>
-            </div>
+<!--            <div class="box-header">-->
+<!--              <div class="dot purple-dot">-->
+<!--              </div>-->
+<!--              <p>In Progress</p>-->
+<!--            </div>-->
             <div class="box-content">
               <h3>
                 {{item.title}}
@@ -104,11 +104,11 @@
         class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
         <div class="roadmap-box blue-box" *ngFor="let item of live" cdkDrag>
-          <div class="box-header">
-            <div class="dot">
-            </div>
-            <p>Live</p>
-          </div>
+<!--          <div class="box-header">-->
+<!--            <div class="dot blue-dot">-->
+<!--            </div>-->
+<!--            <p>Live</p>-->
+<!--          </div>-->
           <div class="box-content">
             <h3>
               {{item.title}}

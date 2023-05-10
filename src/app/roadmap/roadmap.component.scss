@@ -56,7 +56,6 @@
       }
 
       .box-content {
-        padding-top: 0.5rem;
 
         h3 {
           font-weight: 700;
@@ -134,7 +133,7 @@
 
 .roadmap-box {
   border-radius: 5px;
-  padding: 2rem;
+  padding: 1.5rem 2rem;
   cursor: move;
   background: $white;
   margin-bottom: 1.5rem;
@@ -163,13 +162,74 @@
   background-color: $orange;
   padding: 0.25rem;
   margin-right: 1rem;
+
+  &.purple-dot {
+    background-color: $purple;
+  }
+
+  &.blue-dot {
+    background-color: $blue;
+  }
 }
 
 .cdk-drag-preview {
+  box-sizing: border-box;
   border-radius: 5px;
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
   0 8px 10px 1px rgba(0, 0, 0, 0.14),
   0 3px 14px 2px rgba(0, 0, 0, 0.12);
+
+  .box-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+
+    .upvote {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 0.55rem 0.5rem;
+      background-color: $lightGreyBackground;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+
+      .upvote-amount {
+        letter-spacing: -0.180556px;
+        font-weight: 700;
+        font-size: 13px;
+      }
+
+      &:hover {
+        background-color: $greyBlue;
+      }
+    }
+
+    .box-category {
+      background-color: $lightGreyBackground;
+      padding: 0.4rem 1rem;
+      width: min-content;
+      color: $blue;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 0.8125rem;
+    }
+
+    .request-comments {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: -0.222222px;
+      color: $darkBlue;
+      align-self: center;
+    }
+  }
 }
 
 .cdk-drag-placeholder {
