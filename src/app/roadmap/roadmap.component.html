@@ -1,0 +1,56 @@
+<div class="roadmap-container">
+  <div class="roadmap-header">
+    <div>
+      <div class="back-link">
+        <img src="assets/shared/icon-arrow-left.svg" alt="">
+        <a routerLink="/">Go Back</a>
+      </div>
+      <h1>Roadmap</h1>
+    </div>
+    <app-button btnClass="purple-btn" targetRoute="new" btnText="+ Add Feedback"></app-button>
+  </div>
+  <div class="roadmap-body">
+    <div class="roadmap-column">
+      <h3>Planned ({{planned.length}})</h3>
+      <p>Ideas prioritized for research</p>
+      <div
+        id="planned"
+        cdkDropList
+        #plannedList="cdkDropList"
+        [cdkDropListData]="planned"
+        [cdkDropListConnectedTo]="[inProgressList, liveList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of planned" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+    <div class="roadmap-column">
+      <h3>In-Progress ({{inProgress.length}})</h3>
+      <p>Currently being developed</p>
+      <div
+        id="in-progress"
+        cdkDropList
+        #inProgressList="cdkDropList"
+        [cdkDropListData]="inProgress"
+        [cdkDropListConnectedTo]="[plannedList, liveList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of inProgress" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+    <div class="roadmap-column">
+      <h3>Live ({{live.length}})</h3>
+      <p>Released features</p>
+      <div
+        id="live"
+        cdkDropList
+        #liveList="cdkDropList"
+        [cdkDropListData]="live"
+        [cdkDropListConnectedTo]="[plannedList, inProgressList]"
+        class="example-list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="example-box" *ngFor="let item of live" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+  </div>
+</div>

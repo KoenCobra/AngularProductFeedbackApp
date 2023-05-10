@@ -20,6 +20,8 @@ import { FeedbackRequestComponent } from './shared/feedback-request/feedback-req
 import { BacklinkComponent } from './shared/backlink/backlink.component';
 import { InputComponent } from './shared/input/input.component';
 import { UpdateComponent } from './update/update.component';
+import { RoadmapComponent } from './roadmap/roadmap.component';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +36,8 @@ import { UpdateComponent } from './update/update.component';
     FeedbackRequestComponent,
     BacklinkComponent,
     InputComponent,
-    UpdateComponent
+    UpdateComponent,
+    RoadmapComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +47,7 @@ import { UpdateComponent } from './update/update.component';
     MatSelectModule,
     ReactiveFormsModule,
     NgToastModule,
+    DragDropModule
   ],
   providers: [],
   bootstrap: [AppComponent]

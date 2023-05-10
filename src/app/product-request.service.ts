@@ -137,4 +137,17 @@ export class ProductRequestService {
     this.productRequests$.next(updatedProductRequests);
     this.saveToLocalStorage(updatedProductRequests);
   }
+
+  public updateProductRequestStatus(requestId: number, status: string): void {
+    const currentProductRequests = this.productRequests$.getValue();
+    const updatedProductRequests = currentProductRequests.map(request => {
+      if (request.id === requestId) {
+        return {...request, status};
+      } else {
+        return request;
+      }
+    });
+    this.productRequests$.next(updatedProductRequests);
+    this.saveToLocalStorage(updatedProductRequests);
+  }
 }

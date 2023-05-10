@@ -26,21 +26,21 @@
           <div class="road-map-dot-planned"></div>
           <p>Planned</p>
         </div>
-        <p class="road-map-amount">1</p>
+        <p class="road-map-amount">{{ plannedRequests$ | async }}</p>
       </div>
       <div class="content-item">
         <div class="content-item-title">
           <div class="road-map-dot-progress"></div>
           <p>In-Progress</p>
         </div>
-        <p class="road-map-amount">1</p>
+        <p class="road-map-amount">{{ inProgressRequests$ | async }}</p>
       </div>
       <div class="content-item">
         <div class="content-item-title">
           <div class="road-map-dot-live"></div>
           <p>Live</p>
         </div>
-        <p class="road-map-amount">1</p>
+        <p class="road-map-amount">{{ liveRequests$ | async }}</p>
       </div>
     </div>
   </div>
