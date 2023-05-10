@@ -1,9 +1,13 @@
 .index {
   display: grid;
-  grid-template-columns: 255px 825px;
+  grid-template-columns: 255px auto;
   gap: 1.875rem;
   justify-content: center;
-  padding: 3.8rem 0;
+}
+@media (max-width: 900px) {
+  .index {
+    grid-template-columns: 1fr;
+  }
 }
 .index .product-requests {
   display: grid;

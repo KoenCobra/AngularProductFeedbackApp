@@ -1,3 +1,11 @@
+@import "../sass/Variables";
 
+.content{
+  padding: 3.8rem 1rem;
+
+  @media (max-width: $tablet) {
+    padding: 1rem;
+  }
+}
 
 

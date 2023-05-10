@@ -29,14 +29,16 @@
             <p>{{item.description}}</p>
           </div>
           <div class="box-footer">
-            <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
-              <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-              <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
-            </button>
-            <div class="box-category">
-              {{item.category}}
+            <div class="box-footer-left">
+              <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+              </button>
+              <div class="box-category">
+                {{item.category}}
+              </div>
             </div>
-            <div [routerLink]="['/details', item.id]"  class="request-comments">
+            <div [routerLink]="['/details', item.id]" class="request-comments">
               <img src="assets/shared/icon-comments.svg" alt="">
               <p class="comment-amount">
                 {{item.comments?.length ?? 0}}
@@ -57,14 +59,15 @@
         [cdkDropListConnectedTo]="[plannedList, liveList]"
         class="roadmap-list"
         (cdkDropListDropped)="drop($event)">
-          <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
-            <div class="box-content">
-              <h3>
-                {{item.title}}
-              </h3>
-              <p>{{item.description}}</p>
-            </div>
-            <div class="box-footer">
+        <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
+          <div class="box-content">
+            <h3>
+              {{item.title}}
+            </h3>
+            <p>{{item.description}}</p>
+          </div>
+          <div class="box-footer">
+            <div class="box-footer-left">
               <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
                 <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
                 <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
@@ -72,13 +75,14 @@
               <div class="box-category">
                 {{item.category}}
               </div>
-              <div [routerLink]="['/details', item.id]"  class="request-comments">
-                <img src="assets/shared/icon-comments.svg" alt="">
-                <p class="comment-amount">
-                  {{item.comments?.length ?? 0}}
-                </p>
-              </div>
             </div>
+            <div [routerLink]="['/details', item.id]" class="request-comments">
+              <img src="assets/shared/icon-comments.svg" alt="">
+              <p class="comment-amount">
+                {{item.comments?.length ?? 0}}
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -101,14 +105,16 @@
             <p>{{item.description}}</p>
           </div>
           <div class="box-footer">
-            <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
-              <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-              <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
-            </button>
-            <div class="box-category">
-              {{item.category}}
+            <div class="box-footer-left">
+              <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+              </button>
+              <div class="box-category">
+                {{item.category}}
+              </div>
             </div>
-            <div [routerLink]="['/details', item.id]"  class="request-comments">
+            <div [routerLink]="['/details', item.id]" class="request-comments">
               <img src="assets/shared/icon-comments.svg" alt="">
               <p class="comment-amount">
                 {{item.comments?.length ?? 0}}

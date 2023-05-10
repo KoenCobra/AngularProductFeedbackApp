@@ -1,3 +1,10 @@
-
+.content {
+  padding: 3.8rem 1rem;
+}
+@media (max-width: 900px) {
+  .content {
+    padding: 1rem;
+  }
+}
 
 /*# sourceMappingURL=app.component.css.map */

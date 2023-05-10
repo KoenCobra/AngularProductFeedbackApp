@@ -3,7 +3,6 @@
   margin-inline: auto;
   display: grid;
   gap: 1.5rem;
-  padding: 3rem 0 3rem;
 }
 .details-container .details-header {
   display: flex;
