@@ -10,5 +10,8 @@
   font-size: 0.875rem;
   text-decoration: none;
 }
+.back-link a:hover {
+  text-decoration: underline;
+}
 
 /*# sourceMappingURL=backlink.component.css.map */

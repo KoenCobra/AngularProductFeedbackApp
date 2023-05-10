@@ -13,28 +13,28 @@
   background-color: #AD1FEA;
 }
 .purple-btn:hover {
-  background-color: #b940ed;
+  background-color: #be4eee;
 }
 
 .darkblue-btn {
   background-color: #3A4374;
 }
 .darkblue-btn:hover {
-  background-color: #46518c;
+  background-color: #4b5796;
 }
 
 .blue-btn {
   background-color: #4661E6;
 }
 .blue-btn:hover {
-  background-color: #657cea;
+  background-color: #7387ec;
 }
 
 .red-btn {
   background-color: #D73737;
 }
 .red-btn:hover {
-  background-color: #dd5555;
+  background-color: #e06262;
 }
 
 /*# sourceMappingURL=button.component.css.map */

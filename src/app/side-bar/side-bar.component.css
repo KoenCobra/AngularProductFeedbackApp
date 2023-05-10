@@ -63,6 +63,7 @@
 .sidebar .road-map .road-map-header a {
   color: #4661E6;
   font-size: 0.8125rem;
+  text-decoration: underline;
   font-weight: 600;
 }
 .sidebar .road-map .road-map-content {
