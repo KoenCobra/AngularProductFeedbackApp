@@ -20,7 +20,7 @@
 }
 @media (max-width: 700px) {
   .index .product-requests {
-    padding-inline: 1rem;
+    padding: 0 1rem 1rem;
   }
 }
 

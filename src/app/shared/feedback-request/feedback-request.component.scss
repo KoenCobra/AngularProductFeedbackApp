@@ -8,6 +8,12 @@
   grid-template-columns: auto 1fr auto;
   align-items: start;
   gap: 2.5rem;
+  position: relative;
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
 
   .upvoted-btn {
     background-color: $blue !important;
@@ -29,6 +35,12 @@
     border-radius: 10px;
     cursor: pointer;
     transition: all 0.15s ease-in-out;
+
+    @media (max-width: $mobile) {
+      order: 5;
+      width: max-content;
+      flex-direction: row;
+    }
 
     .upvote-amount {
       letter-spacing: -0.180556px;
@@ -81,5 +93,11 @@
     letter-spacing: -0.222222px;
     color: $darkBlue;
     align-self: center;
+
+    @media (max-width: $mobile) {
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+    }
   }
 }

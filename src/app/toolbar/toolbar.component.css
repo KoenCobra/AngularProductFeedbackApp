@@ -64,6 +64,7 @@
   box-shadow: 0 10px 40px -7px rgba(55, 63, 104, 0.350492);
   border-radius: 10px;
   width: 255px;
+  z-index: 10;
 }
 .toolbar .toolbar-info .sort .sort-dropdown ul {
   list-style: none;
