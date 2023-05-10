@@ -2,9 +2,10 @@ export interface productRequest {
   id: number;
   title: string | null;
   category: string | null;
-  upvotes?: number;
+  upvotes: number;
   status?: string | null;
   description: string | null;
+  userHasUpvoted?: boolean;
   comments?: {
     id : number;
     content: string | null;

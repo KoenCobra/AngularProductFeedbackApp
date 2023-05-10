@@ -90,6 +90,7 @@ export class NewComponent implements OnInit {
     } else {
       const newItem: productRequest = {
         id: Date.now(),
+        upvotes: 0,
         title: this.feedbackForm.controls.feedbackTitle.value ?? '',
         category: this.feedbackForm.controls.feedbackCategory.value ?? '',
         description: this.feedbackForm.controls.feedbackDescription.value ?? ''

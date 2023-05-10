@@ -5,6 +5,7 @@ import {productRequest} from './product-request';
 import {HttpClient} from '@angular/common/http';
 import {comment} from "./comment";
 import {Reply} from "./reply";
+import {NgToastService} from "ng-angular-popup";
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +15,7 @@ export class ProductRequestService {
   public selectedCategory$ = new BehaviorSubject<string>('all');
   private localStorageKey = 'productRequests';
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private toast: NgToastService) {
     this.init();
   }
 
@@ -150,4 +151,32 @@ export class ProductRequestService {
     this.productRequests$.next(updatedProductRequests);
     this.saveToLocalStorage(updatedProductRequests);
   }
+
+  public upvoteProductRequest(requestId: number): void {
+    const currentProductRequests = this.productRequests$.getValue();
+    const request = currentProductRequests.find(request => request.id === requestId);
+
+    if (request && !request.userHasUpvoted) {
+      request.upvotes += 1;
+      request.userHasUpvoted = true;
+      this.toast.success({
+        detail: 'SUCCESS',
+        summary: 'Upvote is registered',
+        duration: 4000,
+        position: 'br',
+      });
+      const updatedProductRequests =
+        currentProductRequests.map(productRequest => productRequest.id === requestId ? request : productRequest);
+      this.productRequests$.next(updatedProductRequests);
+      this.saveToLocalStorage(updatedProductRequests);
+    } else {
+      this.toast.error({
+        detail: 'Take it easy...',
+        summary: 'You can only upvote once',
+        duration: 4000,
+        position: 'br',
+      });
+    }
+  }
+
 }

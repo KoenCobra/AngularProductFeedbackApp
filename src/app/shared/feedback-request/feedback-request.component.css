@@ -7,6 +7,13 @@
   align-items: start;
   gap: 2.5rem;
 }
+.product-request .upvoted-btn {
+  background-color: #4661E6 !important;
+  color: white;
+}
+.product-request .upvoted-btn img {
+  filter: brightness(0) invert(1);
+}
 .product-request .upvote {
   display: flex;
   flex-direction: column;

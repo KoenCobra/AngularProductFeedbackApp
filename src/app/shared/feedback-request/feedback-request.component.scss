@@ -9,6 +9,15 @@
   align-items: start;
   gap: 2.5rem;
 
+  .upvoted-btn {
+    background-color: $blue !important;
+    color: white;
+
+    img {
+      filter: brightness(0) invert(1);
+    }
+  }
+
   .upvote {
     display: flex;
     flex-direction: column;

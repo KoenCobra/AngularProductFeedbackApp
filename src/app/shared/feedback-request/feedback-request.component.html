@@ -1,8 +1,8 @@
 <div *ngIf="feedbackRequest" class="product-request">
-  <div class="upvote">
+  <button [ngClass]="feedbackRequest.userHasUpvoted ? 'upvoted-btn' : ''" class="upvote btn" (click)="upVote()">
     <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
     <p class="upvote-amount">{{feedbackRequest.upvotes ?? 0}}</p>
-  </div>
+  </button>
   <div [routerLink]="['/details', feedbackRequest.id]"  class="request-info">
     <h3 class="request-title">{{feedbackRequest.title}}</h3>
     <p class="request-description">

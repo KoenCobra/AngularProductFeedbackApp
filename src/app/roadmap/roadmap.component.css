@@ -61,6 +61,13 @@
   justify-content: space-between;
   padding-top: 1rem;
 }
+.roadmap-container .roadmap-body .roadmap-column .box-footer .upvoted-btn {
+  background-color: #4661E6 !important;
+  color: white;
+}
+.roadmap-container .roadmap-body .roadmap-column .box-footer .upvoted-btn img {
+  filter: brightness(0) invert(1);
+}
 .roadmap-container .roadmap-body .roadmap-column .box-footer .upvote {
   display: flex;
   flex-direction: row;
@@ -146,13 +153,20 @@
 .cdk-drag-preview {
   box-sizing: border-box;
   border-radius: 5px;
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 6px 8px 1px rgba(0, 0, 0, 0.14), 0 1px 12px 2px rgba(0, 0, 0, 0.12);
 }
 .cdk-drag-preview .box-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 1rem;
+}
+.cdk-drag-preview .box-footer .upvoted-btn {
+  background-color: #4661E6 !important;
+  color: white;
+}
+.cdk-drag-preview .box-footer .upvoted-btn img {
+  filter: brightness(0) invert(1);
 }
 .cdk-drag-preview .box-footer .upvote {
   display: flex;

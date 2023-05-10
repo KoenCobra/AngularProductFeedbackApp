@@ -47,4 +47,8 @@ export class RoadmapComponent implements OnInit {
       this.requestService.updateProductRequestStatus(item.id, event.container.id);
     }
   }
+
+  upVote(id: number) {
+      this.requestService.upvoteProductRequest(id);
+  }
 }
