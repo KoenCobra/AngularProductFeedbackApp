@@ -9,6 +9,11 @@
   align-items: center;
   margin-bottom: 1.375rem;
 
+  @media (max-width: $mobile) {
+    border-radius: 0;
+    padding: 0.8rem 1.5rem;
+  }
+
   .toolbar-info {
     display: flex;
     justify-content: space-between;
@@ -16,10 +21,20 @@
     gap: 2rem;
     color: $white;
 
+    .suggestion-img{
+      @media (max-width: $mobile) {
+        display: none;
+      }
+    }
+
     .suggestions {
       font-weight: 700;
       font-size: 1.125rem;
       letter-spacing: -0.25px;
+
+      @media (max-width: $mobile) {
+       display: none;
+      }
     }
 
     .sort {

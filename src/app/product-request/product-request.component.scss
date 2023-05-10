@@ -10,8 +10,16 @@
     grid-template-columns: 1fr;
   }
 
+  @media (max-width: $mobile) {
+    gap: 0;
+  }
+
   .product-requests {
     display: grid;
     gap: 1.375rem;
+
+    @media (max-width: $mobile) {
+      padding-inline: 1rem;
+    }
   }
 }

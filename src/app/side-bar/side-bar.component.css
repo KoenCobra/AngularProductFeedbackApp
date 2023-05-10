@@ -4,6 +4,28 @@
   position: sticky;
   top: 3.8rem;
 }
+@media (max-width: 700px) {
+  .sidebar.mobile {
+    grid-template-columns: 1fr;
+  }
+  .sidebar.mobile .header {
+    background-image: url("../../assets/suggestions/mobile/background-header.png");
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0;
+  }
+  .sidebar.mobile .menu-toggle {
+    display: block;
+  }
+  .sidebar.mobile .categories {
+    display: none;
+  }
+  .sidebar.mobile .road-map {
+    display: none;
+  }
+}
 @media (max-width: 900px) {
   .sidebar {
     grid-template-columns: repeat(3, 1fr);
@@ -23,7 +45,7 @@
 @media (max-width: 900px) {
   .sidebar .header {
     background-image: url("../../assets/suggestions/tablet/background-header.png");
-    padding: 6.4rem 2.8rem 1.5rem 1.5rem;
+    padding: 6.4rem 1rem 1rem;
   }
 }
 .sidebar .header .header-sub {
@@ -32,6 +54,9 @@
   font-size: 0.9375rem;
   color: #FFF;
 }
+.sidebar .menu-toggle {
+  display: none;
+}
 .sidebar .categories {
   background-color: #FFF;
   padding: 1.5rem 3.125rem 1.5rem 1.5rem;
@@ -39,6 +64,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+@media (max-width: 900px) {
+  .sidebar .categories {
+    padding: 1.5rem;
+  }
 }
 .sidebar .categories .category {
   background-color: #F2F4FE;

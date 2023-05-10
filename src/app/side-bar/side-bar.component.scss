@@ -6,6 +6,34 @@
   position: sticky;
   top: 3.8rem;
 
+  @media (max-width: $mobile) {
+    &.mobile {
+      grid-template-columns: 1fr;
+
+
+      .header {
+        background-image: url('../../assets/suggestions/mobile/background-header.png');
+        padding: 1rem 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 0;
+      }
+
+      .menu-toggle{
+        display: block;
+      }
+
+      .categories {
+        display: none;
+      }
+
+      .road-map {
+        display: none;
+      }
+    }
+  }
+
   @media (max-width: $tablet) {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -23,7 +51,7 @@
 
     @media (max-width: $tablet) {
       background-image: url('../../assets/suggestions/tablet/background-header.png');
-      padding: 6.4rem 2.8rem 1.5rem 1.5rem;
+      padding: 6.4rem 1rem 1rem;
     }
 
     .header-sub {
@@ -34,6 +62,10 @@
     }
   }
 
+  .menu-toggle{
+    display: none;
+  }
+
   .categories {
     background-color: $white;
     padding: 1.5rem 3.125rem 1.5rem 1.5rem;
@@ -41,6 +73,10 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+
+    @media (max-width: $tablet) {
+      padding: 1.5rem;
+    }
 
     .category {
       background-color: $lightGreyBackground;
