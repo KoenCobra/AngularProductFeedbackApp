@@ -11,5 +11,4 @@ export class BacklinkComponent {
   goBack() {
     this.location.back();
   }
-
 }

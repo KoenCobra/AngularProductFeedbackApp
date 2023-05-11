@@ -89,7 +89,7 @@ export class NewComponent implements OnInit {
 
       this.requestService.updateProductRequest(updatedItem);
       this.toast.success({detail: 'SUCCESS', summary: 'Request successfully updated', duration: 4000, position: 'br'});
-      this.router.navigateByUrl('/');
+      this.location.back();
     }
   }
 
