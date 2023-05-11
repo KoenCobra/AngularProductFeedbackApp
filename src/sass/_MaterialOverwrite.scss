@@ -54,3 +54,16 @@ mat-option:not(:last-child) {
 .mat-mdc-form-field-focus-overlay {
   background-color: transparent;
 }
+
+.mat-mdc-tab-label-container {
+  margin-bottom: 2rem !important;
+}
+
+.mat-mdc-tab-header {
+  margin-inline: -1.5rem !important;
+}
+
+.mdc-tab__text-label {
+  font-weight: 700;
+  color: $darkBlue !important;
+}

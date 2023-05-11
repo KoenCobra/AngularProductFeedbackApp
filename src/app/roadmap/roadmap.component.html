@@ -5,120 +5,240 @@
         <img src="assets/shared/icon-arrow-left.svg" alt="">
         <a routerLink="/">Go Back</a>
       </div>
-      <h1>Roadmap for '{{category |async}}'</h1>
+      <h1>Roadmap</h1>
     </div>
     <app-button btnClass="purple-btn" targetRoute="new" btnText="+ Add Feedback"></app-button>
   </div>
   <div class="roadmap-body">
-    <div class="roadmap-column">
-      <h3>Planned ({{planned.length}})</h3>
-      <p class="column-subtitle">Ideas prioritized for research</p>
-      <div
-        id="planned"
-        cdkDropList
-        #plannedList="cdkDropList"
-        [cdkDropListData]="planned"
-        [cdkDropListConnectedTo]="[inProgressList, liveList]"
-        class="roadmap-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="roadmap-box orange-box" *ngFor="let item of planned" cdkDrag>
-          <div class="box-content">
-            <h3>
-              {{item.title}}
-            </h3>
-            <p>{{item.description}}</p>
-          </div>
-          <div class="box-footer">
-            <div class="box-footer-left">
-              <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
-                <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-                <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
-              </button>
-              <div class="box-category">
-                {{item.category}}
+    <div class="mobile-roadmap">
+      <mat-tab-group fitInkBarToContent>
+        <mat-tab label="Planned ({{planned.length}})">
+          <div class="roadmap-column">
+            <div
+              cdkDropList
+              #plannedList2="cdkDropList"
+              [cdkDropListData]="planned"
+              [cdkDropListConnectedTo]="[inProgressList2, liveList2]"
+              class="roadmap-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="roadmap-box orange-box" *ngFor="let item of planned" cdkDrag>
+                <div class="box-content">
+                  <h3>
+                    {{item.title}}
+                  </h3>
+                  <p>{{item.description}}</p>
+                </div>
+                <div class="box-footer">
+                  <div class="box-footer-left">
+                    <button class="upvote" (click)="upVote(item.id)"
+                            [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                      <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                      <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+                    </button>
+                    <div class="box-category">
+                      {{item.category}}
+                    </div>
+                  </div>
+                  <div [routerLink]="['/details', item.id]" class="request-comments">
+                    <img src="assets/shared/icon-comments.svg" alt="">
+                    <p class="comment-amount">
+                      {{item.comments?.length ?? 0}}
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
-            <div [routerLink]="['/details', item.id]" class="request-comments">
-              <img src="assets/shared/icon-comments.svg" alt="">
-              <p class="comment-amount">
-                {{item.comments?.length ?? 0}}
-              </p>
+          </div>
+        </mat-tab>
+        <mat-tab label="In Progress ({{inProgress.length}})">
+          <div class="roadmap-column">
+            <div
+              cdkDropList
+              #inProgressList2="cdkDropList"
+              [cdkDropListData]="inProgress"
+              [cdkDropListConnectedTo]="[plannedList2, liveList2]"
+              class="roadmap-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
+                <div class="box-content">
+                  <h3>
+                    {{item.title}}
+                  </h3>
+                  <p>{{item.description}}</p>
+                </div>
+                <div class="box-footer">
+                  <div class="box-footer-left">
+                    <button class="upvote" (click)="upVote(item.id)"
+                            [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                      <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                      <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+                    </button>
+                    <div class="box-category">
+                      {{item.category}}
+                    </div>
+                  </div>
+                  <div [routerLink]="['/details', item.id]" class="request-comments">
+                    <img src="assets/shared/icon-comments.svg" alt="">
+                    <p class="comment-amount">
+                      {{item.comments?.length ?? 0}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+        <mat-tab label="Live ({{live.length}})">
+          <div class="roadmap-column">
+            <div
+              cdkDropList
+              #liveList2="cdkDropList"
+              [cdkDropListData]="live"
+              [cdkDropListConnectedTo]="[plannedList2, inProgressList2]"
+              class="roadmap-list"
+              (cdkDropListDropped)="drop($event)">
+              <div class="roadmap-box blue-box" *ngFor="let item of live" cdkDrag>
+                <div class="box-content">
+                  <h3>
+                    {{item.title}}
+                  </h3>
+                  <p>{{item.description}}</p>
+                </div>
+                <div class="box-footer">
+                  <div class="box-footer-left">
+                    <button class="upvote" (click)="upVote(item.id)"
+                            [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                      <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                      <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+                    </button>
+                    <div class="box-category">
+                      {{item.category}}
+                    </div>
+                  </div>
+                  <div [routerLink]="['/details', item.id]" class="request-comments">
+                    <img src="assets/shared/icon-comments.svg" alt="">
+                    <p class="comment-amount">
+                      {{item.comments?.length ?? 0}}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="desktop-roadmap">
+      <div class="roadmap-column">
+        <h3>Planned ({{planned.length}})</h3>
+        <p class="column-subtitle">Ideas prioritized for research</p>
+        <div
+          id="planned"
+          cdkDropList
+          #plannedList="cdkDropList"
+          [cdkDropListData]="planned"
+          [cdkDropListConnectedTo]="[inProgressList, liveList]"
+          class="roadmap-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="roadmap-box orange-box" *ngFor="let item of planned" cdkDrag>
+            <div class="box-content">
+              <h3>
+                {{item.title}}
+              </h3>
+              <p>{{item.description}}</p>
+            </div>
+            <div class="box-footer">
+              <div class="box-footer-left">
+                <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                  <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                  <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+                </button>
+                <div class="box-category">
+                  {{item.category}}
+                </div>
+              </div>
+              <div [routerLink]="['/details', item.id]" class="request-comments">
+                <img src="assets/shared/icon-comments.svg" alt="">
+                <p class="comment-amount">
+                  {{item.comments?.length ?? 0}}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="roadmap-column">
-      <h3>In-Progress ({{inProgress.length}})</h3>
-      <p class="column-subtitle">Currently being developed</p>
-      <div
-        id="in-progress"
-        cdkDropList
-        #inProgressList="cdkDropList"
-        [cdkDropListData]="inProgress"
-        [cdkDropListConnectedTo]="[plannedList, liveList]"
-        class="roadmap-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
-          <div class="box-content">
-            <h3>
-              {{item.title}}
-            </h3>
-            <p>{{item.description}}</p>
-          </div>
-          <div class="box-footer">
-            <div class="box-footer-left">
-              <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
-                <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-                <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
-              </button>
-              <div class="box-category">
-                {{item.category}}
-              </div>
+      <div class="roadmap-column">
+        <h3>In-Progress ({{inProgress.length}})</h3>
+        <p class="column-subtitle">Currently being developed</p>
+        <div
+          id="in-progress"
+          cdkDropList
+          #inProgressList="cdkDropList"
+          [cdkDropListData]="inProgress"
+          [cdkDropListConnectedTo]="[plannedList, liveList]"
+          class="roadmap-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
+            <div class="box-content">
+              <h3>
+                {{item.title}}
+              </h3>
+              <p>{{item.description}}</p>
             </div>
-            <div [routerLink]="['/details', item.id]" class="request-comments">
-              <img src="assets/shared/icon-comments.svg" alt="">
-              <p class="comment-amount">
-                {{item.comments?.length ?? 0}}
-              </p>
+            <div class="box-footer">
+              <div class="box-footer-left">
+                <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                  <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                  <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+                </button>
+                <div class="box-category">
+                  {{item.category}}
+                </div>
+              </div>
+              <div [routerLink]="['/details', item.id]" class="request-comments">
+                <img src="assets/shared/icon-comments.svg" alt="">
+                <p class="comment-amount">
+                  {{item.comments?.length ?? 0}}
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="roadmap-column">
-      <h3>Live ({{live.length}})</h3>
-      <p class="column-subtitle">Released features</p>
-      <div
-        id="live"
-        cdkDropList
-        #liveList="cdkDropList"
-        [cdkDropListData]="live"
-        [cdkDropListConnectedTo]="[plannedList, inProgressList]"
-        class="roadmap-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="roadmap-box blue-box" *ngFor="let item of live" cdkDrag>
-          <div class="box-content">
-            <h3>
-              {{item.title}}
-            </h3>
-            <p>{{item.description}}</p>
-          </div>
-          <div class="box-footer">
-            <div class="box-footer-left">
-              <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
-                <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
-                <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
-              </button>
-              <div class="box-category">
-                {{item.category}}
-              </div>
+      <div class="roadmap-column">
+        <h3>Live ({{live.length}})</h3>
+        <p class="column-subtitle">Released features</p>
+        <div
+          id="live"
+          cdkDropList
+          #liveList="cdkDropList"
+          [cdkDropListData]="live"
+          [cdkDropListConnectedTo]="[plannedList, inProgressList]"
+          class="roadmap-list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="roadmap-box blue-box" *ngFor="let item of live" cdkDrag>
+            <div class="box-content">
+              <h3>
+                {{item.title}}
+              </h3>
+              <p>{{item.description}}</p>
             </div>
-            <div [routerLink]="['/details', item.id]" class="request-comments">
-              <img src="assets/shared/icon-comments.svg" alt="">
-              <p class="comment-amount">
-                {{item.comments?.length ?? 0}}
-              </p>
+            <div class="box-footer">
+              <div class="box-footer-left">
+                <button class="upvote" (click)="upVote(item.id)" [ngClass]="item.userHasUpvoted ? 'upvoted-btn' : ''">
+                  <img class="upvote-icon" src="assets/shared/icon-arrow-up.svg" alt="">
+                  <p class="upvote-amount">{{item?.upvotes ?? 0}}</p>
+                </button>
+                <div class="box-category">
+                  {{item.category}}
+                </div>
+              </div>
+              <div [routerLink]="['/details', item.id]" class="request-comments">
+                <img src="assets/shared/icon-comments.svg" alt="">
+                <p class="comment-amount">
+                  {{item.comments?.length ?? 0}}
+                </p>
+              </div>
             </div>
           </div>
         </div>
@@ -127,8 +247,4 @@
   </div>
 </div>
 
-<!--<mat-tab-group>-->
-<!--  <mat-tab label="First"> Content 1 </mat-tab>-->
-<!--  <mat-tab label="Second"> Content 2 </mat-tab>-->
-<!--  <mat-tab label="Third"> Content 3 </mat-tab>-->
-<!--</mat-tab-group>-->
+
