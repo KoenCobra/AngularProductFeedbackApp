@@ -4,7 +4,11 @@
   display: grid;
   justify-content: center;
 
-  .new-header{
+  @media (max-width: $mobile) {
+    padding: 0 1rem 1rem;
+  }
+
+  .new-header {
     padding: 1rem 0 3rem;
   }
 
@@ -34,8 +38,12 @@
       gap: 1rem;
       justify-content: flex-end;
 
-      .delete-btn{
+      .delete-btn {
         margin-right: auto;
+      }
+
+      @media (max-width: $mobile) {
+        flex-direction: column-reverse;
       }
     }
   }

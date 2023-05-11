@@ -6,6 +6,10 @@
   display: grid;
   gap: 1.5rem;
 
+  @media (max-width: $mobile) {
+    padding: 1rem;
+  }
+
   .details-header {
     display: flex;
     justify-content: space-between;

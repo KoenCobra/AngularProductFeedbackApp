@@ -24,4 +24,13 @@
   }
 }
 
+@media (max-width: 700px) {
+  app-side-bar {
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+  }
+}
+
 /*# sourceMappingURL=product-request.component.css.map */

@@ -6,36 +6,12 @@
   position: sticky;
   top: 3.8rem;
 
-  @media (max-width: $mobile) {
-    &.mobile {
-      grid-template-columns: 1fr;
-
-
-      .header {
-        background-image: url('../../assets/suggestions/mobile/background-header.png');
-        padding: 1rem 1.5rem;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        border-radius: 0;
-      }
-
-      .menu-toggle{
-        display: block;
-      }
-
-      .categories {
-        display: none;
-      }
-
-      .road-map {
-        display: none;
-      }
-    }
-  }
-
   @media (max-width: $tablet) {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: $mobile) {
+    grid-template-columns: 1fr;
   }
 
   .header {
@@ -54,6 +30,15 @@
       padding: 6.4rem 1rem 1rem;
     }
 
+    @media (max-width: $mobile) {
+      background-image: url('../../assets/suggestions/mobile/background-header.png');
+      padding: 1rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 0;
+    }
+
     .header-sub {
       opacity: 0.75;
       font-weight: 500;
@@ -62,8 +47,12 @@
     }
   }
 
-  .menu-toggle{
+  .menu-toggle {
     display: none;
+
+    @media (max-width: $mobile) {
+      display: block;
+    }
   }
 
   .categories {
@@ -76,6 +65,10 @@
 
     @media (max-width: $tablet) {
       padding: 1.5rem;
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
     }
 
     .category {
@@ -103,6 +96,10 @@
     background-color: $white;
     padding: 0.8rem 1.5rem;
     border-radius: 10px;
+
+    @media (max-width: $mobile) {
+      display: none;
+    }
 
     .road-map-header {
       display: flex;

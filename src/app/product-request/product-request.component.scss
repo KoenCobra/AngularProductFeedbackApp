@@ -23,3 +23,12 @@
     }
   }
 }
+
+app-side-bar {
+  @media (max-width: $mobile) {
+    gap: 0;
+    position: sticky;
+    top: 0;
+    z-index: 9;
+  }
+}

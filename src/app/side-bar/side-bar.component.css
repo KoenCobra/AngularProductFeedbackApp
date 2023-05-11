@@ -4,31 +4,14 @@
   position: sticky;
   top: 3.8rem;
 }
-@media (max-width: 700px) {
-  .sidebar.mobile {
-    grid-template-columns: 1fr;
-  }
-  .sidebar.mobile .header {
-    background-image: url("../../assets/suggestions/mobile/background-header.png");
-    padding: 1rem 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-radius: 0;
-  }
-  .sidebar.mobile .menu-toggle {
-    display: block;
-  }
-  .sidebar.mobile .categories {
-    display: none;
-  }
-  .sidebar.mobile .road-map {
-    display: none;
-  }
-}
 @media (max-width: 900px) {
   .sidebar {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 700px) {
+  .sidebar {
+    grid-template-columns: 1fr;
   }
 }
 .sidebar .header {
@@ -48,6 +31,16 @@
     padding: 6.4rem 1rem 1rem;
   }
 }
+@media (max-width: 700px) {
+  .sidebar .header {
+    background-image: url("../../assets/suggestions/mobile/background-header.png");
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0;
+  }
+}
 .sidebar .header .header-sub {
   opacity: 0.75;
   font-weight: 500;
@@ -56,6 +49,11 @@
 }
 .sidebar .menu-toggle {
   display: none;
+}
+@media (max-width: 700px) {
+  .sidebar .menu-toggle {
+    display: block;
+  }
 }
 .sidebar .categories {
   background-color: #FFF;
@@ -68,6 +66,11 @@
 @media (max-width: 900px) {
   .sidebar .categories {
     padding: 1.5rem;
+  }
+}
+@media (max-width: 700px) {
+  .sidebar .categories {
+    display: none;
   }
 }
 .sidebar .categories .category {
@@ -91,6 +94,11 @@
   background-color: #FFF;
   padding: 0.8rem 1.5rem;
   border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .sidebar .road-map {
+    display: none;
+  }
 }
 .sidebar .road-map .road-map-header {
   display: flex;
