@@ -6,7 +6,8 @@
     </div>
 
     <div class="menu-toggle" (click)="toggleMenu()">
-      <i class="fa-solid fa-bars"></i>
+      <i *ngIf="!isMenuShowing" class="fa-solid fa-bars"></i>
+      <i *ngIf="isMenuShowing" class="fa-solid fa-x"></i>
     </div>
   </div>
 

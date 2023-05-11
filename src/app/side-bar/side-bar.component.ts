@@ -39,6 +39,10 @@ export class SideBarComponent implements OnInit {
     this.liveRequests$ = this.productRequests$.pipe(
       map(requests => requests.filter(request => request.status === 'live').length)
     );
+
+    this.requestService.isMenuShowing$.subscribe(
+      value => this.isMenuShowing = value
+    );
   }
 
   changeCategory(category: string): void {
