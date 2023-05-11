@@ -1,21 +1,23 @@
 <div class="comment" *ngFor="let comment of productRequest?.comments; let i = index">
-  <img src="{{comment.user?.image}}" alt="">
-  <div class="comment-section">
-    <div class="name-section">
+  <div class="name-section">
+    <div class="comment-header">
+      <img src="{{comment.user?.image}}" alt="">
       <div>
         <p class="name">{{comment.user?.name}}</p>
         <p class="user-name">@{{comment.user?.username}}</p>
       </div>
-      <button (click)="showReply(comment.id)" class="reply-btn">
-        Reply
-      </button>
     </div>
-    <div class="comment-content">
-      <p>{{comment.content}}</p>
-      <div *ngIf="totalComments && totalComments !== 1 && i !== (totalComments - 1)" class="divider"></div>
-    </div>
+    <button (click)="showReply(comment.id)" class="reply-btn">
+      Reply
+    </button>
+  </div>
+  <div class="comment-content">
+    <p>{{comment.content}}</p>
+    <div *ngIf="totalComments && totalComments !== 1 && i !== (totalComments - 1)" class="divider"></div>
+  </div>
+  <ng-container *ngIf="isReplyShowing(comment.id)">
     <form [formGroup]="replyForm" (ngSubmit)="onReplySubmit(comment.id)">
-      <div *ngIf="isReplyShowing(comment.id)" class="reply">
+      <div class="reply">
         <app-input
           [control]="replyForm.controls.reply"
           controlType="textarea"
@@ -25,19 +27,22 @@
         <app-button btnText="Post Reply" type="submit" btnClass="purple-btn"></app-button>
       </div>
     </form>
-    <div class="replies" *ngFor="let reply of comment.replies">
-      <img src="{{reply.user?.image}}" alt="">
-      <div class="comment-section">
-        <div class="name-section">
-          <div>
-            <p class="name">{{reply.user?.name}}</p>
-            <p class="user-name">@{{reply.user?.username}}</p>
-          </div>
+  </ng-container>
+  <div class="replies" *ngFor="let reply of comment.replies">
+    <div class="name-section">
+      <div class="comment-header">
+        <img src="{{reply.user?.image}}" alt="">
+        <div>
+          <p class="name">{{reply.user?.name}}</p>
+          <p class="user-name">@{{reply.user?.username}}</p>
         </div>
-        <div class="comment-content">
-          <p><span class="reply-to">@{{reply.replyingTo}}</span> {{reply.content}}</p>
-        </div>
+      </div>
+<!--      <button (click)="showReply(comment.id)" class="reply-btn">-->
+<!--        Reply-->
+<!--      </button>-->
+    </div>
+      <div class="comment-content">
+        <p><span class="reply-to">@{{reply.replyingTo}}</span> {{reply.content}}</p>
       </div>
     </div>
   </div>
-</div>

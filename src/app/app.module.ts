@@ -22,6 +22,7 @@ import { InputComponent } from './shared/input/input.component';
 import { UpdateComponent } from './update/update.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +48,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatSelectModule,
     ReactiveFormsModule,
     NgToastModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

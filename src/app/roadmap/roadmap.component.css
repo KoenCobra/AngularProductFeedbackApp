@@ -10,6 +10,11 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 700px) {
+  .roadmap-container .roadmap-header {
+    border-radius: 0;
+  }
+}
 .roadmap-container .roadmap-header .back-link {
   display: flex;
   align-items: center;

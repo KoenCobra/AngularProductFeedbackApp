@@ -1,7 +1,4 @@
 .comment {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
   position: relative;
 }
 .comment .divider {
@@ -24,6 +21,10 @@
   justify-content: space-between;
   padding-bottom: 1.05rem;
 }
+.comment .name-section .comment-header {
+  display: flex;
+  gap: 1rem;
+}
 .comment .name-section .name {
   font-weight: 700;
   font-size: 0.8125rem;
@@ -43,29 +44,48 @@
 .comment .name-section .reply-btn:hover {
   text-decoration-line: underline;
 }
-.comment .reply-to {
+
+.reply-to {
   font-weight: 700;
   font-size: 0.9375rem;
   color: #AD1FEA;
 }
-.comment .comment-content {
+
+.comment-content {
   font-weight: 400;
   font-size: 0.9375rem;
   color: #647196;
   padding-bottom: 1.5rem;
+  padding-left: 0;
 }
-.comment .reply {
+@media (max-width: 700px) {
+  .comment-content {
+    padding-left: 0;
+  }
+}
+
+.reply {
   display: flex;
   gap: 1rem;
 }
-.comment .reply app-input {
+@media (max-width: 700px) {
+  .reply {
+    flex-direction: column;
+  }
+  .reply button {
+    margin-bottom: 1rem;
+  }
+}
+.reply app-input {
   flex-grow: 1;
 }
 
 .replies {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+}
+.replies .comment-content {
+  padding-left: 0;
 }
 
 /*# sourceMappingURL=comment.component.css.map */

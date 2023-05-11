@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 import {productRequest} from '../product-request';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {Reply} from "../reply";
@@ -8,6 +8,7 @@ import {ProductRequestService} from "../product-request.service";
   selector: 'app-comment',
   templateUrl: './comment.component.html',
   styleUrls: ['./comment.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class CommentComponent {
   @Input() productRequest!: productRequest | null;

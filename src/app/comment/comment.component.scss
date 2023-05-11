@@ -1,9 +1,6 @@
- @import "../../sass/Variables";
+@import "../../sass/Variables";
 
 .comment {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
   position: relative;
 
   .divider {
@@ -24,62 +21,82 @@
     height: 40px;
   }
 
-    .name-section {
-      display: flex;
-      justify-content: space-between;
-      padding-bottom: 1.05rem;
-
-      .name {
-        font-weight: 700;
-        font-size: 0.8125rem;
-        letter-spacing: -0.194444px;
-        color: $darkBlue;
-      }
-
-      .user-name {
-        font-weight: 400;
-        font-size: 0.8125rem;
-        color: $veryLightBlue;
-      }
-
-      .reply-btn {
-        font-weight: 600;
-        font-size: 0.8125rem;
-        color: $blue;
-
-        &:hover {
-          text-decoration-line: underline;
-        }
-      }
-    }
-
-    .reply-to {
-      font-weight: 700;
-      font-size: 0.9375rem;
-      color: $purple;
-    }
-
-  .comment-content {
-    font-weight: 400;
-    font-size: 0.9375rem;
-    color: $veryLightBlue;
-    padding-bottom: 1.5rem;
-  }
-
-  .reply {
+  .name-section {
     display: flex;
-    gap: 1rem;
+    justify-content: space-between;
+    padding-bottom: 1.05rem;
 
-    app-input {
-      flex-grow: 1;
+    .comment-header {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .name {
+      font-weight: 700;
+      font-size: 0.8125rem;
+      letter-spacing: -0.194444px;
+      color: $darkBlue;
+    }
+
+    .user-name {
+      font-weight: 400;
+      font-size: 0.8125rem;
+      color: $veryLightBlue;
+    }
+
+    .reply-btn {
+      font-weight: 600;
+      font-size: 0.8125rem;
+      color: $blue;
+
+      &:hover {
+        text-decoration-line: underline;
+      }
     }
   }
 }
 
-.replies{
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2rem;
+.reply-to {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  color: $purple;
+}
+
+.comment-content {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  color: $veryLightBlue;
+  padding-bottom: 1.5rem;
+  padding-left: 0;
+
+  @media (max-width: $mobile) {
+    padding-left: 0;
+  }
+}
+
+.reply {
+  display: flex;
+  gap: 1rem;
+
+  @media (max-width: $mobile) {
+    flex-direction: column;
+
+    button {
+      margin-bottom: 1rem;
+    }
+  }
+
+  app-input {
+    flex-grow: 1;
+  }
+}
+
+.replies {
+  padding-left: 1.5rem;
+  padding-top: 1rem;
+  .comment-content {
+    padding-left: 0;
+  }
 }
 
 
