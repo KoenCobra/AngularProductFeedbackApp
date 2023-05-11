@@ -1,0 +1,17 @@
+.mobile-menu {
+  position: absolute;
+  inset: 0;
+  z-index: 99999;
+  width: 0;
+  margin-left: auto;
+  background-color: #FFF;
+  transition: all 0.15s ease-in-out;
+  transform: scale(0);
+  transform-origin: top right;
+}
+.mobile-menu.open {
+  width: 70%;
+  transform: scale(1);
+}
+
+/*# sourceMappingURL=mobile-menu.component.css.map */

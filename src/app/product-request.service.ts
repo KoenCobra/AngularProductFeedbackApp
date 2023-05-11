@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Renderer2, RendererFactory2} from '@angular/core';
 import {BehaviorSubject, combineLatest, Observable} from 'rxjs';
 import {map} from 'rxjs/operators';
 import {productRequest} from './product-request';
@@ -13,9 +13,11 @@ import {NgToastService} from "ng-angular-popup";
 export class ProductRequestService {
   public productRequests$ = new BehaviorSubject<productRequest[]>([]);
   public selectedCategory$ = new BehaviorSubject<string>('all');
+  public isMenuShowing$ = new BehaviorSubject<boolean>(false);
   private localStorageKey = 'productRequests';
-
-  constructor(private http: HttpClient, private toast: NgToastService) {
+  private renderer!: Renderer2;
+  constructor(private http: HttpClient, private toast: NgToastService, rendererFactory: RendererFactory2,) {
+    this.renderer = rendererFactory.createRenderer(null, null);
     this.init();
   }
 
@@ -178,5 +180,16 @@ export class ProductRequestService {
   private loadFromLocalStorage(): productRequest[] | null {
     const data = localStorage.getItem(this.localStorageKey);
     return data ? JSON.parse(data) : null;
+  }
+
+  public toggleMenuVisibility(): void {
+    const currentValue = this.isMenuShowing$.getValue();
+    this.isMenuShowing$.next(!currentValue);
+
+    if (!currentValue) {
+      this.renderer.addClass(document.body, 'no-scroll');
+    } else {
+      this.renderer.removeClass(document.body, 'no-scroll');
+    }
   }
 }

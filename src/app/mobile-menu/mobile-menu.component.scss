@@ -1,0 +1,18 @@
+@import "../../sass/Variables";
+
+.mobile-menu {
+  position: absolute;
+  inset: 0;
+  z-index: 99999;
+  width: 0;
+  margin-left: auto;
+  background-color: $white;
+  transition: all 0.15s ease-in-out;
+  transform: scale(0);
+  transform-origin: top right;
+
+  &.open {
+    width: 70%;
+    transform: scale(1);
+  }
+}

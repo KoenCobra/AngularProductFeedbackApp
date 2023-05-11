@@ -23,6 +23,7 @@ import { UpdateComponent } from './update/update.component';
 import { RoadmapComponent } from './roadmap/roadmap.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTabsModule} from '@angular/material/tabs';
+import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     BacklinkComponent,
     InputComponent,
     UpdateComponent,
-    RoadmapComponent
+    RoadmapComponent,
+    MobileMenuComponent
   ],
   imports: [
     BrowserModule,

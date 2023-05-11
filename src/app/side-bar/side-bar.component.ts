@@ -1,5 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { ProductRequestService } from '../product-request.service';
+import {ProductRequestService} from '../product-request.service';
 import {Observable} from "rxjs";
 import {productRequest} from "../product-request";
 import {map} from "rxjs/operators";
@@ -9,9 +9,10 @@ import {map} from "rxjs/operators";
   templateUrl: './side-bar.component.html',
   styleUrls: ['./side-bar.component.scss'],
 })
-export class SideBarComponent implements OnInit{
+export class SideBarComponent implements OnInit {
   @Output() categoryChange: EventEmitter<string> = new EventEmitter<string>();
-  productRequests$: Observable<productRequest[]> = new  Observable<productRequest[]>();
+  productRequests$: Observable<productRequest[]> = new Observable<productRequest[]>();
+  isMenuShowing: boolean = false;
 
   currentCategory!: string;
   categories: string[] = ['all', 'UI', 'UX', 'enhancement', 'bug', 'feature'];
@@ -44,5 +45,8 @@ export class SideBarComponent implements OnInit{
     this.currentCategory = category;
     this.categoryChange.emit(category);
   }
-}
 
+  toggleMenu() {
+    this.requestService.toggleMenuVisibility();
+  }
+}
