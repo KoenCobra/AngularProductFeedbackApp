@@ -3,7 +3,7 @@ export interface productRequest {
   title: string | null;
   category: string | null;
   upvotes: number;
-  status?: string | null;
+  status: string | null;
   description: string | null;
   userHasUpvoted?: boolean;
   comments?: {

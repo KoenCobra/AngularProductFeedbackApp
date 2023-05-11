@@ -1,7 +1,6 @@
 .roadmap-container {
   margin-inline: auto;
   max-width: 1110px;
-  padding-top: 2rem;
 }
 .roadmap-container .roadmap-header {
   border-radius: 10px;
@@ -39,7 +38,7 @@
   gap: 1.875rem;
   padding-top: 3rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .roadmap-container .roadmap-body {
     gap: 0.7rem;
   }
@@ -71,7 +70,7 @@
   justify-content: space-between;
   padding-top: 1rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .roadmap-container .roadmap-body .roadmap-column .box-footer {
     align-items: flex-end;
   }
@@ -81,7 +80,7 @@
   align-items: center;
   gap: 1rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .roadmap-container .roadmap-body .roadmap-column .box-footer .box-footer-left {
     display: flex;
     flex-direction: column-reverse;
@@ -149,7 +148,7 @@
   background: #FFF;
   margin-bottom: 1.5rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .roadmap-box {
     padding: 1rem 1.5rem;
   }
@@ -194,7 +193,7 @@
   justify-content: space-between;
   padding-top: 1rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .cdk-drag-preview .box-footer {
     align-items: flex-end;
   }
@@ -204,7 +203,7 @@
   align-items: center;
   gap: 1rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .cdk-drag-preview .box-footer .box-footer-left {
     display: flex;
     flex-direction: column-reverse;

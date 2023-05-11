@@ -41,6 +41,10 @@
   .new-container .new-form .new-footer {
     flex-direction: column-reverse;
   }
+  .new-container .new-form .new-footer button, .new-container .new-form .new-footer .delete-btn {
+    width: 100% !important;
+    justify-content: center;
+  }
 }
 
 /*# sourceMappingURL=new.component.css.map */

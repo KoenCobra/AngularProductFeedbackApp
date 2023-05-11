@@ -95,8 +95,7 @@ export class ProductRequestService {
 
       const updatedProductRequests =
         currentProductRequests.map(productRequest => productRequest.id === requestId ? updatedProductRequest : productRequest);
-      this.productRequests$.next(updatedProductRequests);
-      this.saveToLocalStorage(updatedProductRequests);
+      this.saveChanges(updatedProductRequests);
     }
   }
 
@@ -118,8 +117,7 @@ export class ProductRequestService {
         const updatedProductRequests =
           currentProductRequests.map(
             productRequest => productRequest.id === requestId ? updatedRequest : productRequest);
-        this.productRequests$.next(updatedProductRequests);
-        this.saveToLocalStorage(updatedProductRequests);
+        this.saveChanges(updatedProductRequests);
       }
     }
   }
@@ -127,16 +125,14 @@ export class ProductRequestService {
   public updateProductRequest(updatedRequest: productRequest): void {
     const currentProductRequests = this.productRequests$.getValue();
     const updatedProductRequests = currentProductRequests.map(request => request.id === updatedRequest.id ? updatedRequest : request);
-    this.productRequests$.next(updatedProductRequests);
-    this.saveToLocalStorage(updatedProductRequests);
+    this.saveChanges(updatedProductRequests);
   }
 
 
   public deleteRequest(requestId: number): void {
     const currentProductRequests = this.productRequests$.getValue();
     const updatedProductRequests = currentProductRequests.filter(request => request.id !== requestId);
-    this.productRequests$.next(updatedProductRequests);
-    this.saveToLocalStorage(updatedProductRequests);
+    this.saveChanges(updatedProductRequests);
   }
 
   public updateProductRequestStatus(requestId: number, status: string): void {
@@ -148,8 +144,7 @@ export class ProductRequestService {
         return request;
       }
     });
-    this.productRequests$.next(updatedProductRequests);
-    this.saveToLocalStorage(updatedProductRequests);
+    this.saveChanges(updatedProductRequests);
   }
 
   public upvoteProductRequest(requestId: number): void {
@@ -167,8 +162,7 @@ export class ProductRequestService {
       });
       const updatedProductRequests =
         currentProductRequests.map(productRequest => productRequest.id === requestId ? request : productRequest);
-      this.productRequests$.next(updatedProductRequests);
-      this.saveToLocalStorage(updatedProductRequests);
+      this.saveChanges(updatedProductRequests);
     } else {
       this.toast.error({
         detail: 'Take it easy...',
@@ -179,4 +173,8 @@ export class ProductRequestService {
     }
   }
 
+  saveChanges(productRequests: productRequest[]) {
+    this.productRequests$.next(productRequests);
+    this.saveToLocalStorage(productRequests);
+  }
 }

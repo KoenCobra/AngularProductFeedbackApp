@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
 import {NgToastService} from "ng-angular-popup";
@@ -10,11 +10,15 @@ import {Location} from "@angular/common";
 interface Category {
   value: string;
 }
+interface Status {
+  value: string;
+}
 
 @Component({
   selector: 'app-new',
   templateUrl: './new.component.html',
-  styleUrls: ['./new.component.scss']
+  styleUrls: ['./new.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class NewComponent implements OnInit {
   requestId: string = '';
@@ -42,6 +46,13 @@ export class NewComponent implements OnInit {
     {value: 'bug'}
   ];
 
+  status: Status[] = [
+    {value: 'suggestion'},
+    {value: 'planned'},
+    {value: 'in-progress'},
+    {value: 'live'},
+  ];
+
   capitalizeFirstLetter(str: string): string {
     return str.charAt(0).toUpperCase() + str.slice(1);
   }
@@ -49,6 +60,7 @@ export class NewComponent implements OnInit {
   feedbackForm = new FormGroup({
     feedbackTitle: new FormControl('', [Validators.required]),
     feedbackCategory: new FormControl(this.requestService.selectedCategory$.getValue()),
+    feedbackStatus: new FormControl(''),
     feedbackDescription: new FormControl('', [Validators.required])
   })
 
@@ -59,6 +71,7 @@ export class NewComponent implements OnInit {
       this.feedbackForm.setValue({
         feedbackTitle: this.productRequest.title,
         feedbackCategory: this.productRequest.category,
+        feedbackStatus: this.productRequest.status,
         feedbackDescription: this.productRequest.description,
       })
     }
@@ -70,6 +83,7 @@ export class NewComponent implements OnInit {
         ...this.productRequest,
         title: this.feedbackForm.controls.feedbackTitle.value,
         category: this.feedbackForm.controls.feedbackCategory.value,
+        status: this.feedbackForm.controls.feedbackStatus.value,
         description: this.feedbackForm.controls.feedbackDescription.value,
       };
 
@@ -93,7 +107,8 @@ export class NewComponent implements OnInit {
         upvotes: 0,
         title: this.feedbackForm.controls.feedbackTitle.value ?? '',
         category: this.feedbackForm.controls.feedbackCategory.value ?? '',
-        description: this.feedbackForm.controls.feedbackDescription.value ?? ''
+        description: this.feedbackForm.controls.feedbackDescription.value ?? '',
+        status: this.feedbackForm.controls.feedbackStatus.value ?? 'suggestion'
       };
 
       this.requestService.addProductRequest(newItem);

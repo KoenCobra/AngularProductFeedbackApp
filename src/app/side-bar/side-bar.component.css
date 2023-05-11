@@ -4,7 +4,7 @@
   position: sticky;
   top: 3.8rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .sidebar {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -25,7 +25,7 @@
   font-size: 1.25rem;
   letter-spacing: -0.25px;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .sidebar .header {
     background-image: url("../../assets/suggestions/tablet/background-header.png");
     padding: 6.4rem 1rem 1rem;
@@ -63,7 +63,7 @@
   flex-wrap: wrap;
   gap: 0.5rem;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .sidebar .categories {
     padding: 1.5rem;
   }

@@ -1,10 +1,10 @@
 .index {
   display: grid;
-  grid-template-columns: 255px auto;
+  grid-template-columns: 255px 750px;
   gap: 1.875rem;
   justify-content: center;
 }
-@media (max-width: 900px) {
+@media (max-width: 1050px) {
   .index {
     grid-template-columns: 1fr;
   }

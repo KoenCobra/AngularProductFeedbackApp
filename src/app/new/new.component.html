@@ -30,6 +30,21 @@
         </mat-form-field>
       </app-input>
 
+      <ng-container *ngIf="requestId">
+        <app-input
+          [control]="feedbackForm.controls['feedbackStatus']"
+          [label]="'Update Status'"
+          [subLabel]="'Change feature state'">
+          <mat-form-field appearance="fill">
+            <mat-select [formControl]="feedbackForm.controls['feedbackStatus']">
+              <mat-option *ngFor="let status of status" [value]="status.value">
+                {{capitalizeFirstLetter(status.value)}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </app-input>
+      </ng-container>
+
       <app-input
         controlType="textarea"
         [control]="feedbackForm.controls['feedbackDescription']"
@@ -39,8 +54,9 @@
       </app-input>
 
       <div class="new-footer">
-        <ng-container class="delete-btn" *ngIf="productRequest">
-          <app-button class="delete-btn" (click)="deleteRequest()" [btnText]="'Delete'" [btnClass]="'red-btn'" [type]="'button'"></app-button>
+        <ng-container *ngIf="productRequest">
+          <app-button class="delete-btn" (click)="deleteRequest()" [btnText]="'Delete'" [btnClass]="'red-btn'"
+                      [type]="'button'"></app-button>
         </ng-container>
         <app-button [btnText]="'Cancel'" btnClass="darkblue-btn" (click)="goBack()" type="button"></app-button>
         <app-button [btnText]="btnText + ' feedback'" btnClass="purple-btn" type="submit"></app-button>
