@@ -1,17 +1,51 @@
-/* Error: Can't find stylesheet to import.
- *   ,
- * 1 | @import "src/sass/_variables.scss";
- *   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^
- *   '
- *   new.component.scss 1:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a   \2577 \a 1 \2502  @import \"src/sass/_variables.scss\";\d\a   \2502          ^^^^^^^^^^^^^^^^^^^^^^^^^^\a   \2575 \a   new.component.scss 1:9  root stylesheet";
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Jost:wght@400;500;600;700;800;900&display=swap");
+.new-container {
+  display: grid;
+  justify-content: center;
 }
+@media (max-width: 700px) {
+  .new-container {
+    padding: 0 1rem 1rem;
+  }
+}
+.new-container .new-header {
+  padding: 1rem 0 3rem;
+}
+.new-container .new-form {
+  background-color: #FFF;
+  border-radius: 10px;
+  position: relative;
+  padding: 2.625rem;
+}
+.new-container .new-form img {
+  position: absolute;
+  left: 2.625rem;
+  top: 0;
+  transform: translateY(-50%);
+}
+.new-container .new-form h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  letter-spacing: -0.333333px;
+  color: #3A4374;
+  padding-bottom: 1.5rem;
+}
+.new-container .new-form .new-footer {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+.new-container .new-form .new-footer .delete-btn {
+  margin-right: auto;
+}
+@media (max-width: 700px) {
+  .new-container .new-form .new-footer {
+    flex-direction: column-reverse;
+  }
+  .new-container .new-form .new-footer button, .new-container .new-form .new-footer .delete-btn {
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+/*# sourceMappingURL=new.component.css.map */
