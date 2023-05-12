@@ -5,7 +5,6 @@ import {productRequest} from './product-request';
 import {HttpClient} from '@angular/common/http';
 import {comment} from "./comment";
 import {Reply} from "./reply";
-import {NgToastService} from "ng-angular-popup";
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +15,7 @@ export class ProductRequestService {
   public isMenuShowing$ = new BehaviorSubject<boolean>(false);
   private localStorageKey = 'productRequests';
   private renderer!: Renderer2;
-  constructor(private http: HttpClient, private toast: NgToastService, rendererFactory: RendererFactory2,) {
+  constructor(private http: HttpClient, rendererFactory: RendererFactory2,) {
     this.renderer = rendererFactory.createRenderer(null, null);
     this.init();
   }
@@ -149,22 +148,10 @@ export class ProductRequestService {
     if (request && !request.userHasUpvoted) {
       request.upvotes += 1;
       request.userHasUpvoted = true;
-      this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Upvote is registered',
-        duration: 4000,
-        position: 'br',
-      });
       const updatedProductRequests =
         currentProductRequests.map(productRequest => productRequest.id === requestId ? request : productRequest);
       this.saveChanges(updatedProductRequests);
     } else {
-      this.toast.error({
-        detail: 'Take it easy...',
-        summary: 'You can only upvote once',
-        duration: 4000,
-        position: 'br',
-      });
     }
   }
 

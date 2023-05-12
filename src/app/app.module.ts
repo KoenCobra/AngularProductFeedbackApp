@@ -11,7 +11,6 @@ import { NewComponent } from './new/new.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import {ReactiveFormsModule} from "@angular/forms";
-import { NgToastModule } from 'ng-angular-popup';
 import { DetailsComponent } from './details/details.component';
 import { CommentComponent } from './comment/comment.component';
 import { ButtonComponent } from './shared/button/button.component';
@@ -52,7 +51,6 @@ import { RoadmapNavComponent } from './shared/roadmap-nav/roadmap-nav.component'
     BrowserAnimationsModule,
     MatSelectModule,
     ReactiveFormsModule,
-    NgToastModule,
     DragDropModule,
     MatTabsModule
   ],

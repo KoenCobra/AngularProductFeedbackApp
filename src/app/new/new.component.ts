@@ -1,7 +1,6 @@
 import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {ActivatedRoute, Router} from "@angular/router";
-import {NgToastService} from "ng-angular-popup";
 import {ProductRequestService} from "../product-request.service";
 import {productRequest} from "../product-request";
 import {map} from "rxjs/operators";
@@ -26,7 +25,7 @@ export class NewComponent implements OnInit {
   title: string = 'Create';
   btnText: string = 'Add';
 
-  constructor(private router: Router, private toast: NgToastService, private requestService: ProductRequestService,
+  constructor(private router: Router, private requestService: ProductRequestService,
               private route: ActivatedRoute, private location: Location) {
   }
 
@@ -88,7 +87,6 @@ export class NewComponent implements OnInit {
       };
 
       this.requestService.updateProductRequest(updatedItem);
-      this.toast.success({detail: 'SUCCESS', summary: 'Request successfully updated', duration: 4000, position: 'br'});
       this.location.back();
     }
   }
@@ -112,7 +110,6 @@ export class NewComponent implements OnInit {
       };
 
       this.requestService.addProductRequest(newItem);
-      this.toast.success({detail: 'SUCCESS', summary: 'Request successfully added', duration: 4000, position: 'br'});
       this.router.navigateByUrl('/');
     }
   }
@@ -120,12 +117,6 @@ export class NewComponent implements OnInit {
   deleteRequest() {
     if (this.productRequest) {
       this.requestService.deleteRequest(this.productRequest.id);
-      this.toast.success({
-        detail: 'SUCCESS',
-        summary: 'Request successfully deleted',
-        duration: 4000,
-        position: 'br',
-      });
       this.router.navigateByUrl('/');
     }
   }
