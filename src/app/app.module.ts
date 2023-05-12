@@ -24,6 +24,7 @@ import { RoadmapComponent } from './roadmap/roadmap.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
+import { CategoriesComponent } from './shared/categories/categories.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
     InputComponent,
     UpdateComponent,
     RoadmapComponent,
-    MobileMenuComponent
+    MobileMenuComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
