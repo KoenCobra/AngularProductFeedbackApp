@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Jost:wght@400;500;600;700;800;900&display=swap"); /* Box sizing rules */
+/* Box sizing rules */
 *,
 *::before,
 *::after {
@@ -94,6 +94,11 @@ select {
   padding-top: 0.3rem;
 }
 
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
   width: 100%;
   background-color: #F7F8FD;
@@ -136,8 +141,7 @@ mat-option:not(:last-child) {
 
 .cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel {
   padding: 0;
-  border-top-left-radius: 4px !important;
-  border-top-right-radius: 4px !important;
+  border-radius: 10px !important;
 }
 
 .mat-mdc-select-value, .mat-mdc-option {
@@ -148,6 +152,19 @@ mat-option:not(:last-child) {
 
 .mat-mdc-form-field-focus-overlay {
   background-color: transparent;
+}
+
+.mat-mdc-tab-label-container {
+  margin-bottom: 2rem !important;
+}
+
+.mat-mdc-tab-header {
+  margin-inline: -1.5rem !important;
+}
+
+.mdc-tab__text-label {
+  font-weight: 700;
+  color: #3A4374 !important;
 }
 
 /*# sourceMappingURL=styles.css.map */
