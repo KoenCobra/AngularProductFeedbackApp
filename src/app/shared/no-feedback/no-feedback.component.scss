@@ -10,6 +10,10 @@
   text-align: center;
   border-radius: 10px;
 
+  @media (max-width: $tablet) {
+    padding: 4.75rem 1.5rem
+  }
+
   img {
     padding-bottom: 3.3rem;
   }

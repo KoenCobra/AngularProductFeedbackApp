@@ -6,7 +6,7 @@
       <app-feedback-request *ngFor="let request of productRequests$ |async"
                             [feedbackRequest]="request"></app-feedback-request>
     </div>
-    <div *ngIf="(productRequests$ | async)?.length === 0">
+    <div class="no-feedback-section" *ngIf="(productRequests$ | async)?.length === 0">
       <app-no-feedback></app-no-feedback>
     </div>
     <app-mobile-menu></app-mobile-menu>

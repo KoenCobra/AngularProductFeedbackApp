@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Output} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ProductRequestService} from "../../product-request.service";
 
 @Component({
@@ -7,6 +7,7 @@ import {ProductRequestService} from "../../product-request.service";
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent {
+  @Input() toggleVisibilityOnCategoryChange: boolean = false;
   currentCategory!: string;
   categories: string[] = ['all', 'UI', 'UX', 'enhancement', 'bug', 'feature'];
 
@@ -17,5 +18,8 @@ export class CategoriesComponent {
   changeCategory(category: string): void {
     this.currentCategory = category;
     this.requestService.changeCategory(category);
+    if (this.toggleVisibilityOnCategoryChange) {
+      this.requestService.toggleMenuVisibility();
+    }
   }
 }

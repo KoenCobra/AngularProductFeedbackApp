@@ -33,6 +33,12 @@ app-side-bar {
   }
 }
 
-.index-content{
+.index-content {
   position: relative;
+}
+
+.no-feedback-section {
+  @media (max-width: $mobile) {
+    padding-inline: 1rem;
+  }
 }
