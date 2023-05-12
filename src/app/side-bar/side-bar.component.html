@@ -11,14 +11,7 @@
     </div>
   </div>
 
-  <div class="categories">
-    <button
-      class="category"
-      *ngFor="let category of categories" (click)="changeCategory(category)"
-      [class.active]="currentCategory === category">
-      {{category}}
-    </button>
-  </div>
+  <app-categories></app-categories>
 
   <div class="road-map">
     <div class="road-map-header">

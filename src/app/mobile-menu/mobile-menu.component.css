@@ -4,14 +4,20 @@
   z-index: 99999;
   width: 0;
   margin-left: auto;
-  background-color: #FFF;
+  background-color: #F2F4FE;
   transition: all 0.15s ease-in-out;
   transform: scale(0);
   transform-origin: top right;
+  padding: 1.5rem;
 }
 .mobile-menu.open {
   width: 70%;
   transform: scale(1);
+}
+@media (max-width: 700px) {
+  .mobile-menu app-categories {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=mobile-menu.component.css.map */

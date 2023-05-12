@@ -19,10 +19,6 @@ export class ProductRequestComponent implements OnInit {
     this.productRequests$ = this.requestService.getAllProductRequests();
   }
 
-  onCategoryChange(category: string): void {
-    this.requestService.changeCategory(category);
-  }
-
   onSortCriterionChange(criterion: string): void {
     this.productRequests$ = this.productRequests$.pipe(
       map((requests) => {

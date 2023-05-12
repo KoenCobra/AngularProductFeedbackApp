@@ -14,6 +14,12 @@
     grid-template-columns: 1fr;
   }
 
+  app-categories{
+    @media (max-width: $mobile) {
+      display: none;
+    }
+  }
+
   .header {
     background-image: url('../../assets/suggestions/desktop/background-header.png');
     background-repeat: no-repeat;
@@ -54,43 +60,6 @@
 
     @media (max-width: $mobile) {
       display: block;
-    }
-  }
-
-  .categories {
-    background-color: $white;
-    padding: 1.5rem 3.125rem 1.5rem 1.5rem;
-    border-radius: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-
-    @media (max-width: $tablet) {
-      padding: 1.5rem;
-    }
-
-    @media (max-width: $mobile) {
-      display: none;
-    }
-
-    .category {
-      background-color: $lightGreyBackground;
-      border-radius: 10px;
-      color: $blue;
-      font-weight: 600;
-      font-size: 0.8125rem;
-      padding: 0.3rem 1rem;
-      text-transform: capitalize;
-      transition: all 0.15s ease-in-out;
-
-      &.active {
-        background-color: $blue;
-        color: $white;
-      }
-
-      &:hover {
-        background-color: $greyBlue;
-      }
     }
   }
 
