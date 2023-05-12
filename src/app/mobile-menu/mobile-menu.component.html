@@ -1,3 +1,5 @@
-<div [ngClass]="{'open': isMenuShowing}" class="mobile-menu">
-  <app-categories [toggleVisibilityOnCategoryChange]="true"></app-categories>
-</div>
+<ng-container *ngIf="isMenuShowing">
+  <div [ngClass]="{'open': isMenuShowing}" class="mobile-menu">
+    <app-categories [toggleVisibilityOnCategoryChange]="true"></app-categories>
+  </div>
+</ng-container>

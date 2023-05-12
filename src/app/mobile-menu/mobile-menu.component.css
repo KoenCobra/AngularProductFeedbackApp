@@ -1,13 +1,14 @@
 .mobile-menu {
-  position: absolute;
+  position: sticky;
   inset: 0;
+  height: calc(100vh - 85px);
   z-index: 99999;
   width: 0;
   margin-left: auto;
   background-color: #F2F4FE;
   transition: all 0.15s ease-in-out;
   transform: scale(0);
-  transform-origin: top right;
+  transform-origin: right;
   padding: 1.5rem;
 }
 .mobile-menu.open {

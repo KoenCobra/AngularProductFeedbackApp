@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { productRequest } from '../product-request';
-import { ProductRequestService } from '../product-request.service';
-import { Observable } from 'rxjs';
+import {Component, OnDestroy, OnInit} from '@angular/core';
+import {productRequest} from '../product-request';
+import {ProductRequestService} from '../product-request.service';
+import {Observable, Subscription} from 'rxjs';
 import {map} from "rxjs/operators";
 
 @Component({
@@ -9,14 +9,21 @@ import {map} from "rxjs/operators";
   templateUrl: './product-request.component.html',
   styleUrls: ['./product-request.component.scss'],
 })
-export class ProductRequestComponent implements OnInit {
-  productRequests$: Observable<productRequest[]> = new  Observable<productRequest[]>();
+export class ProductRequestComponent implements OnInit, OnDestroy {
+  productRequests$: Observable<productRequest[]> = new Observable<productRequest[]>();
+  isMenuShowing: boolean = false;
+  private subscription!: Subscription;
 
   constructor(private requestService: ProductRequestService) {
   }
 
   ngOnInit(): void {
     this.productRequests$ = this.requestService.getAllProductRequests();
+    this.subscription = this.requestService.isMenuShowing$.subscribe(
+      value => {
+        this.isMenuShowing = value;
+      }
+    );
   }
 
   onSortCriterionChange(criterion: string): void {
@@ -42,4 +49,9 @@ export class ProductRequestComponent implements OnInit {
     );
   }
 
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
 }

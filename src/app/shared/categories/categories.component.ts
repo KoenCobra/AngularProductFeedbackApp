@@ -20,6 +20,7 @@ export class CategoriesComponent {
     this.requestService.changeCategory(category);
     if (this.toggleVisibilityOnCategoryChange) {
       this.requestService.toggleMenuVisibility();
+      window.scrollTo(0, 0);
     }
   }
 }
