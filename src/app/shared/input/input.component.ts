@@ -13,6 +13,7 @@ export class InputComponent {
   @Input() control!: FormControl;
   @Input() inputType: string = '';
   @Input() placeholder: string = '';
+  @Input() errorClass: string = '';
   @Input() controlType!: 'input' | 'textarea';
 
   charactersLeft: number = 250;

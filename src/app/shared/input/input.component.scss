@@ -31,19 +31,19 @@
       border: 1px solid $red !important;
     }
 
-    &:focus{
+    &:focus {
       outline: 1px solid $blue;
     }
   }
 
-  .characters-left{
+  .characters-left {
     font-weight: 400;
     font-size: 0.9125rem;
     color: $veryLightBlue;
     padding-top: 0.5rem;
   }
 
-  ::placeholder{
+  ::placeholder {
     font-size: 0.9rem;
   }
 }
