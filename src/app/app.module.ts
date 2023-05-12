@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
@@ -25,6 +24,7 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MatTabsModule} from '@angular/material/tabs';
 import { MobileMenuComponent } from './mobile-menu/mobile-menu.component';
 import { CategoriesComponent } from './shared/categories/categories.component';
+import { RoadmapNavComponent } from './shared/roadmap-nav/roadmap-nav.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +42,8 @@ import { CategoriesComponent } from './shared/categories/categories.component';
     UpdateComponent,
     RoadmapComponent,
     MobileMenuComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    RoadmapNavComponent
   ],
   imports: [
     BrowserModule,

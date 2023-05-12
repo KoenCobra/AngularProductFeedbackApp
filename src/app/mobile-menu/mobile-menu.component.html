@@ -1,5 +1,7 @@
 <ng-container *ngIf="isMenuShowing">
-  <div [ngClass]="{'open': isMenuShowing}" class="mobile-menu">
+  <div class="mobile-menu">
     <app-categories [toggleVisibilityOnCategoryChange]="true"></app-categories>
+    <app-roadmap-nav [toggleVisibilityOnNavigation]="true"></app-roadmap-nav>
   </div>
+  <div (click)="closeMenu()" class="overlay"></div>
 </ng-container>

@@ -1,0 +1,65 @@
+.road-map {
+  background-color: #FFF;
+  padding: 0.8rem 1.5rem;
+  border-radius: 10px;
+}
+@media (max-width: 700px) {
+  .road-map app-roadmap-nav {
+    display: block;
+  }
+}
+.road-map .road-map-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 1.5rem;
+}
+.road-map .road-map-header p {
+  font-weight: 700;
+  font-size: 1.125rem;
+  letter-spacing: -0.25px;
+}
+.road-map .road-map-header a {
+  color: #4661E6;
+  font-size: 0.8125rem;
+  text-decoration: underline;
+  font-weight: 600;
+  cursor: pointer;
+}
+.road-map .road-map-content {
+  display: grid;
+  gap: 0.5rem;
+}
+.road-map .road-map-content .content-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.road-map .road-map-content .content-item .content-item-title {
+  display: flex;
+  align-items: center;
+}
+.road-map .road-map-content .content-item .content-item-title .road-map-dot-planned, .road-map .road-map-content .content-item .content-item-title .road-map-dot-live, .road-map .road-map-content .content-item .content-item-title .road-map-dot-progress {
+  border-radius: 50%;
+  background-color: #F49F85;
+  padding: 0.25rem;
+  margin-right: 1rem;
+}
+.road-map .road-map-content .content-item .content-item-title .road-map-dot-progress {
+  background-color: #AD1FEA;
+}
+.road-map .road-map-content .content-item .content-item-title .road-map-dot-live {
+  background-color: #62BCFA;
+}
+.road-map .road-map-content .content-item .content-item-title p {
+  font-weight: 400;
+  font-size: 1rem;
+  color: #647196;
+}
+.road-map .road-map-content .content-item .content-item-title .road-map-amount {
+  font-weight: 700;
+  font-size: 1rem;
+  color: #647196;
+}
+
+/*# sourceMappingURL=roadmap-nav.component.css.map */

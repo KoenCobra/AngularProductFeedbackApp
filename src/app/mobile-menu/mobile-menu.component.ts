@@ -25,4 +25,8 @@ export class MobileMenuComponent implements OnInit, OnDestroy {
       this.subscription.unsubscribe();
     }
   }
+
+  closeMenu() {
+    this.requestService.toggleMenuVisibility()
+  }
 }
