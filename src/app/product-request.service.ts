@@ -5,6 +5,7 @@ import {productRequest} from './product-request';
 import {HttpClient} from '@angular/common/http';
 import {comment} from "./comment";
 import {Reply} from "./reply";
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 @Injectable({
   providedIn: 'root',
@@ -15,7 +16,8 @@ export class ProductRequestService {
   public isMenuShowing$ = new BehaviorSubject<boolean>(false);
   private localStorageKey = 'productRequests';
   private renderer!: Renderer2;
-  constructor(private http: HttpClient, rendererFactory: RendererFactory2,) {
+
+  constructor(private http: HttpClient, rendererFactory: RendererFactory2, private snackBar: MatSnackBar) {
     this.renderer = rendererFactory.createRenderer(null, null);
     this.init();
   }
@@ -56,6 +58,7 @@ export class ProductRequestService {
 
   public addProductRequest(item: productRequest): void {
     this.saveChanges([...this.productRequests$.getValue(), item]);
+    this.snackBar.open('Request has been added', 'close');
   }
 
   public changeCategory(category: string): void {
@@ -118,6 +121,7 @@ export class ProductRequestService {
     const updatedProductRequests = currentProductRequests.map(request => request.id === updatedRequest.id ? updatedRequest : request);
 
     this.saveChanges(updatedProductRequests);
+    this.snackBar.open('Request has been updated', 'close');
   }
 
 
@@ -126,6 +130,7 @@ export class ProductRequestService {
     const updatedProductRequests = currentProductRequests.filter(request => request.id !== requestId);
 
     this.saveChanges(updatedProductRequests);
+    this.snackBar.open('Request has been deleted', 'close');
   }
 
   public updateProductRequestStatus(requestId: number, status: string): void {
@@ -151,7 +156,9 @@ export class ProductRequestService {
       const updatedProductRequests =
         currentProductRequests.map(productRequest => productRequest.id === requestId ? request : productRequest);
       this.saveChanges(updatedProductRequests);
+      this.snackBar.open('Request has been upvoted', 'close');
     } else {
+      this.snackBar.open('You can only upvote once', 'close');
     }
   }
 

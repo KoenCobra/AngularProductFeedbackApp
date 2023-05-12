@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../../../sass/_variables.scss","backlink.component.scss"],"names":[],"mappings":"AAAS;ACET;EACE;EACA;EACA;EACA;;AAEA;EACE,ODJY;ECKZ;EACA;EACA;;AAEA;EACE","file":"backlink.component.css"}
+{"version":3,"sourceRoot":"","sources":["backlink.component.scss","../../../sass/_variables.scss"],"names":[],"mappings":"AAEA;EACE;EACA;EACA;EACA;;AAEA;EACE,OCNY;EDOZ;EACA;EACA;;AAEA;EACE","file":"backlink.component.css"}
