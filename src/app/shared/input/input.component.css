@@ -26,7 +26,7 @@
 .input-field input.error, .input-field textarea.error {
   border: 1px solid #D73737 !important;
 }
-.input-field input:focus, .input-field textarea:focus {
+.input-field input:focus:not(.error), .input-field textarea:focus:not(.error) {
   outline: 1px solid #4661E6;
 }
 .input-field .characters-left {

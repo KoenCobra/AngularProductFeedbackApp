@@ -31,7 +31,7 @@
       border: 1px solid $red !important;
     }
 
-    &:focus {
+    &:focus:not(.error) {
       outline: 1px solid $blue;
     }
   }
