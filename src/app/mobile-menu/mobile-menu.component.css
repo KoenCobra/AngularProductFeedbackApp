@@ -1,10 +1,9 @@
 .mobile-menu {
   position: sticky;
   inset: 0;
-  height: calc(100vh - 85px);
-  height: calc(100svh - 85px);
+  height: 100vh;
   width: 70%;
-  z-index: 9;
+  z-index: 15;
   margin-left: auto;
   background-color: #F2F4FE;
   padding: 1.5rem;
@@ -12,6 +11,10 @@
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+.mobile-menu i {
+  margin-left: auto;
+  color: #4661E6;
 }
 @media (max-width: 700px) {
   .mobile-menu app-categories {
@@ -22,8 +25,8 @@
 .overlay {
   position: sticky;
   inset: 0;
-  height: calc(100vh - 85px);
-  z-index: 8;
+  height: 100vh;
+  z-index: 14;
   background-color: rgba(0, 0, 0, 0.5);
   animation: openMenu 0.2s ease-in-out forwards;
 }
