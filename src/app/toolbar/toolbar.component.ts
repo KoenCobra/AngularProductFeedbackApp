@@ -40,6 +40,4 @@ export class ToolbarComponent implements OnInit {
     this.isSortDropdownOpen = !this.isSortDropdownOpen;
     this.selectedSortCriterion = criterion;
   }
-
-  protected readonly RouterLink = RouterLink;
 }

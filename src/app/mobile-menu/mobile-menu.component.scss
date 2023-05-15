@@ -4,6 +4,8 @@
   position: sticky;
   inset: 0;
   height: calc(100vh - 85px);
+  //100svh for fixing some mobile issues
+  height: calc(100svh - 85px);
   width: 70%;
   z-index: 9;
   margin-left: auto;
