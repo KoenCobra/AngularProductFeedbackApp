@@ -1,10 +1,11 @@
 .mobile-menu {
-  position: sticky;
+  position: fixed;
   inset: 0;
-  height: 100vh;
+  top: 84.5px;
   width: 70%;
   z-index: 15;
   margin-left: auto;
+  margin-top: auto;
   background-color: #F2F4FE;
   padding: 1.5rem;
   animation: openMenu 0.2s ease-in-out forwards;
@@ -23,9 +24,10 @@
 }
 
 .overlay {
-  position: sticky;
+  position: fixed;
   inset: 0;
-  height: 100vh;
+  top: 84.5px;
+  margin-top: auto;
   z-index: 14;
   background-color: rgba(0, 0, 0, 0.5);
   animation: openMenu 0.2s ease-in-out forwards;

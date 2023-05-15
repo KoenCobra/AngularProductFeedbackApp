@@ -1,5 +1,6 @@
 .content {
   padding: 3.8rem 1rem;
+  position: relative;
 }
 @media (max-width: 1050px) {
   .content {

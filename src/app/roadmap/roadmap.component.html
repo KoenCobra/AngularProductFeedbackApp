@@ -22,7 +22,7 @@
               class="roadmap-list"
               (cdkDropListDropped)="drop($event)">
               <div class="roadmap-box orange-box" *ngFor="let item of planned" cdkDrag>
-                <div class="box-content">
+                <div class="box-content" cdkDragHandle>
                   <h3>
                     {{item.title}}
                   </h3>
@@ -60,7 +60,7 @@
               class="roadmap-list"
               (cdkDropListDropped)="drop($event)">
               <div class="roadmap-box purple-box" *ngFor="let item of inProgress" cdkDrag>
-                <div class="box-content">
+                <div class="box-content" cdkDragHandle>
                   <h3>
                     {{item.title}}
                   </h3>
@@ -98,7 +98,7 @@
               class="roadmap-list"
               (cdkDropListDropped)="drop($event)">
               <div class="roadmap-box blue-box" *ngFor="let item of live" cdkDrag>
-                <div class="box-content">
+                <div class="box-content" cdkDragHandle>
                   <h3>
                     {{item.title}}
                   </h3>

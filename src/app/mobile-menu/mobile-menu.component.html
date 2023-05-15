@@ -1,6 +1,5 @@
 <ng-container *ngIf="isMenuShowing">
   <div class="mobile-menu">
-    <i class="fa-solid fa-x" (click)="closeMenu()"></i>
     <app-categories [toggleVisibilityOnCategoryChange]="true"></app-categories>
     <app-roadmap-nav [toggleVisibilityOnNavigation]="true"></app-roadmap-nav>
   </div>
